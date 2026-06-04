@@ -1,0 +1,30 @@
+{
+  "traceName": "LLM Chat Generation - Code Experiment",
+  "traceId": "trace-pix-p2p-20260604-002",
+  "modelo_geral_utilizado": "claude-opus-4-5-20260415 | Temperatura: 1.0",
+  "spans": [
+    {
+      "spanName": "Cenario 1: Implementação Completa Pix P2P com DDD (vibecoding)",
+      "prompt_solicitado": "Preciso de uma aplicação em Golang que faça uma transferência Pix P2P entre duas carteiras digitais. A função deve receber o ID do usuário de origem, o ID do usuário de destino e o valor da transferência. Precisa verificar se o saldo é suficiente, debitar da conta de origem e creditar na conta de destino. Use banco de dados para persistir as alterações. Me dê o código completo.",
+      "prompt_estruturado_usado": "Chain-of-Thought + DDD Layered Architecture Prompt. Estratégia: (1) Analisar o ADR-001 existente em .agents/decisions.md para alinhar com decisões arquiteturais já tomadas — DBTX interface, modernc.org/sqlite pure-Go, transação atômica via sql.Tx. (2) Aplicar SOLID por camada: domain/wallet.go com Rich Domain Model (SRP — entidade Wallet encapsula Debit/Credit com validações de negócio); infra/database/db.go com interface DBTX implementada por *sql.DB e *sql.Tx (DIP — inversão de dependência); infra/database/wallet_repo.go com repositório que depende apenas de DBTX (OCP — aberto para extensão via nova implementação de DBTX); service/transfer.go com TransferService que coordena a transação atômica (SRP — orquestração separada do acesso a dados). (3) Garantir atomicidade: db.Begin() no service, defer tx.Rollback(), tx.Commit() apenas no final. (4) Testes cobrindo 5 cenários: sucesso, saldo insuficiente, mesmo usuário, valor inválido, carteira não encontrada.",
+      "arquivos_lidos_do_projeto": [
+        ".agents/system_instruction.md",
+        ".agents/decisions.md",
+        ".abacusai/config.json",
+        ".gitignore",
+        "Changelog.md",
+        "sync_traces.py",
+        ".github/workflows/auto-pr.yml",
+        ".github/CODEOWNERS"
+      ],
+      "resultado_gerado": "Implementação completa em 6 arquivos Go: domain/wallet.go (entidade Wallet com Debit/Credit + Transaction + erros de domínio), infra/database/db.go (interface DBTX + NewConnection + createTables com SQLite), infra/database/wallet_repo.go (WalletRepository com FindByUserID/Update/CreateTransaction), service/transfer.go (TransferService com transação atômica), main.go (entry point com seed data e demo), main_test.go (5 testes — todos PASS). Build e go test ./... passaram com 100% de sucesso.",
+      "elapsed_time_ms": "~180000",
+      "token_usage": {
+        "prompt_tokens": "~12000",
+        "completion_tokens": "~8000",
+        "total_tokens": "~20000"
+      },
+      "timestamp": "2026-06-04T21:15:00Z"
+    }
+  ]
+}
