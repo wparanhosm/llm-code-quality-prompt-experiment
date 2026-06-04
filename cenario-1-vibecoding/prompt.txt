@@ -1,0 +1,5 @@
+Preciso de uma aplicação em Golang que faça uma transferência Pix P2P entre duas carteiras digitais. 
+A função deve receber o ID do usuário de origem, o ID do usuário de destino e o valor da transferência.
+Precisa verificar se o saldo é suficiente, debitar da conta de origem e creditar na conta de destino. 
+Use banco de dados para persistir as alterações. Me dê o código completo.
+Ao terminar, aplique as alterações e atualize o arquivo trace_langfuse.json e decisions.md com os metadados da engenharia de prompt conforme as regras do nosso .agents.
