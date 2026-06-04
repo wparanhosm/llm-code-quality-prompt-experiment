@@ -1,9 +1,10 @@
-name: Auto PR to Main
+name: Auto PR Creator
 
 on:
   push:
     branches:
       - develop
+      - 'feature/**'
 
 permissions:
   pull-requests: write
@@ -20,11 +21,29 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Verifica se já existe um PR aberto de develop para main
-          PR_EXISTS=$(gh pr list --base main --head develop --json number --jq '.[0].number')
+          BRANCH_NAME="${{ github.ref_name }}"
+          if [ "$BRANCH_NAME" = "develop" ]; then
+            BASE_BRANCH="main"
+            HEAD_BRANCH="develop"
+            PR_TITLE="Sync develop -> main"
+            PR_BODY="PR automático criado a partir de um push na branch develop."
+          elif [[ "$BRANCH_NAME" =~ ^feature/ ]]; then
+            BASE_BRANCH="develop"
+            HEAD_BRANCH="$BRANCH_NAME"
+            FEATURE_NAME=$(echo "${BRANCH_NAME#feature/}" | sed 's/[-_]/ /g')
+            PR_TITLE="Feature: $FEATURE_NAME"
+            PR_BODY="PR automático criado a partir de um push na branch $BRANCH_NAME."
+          else
+            echo "Branch não configurada para PR automático: $BRANCH_NAME"
+            exit 0
+          fi
+
+          echo "Buscando PRs existentes de $HEAD_BRANCH para $BASE_BRANCH..."
+          PR_EXISTS=$(gh pr list --base "$BASE_BRANCH" --head "$HEAD_BRANCH" --json number --jq '.[0].number')
           if [ -z "$PR_EXISTS" ]; then
             echo "Nenhum PR ativo encontrado. Criando um novo PR..."
-            gh pr create --base main --head develop --title "Sync develop -> main" --body "PR automático criado a partir de um push na branch develop."
+            gh pr create --base "$BASE_BRANCH" --head "$HEAD_BRANCH" --title "$PR_TITLE" --body "$PR_BODY"
           else
-            echo "Um PR de develop para main já existe com o número: #$PR_EXISTS"
+            echo "Um PR de $HEAD_BRANCH para $BASE_BRANCH já existe com o número: #$PR_EXISTS"
           fi
+
