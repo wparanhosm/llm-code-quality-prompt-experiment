@@ -1,0 +1,30 @@
+name: Auto PR to Main
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Verifica se já existe um PR aberto de develop para main
+          PR_EXISTS=$(gh pr list --base main --head develop --json number --jq '.[0].number')
+          if [ -z "$PR_EXISTS" ]; then
+            echo "Nenhum PR ativo encontrado. Criando um novo PR..."
+            gh pr create --base main --head develop --title "Sync develop -> main" --body "PR automático criado a partir de um push na branch develop."
+          else
+            echo "Um PR de develop para main já existe com o número: #$PR_EXISTS"
+          fi

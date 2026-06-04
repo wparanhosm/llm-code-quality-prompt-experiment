@@ -36,6 +36,7 @@ Para garantir o determinismo científico, a reprodutibilidade da pesquisa e a el
 
 A avaliação comparativa entre os códigos gerados nos dois cenários baseia-se nos seguintes indicadores quantitativos e qualitativos:
 
+
 | Dimensão | Indicador Técnico | Ferramenta de Extração | Meta de Engenharia |
 | :--- | :--- | :--- | :--- |
 | **Manutenibilidade** | Complexidade Ciclomática | `gocyclo` / SonarCloud | Minimizar caminhos independentes por função. |
