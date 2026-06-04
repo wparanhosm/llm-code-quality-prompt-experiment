@@ -7,18 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Atualizado `README.md` com dados reais da branch: modelos e temperaturas efetivamente usados, resultados dos testes de ambos os cenários, estrutura completa de arquivos do repositório e tabela comparativa de métricas apuradas.
+- Atualizado `Changelog.md` para refletir o histórico completo de commits.
+
+---
+
+## [develop] - 2026-06-04
+
+> Commit: `be027a1` — `:test_tube: feat: add AI-generated scenarios 1 and 2 for LLM code quality experiment`
+
 ### Added
-- Adicionado `cenario-1-vibecoding/`: implementação Pix P2P em Go gerada por IA (claude-opus-4-5) com vibe coding — arquitetura DDD + SQLite puro (modernc.org/sqlite), sem prompt estruturado de engenharia; inclui `domain/`, `infra/`, `service/`, `main.go`, `main_test.go` (5 testes, 100% pass), `prompt.txt`, `trace_langfuse.json` e `decisions.md` (ADR-001).
-- Adicionado `cenario-2-agente-engenheiro/`: implementação P2P Transfer em Go gerada por IA (Claude Opus 4.6) com prompt estruturado de engenharia — Clean Architecture (Domain, Usecase, Infra, Delivery), PostgreSQL com bloqueio pessimista (`SELECT FOR UPDATE`), TxManager via `context.Value`, correlation ID em structured JSON logs (`log/slog`) e `net/http` puro; 47 testes, 97.6% de cobertura global, race detector limpo.
-- Adicionado `.agents/decisions.md`: template de instruction para o agente registrar ADRs (Architecture Decision Records) com metadados de LLM, trace ID e resultado de testes.
-- Adicionado `.agents/system_instruction.md`: instrução para o agente gerar/atualizar `trace_langfuse.json` com estrutura de spans por tentativa (Self-Correction Loop), incluindo tokens e timestamps ISO-8601.
+- Adicionado `cenario-1-vibecoding/`: implementação Pix P2P em Go gerada por IA (`claude-opus-4-5-20260415`, temp. 1.0) com abordagem vibe coding — DDD + SQLite puro (`modernc.org/sqlite`); inclui `domain/`, `infra/`, `service/`, `main.go`, `main_test.go` (5 testes, 100% PASS), `prompt.txt`, `trace_langfuse.json` e `decisions.md` (ADR-001).
+- Adicionado `cenario-2-agente-engenheiro/`: implementação P2P Transfer em Go gerada por IA (`claude-opus-4-5-20260415`) com prompt estruturado de engenharia — Clean Architecture (Domain, Usecase, Infra, Delivery), PostgreSQL com bloqueio pessimista (`SELECT FOR UPDATE`), `TxManager` via `context.Value`, structured JSON logs (`log/slog`) e `net/http` puro; 47 testes, 97.6% de cobertura global, race detector limpo.
+- Adicionado `.agents/decisions.md`: template de instrução para o agente registrar ADRs com metadados de LLM, trace ID e resultado de testes.
+- Adicionado `.agents/system_instruction.md`: instrução para o agente gerar/atualizar `trace_langfuse.json` com spans por tentativa (Self-Correction Loop), tokens e timestamps ISO-8601.
 - Adicionado `sync_traces.py`: script Python para sincronização de traces locais com a plataforma Langfuse.
+
+---
 
 ## [main] - 2026-06-04
 
+> Commits: `b1fedbd` → `b10fe9d` → `0d09e45` → `f841da4`
+
 ### Added
-- Created `Changelog.md` to track project updates.
-- Added `.gitignore` to prevent environment variables and temporary files from being tracked by git.
-- Configured Git Flow structure locally (branch `main` and `develop`).
-- Created `.github/CODEOWNERS` to set default ownership and require code reviews for branch protection.
-- Created `.github/workflows/auto-pr.yml` to automate Pull Request creation (from `develop` to `main` and from `feature/*` to `develop`).
+- Criado `README.md` com documentação científica do laboratório experimental (TCC MBA USP/ESALQ).
+- Criado `Changelog.md` para rastreamento de alterações do projeto.
+- Adicionado `.gitignore` para ignorar variáveis de ambiente e arquivos temporários.
+- Configurado Git Flow localmente (branches `main` e `develop`).
+- Criado `.github/CODEOWNERS` para definir ownership padrão e exigir revisão de código nas branches protegidas.
+- Criado `.github/workflows/auto-pr.yml` com criação automática de Pull Request de `develop` → `main`.
+
+### Changed
+- Expandido `.github/workflows/auto-pr.yml` para suportar também branches `feature/*` → `develop`, com título de PR dinâmico baseado no nome da feature.
