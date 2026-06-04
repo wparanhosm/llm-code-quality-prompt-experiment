@@ -10,3 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Created `Changelog.md` to track project updates.
 - Added `.gitignore` to prevent environment variables and temporary files from being tracked by git.
+- Configured Git Flow structure locally (branch `main` and `develop`).
+- Created `.github/CODEOWNERS` to set default ownership and require code reviews for branch protection.
+- Created `.github/workflows/auto-pr.yml` to automate Pull Request creation (from `develop` to `main` and from `feature/*` to `develop`).
