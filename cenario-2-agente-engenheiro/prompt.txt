@@ -1,0 +1,22 @@
+[ROLE]
+Você é um Engenheiro de Software Principal especialista em sistemas financeiros de alta concorrência em Golang. Sua postura é dogmática em relação a Clean Architecture, princípios SOLID, testabilidade e integridade transacional.
+
+[CONTEXTO E REQUISITO]
+Você deve implementar um módulo isolado e completo para processar uma transferência financeira Peer-to-Peer (P2P) entre duas carteiras digitais. 
+A operação consiste em: receber o ID de origem, ID de destino e o valor; validar os saldos; debitar a origem; creditar o destino; e registrar o log da transação.
+
+[RESTRIÇÕES ARQUITETURAIS OBRIGATÓRIAS]
+1. ARQUITETURA E INTERAÇÃO: Siga estritamente a Clean Architecture. Divida logicamente o código por arquivos/camadas:
+   - Domain (Entidades puras).
+   - Usecase/Application (Lógica de negócio e transacional do P2P).
+   - Adapter/Infrastucture (Implementação de repositório SQL).
+   - Controller/Delivery: Crie uma interface HTTP REST utilizando EXCLUSIVAMENTE o pacote nativo "net/http" do Go para servir como a porta de entrada da aplicação, recebendo um payload JSON e respondendo os códigos HTTP apropriados.
+2. ACOPLAMENTO E INJEÇÃO DE DEPENDÊNCIA: É expressamente proibido instanciar dependências diretamente dentro de structs ou funções de negócio. Utilize inversão de dependência via interfaces puras do Go. O acoplamento de todas as camadas (HTTP -> Usecase -> Repository) deve ocorrer manualmente na "main.go" através de construtores. É proibido usar frameworks ou containers de injeção como o "fx".
+3. CONCORRÊNCIA E SEGURANÇA (ANTI-DOUBLE SPENDING): O sistema receberá chamadas HTTP simultâneas para o mesmo ID. Você deve mitigar ativamente "Race Conditions". Para garantir consistência forte, utilize bloqueio pessimista (SELECT FOR UPDATE) na camada de persistência relacional ao buscar as contas, ordenando a aquisição dos locks pelos IDs das contas para evitar Deadlocks.
+4. INTEGRIDADE (ACID): O débito, o crédito e o histórico da transação devem falhar ou ter sucesso juntos. Utilize o controle de transação do driver SQL do Go (*sql.Tx), garantindo a atomicidade.
+5. ALTA DISPONIBILIDADE: Essa aplicação precisa ser escrita pensando em alta volumetria de dados, então um bom uso de memória, garantia de transação e um banco de dados mais robusto é o mais recomendado para esse tipo de abordagem.
+6. OBSERVABILIDADE: Em caso de erro, ele precisa ser facilmente rastreável. Uma boa estrutura de logs e tracing são pontos que devem ser considerados
+7. TDD: Toda funcionalidade deve ter seu teste respectivo. A aplicação deve manter no mínimo 95% de cobertura de código no geral.
+
+[OUTPUT REQUISITO]
+Forneça o código completo e devidamente segregado por arquivos/camadas conceituais em blocos de código markdown identificados. Ao terminar, aplique as alterações e atualize o arquivo trace_langfuse.json e decisions.md com os metadados da engenharia de prompt conforme as regras do nosso .agents.
