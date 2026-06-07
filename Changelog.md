@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Gerado `cenario-1-vibecoding/sonar_output.json`: métricas SonarQube extraídas via API REST após execução do `sonar-scanner-cli` (Docker) — coverage 72.7%, bugs 0, vulnerabilidades 0, code smells 2, complexidade ciclomática 29, complexidade cognitiva 18, dívida técnica 12 min.
+- Gerado `cenario-2-agente-engenheiro/sonar_output.json`: métricas SonarQube extraídas via API REST — coverage 87.7%, bugs 0, vulnerabilidades 0, code smells 1, complexidade ciclomática 81, complexidade cognitiva 63, dívida técnica 10 min.
+- Adicionados arquivos `sonar-project.properties` em ambos os cenários para configuração do scanner local.
+
 ### Changed
+- Atualizado `README.md` com seção de Resultados SonarQube (Rodada 1 — 2026-06-07): tabela comparativa completa com as métricas extraídas dos `sonar_output.json` de ambos os cenários e análise dos destaques.
 - Atualizado `README.md` com dados reais da branch: modelos e temperaturas efetivamente usados, resultados dos testes de ambos os cenários, estrutura completa de arquivos do repositório e tabela comparativa de métricas apuradas.
 - Atualizado `Changelog.md` para refletir o histórico completo de commits.
 
