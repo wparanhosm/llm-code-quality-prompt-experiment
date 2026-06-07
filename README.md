@@ -109,23 +109,6 @@ As chamadas de API são registradas no Langfuse com os seguintes metadados para 
 
 ---
 
-## 📊 Resultados Apurados (Rodada 1 — 2026-06-04)
-
-| Métrica | Cenário 1 — Vibecoding | Cenário 2 — Agente Engenheiro |
-| :--- | :---: | :---: |
-| **Testes automatizados** | 5 | 47 |
-| **Resultado dos testes** | 100% PASS | 100% PASS |
-| **Cobertura de código** | — | 97.6% |
-| **Race Detector (`-race`)** | — | Limpo |
-| **`go vet` / `go build`** | Limpo | Limpo |
-| **Banco de dados** | SQLite (`modernc.org/sqlite`) | PostgreSQL (`lib/pq`) |
-| **Arquitetura** | DDD simplificado | Clean Architecture (4 camadas) |
-| **Controle de concorrência** | Não aplicado | `SELECT FOR UPDATE` + lock ordering |
-| **Integridade transacional** | `sql.Tx` básico | `TxManager` via `context.Value` + ACID |
-| **Observabilidade** | Não aplicada | Structured JSON logs (`log/slog`) + Correlation ID |
-
----
-
 ## 📊 Resultados Apurados (Rodada 2 — 2026-06-07)
 
 > Ferramentas executadas: `go test`, `go test -race`, `go vet`, `go build`, `golangci-lint` (errcheck, staticcheck), `gocyclo`. Ambiente: Go 1.26.0 / Windows amd64.
@@ -145,9 +128,9 @@ As chamadas de API são registradas no Langfuse com os seguintes metadados para 
 | **Integridade transacional** | `sql.Tx` básico | `TxManager` via `context.Value` + ACID |
 | **Observabilidade** | Não aplicada | Structured JSON logs (`log/slog`) + Correlation ID |
 
-### Destaques da Rodada 2
+### Destaques da Rodada 1
 
-- **Cobertura Cenário 1 apurada:** A cobertura real de 64.5% revela que `main.go` não possui testes e que caminhos de erro em `Transfer` e `Debit`/`Credit` ficam descobertos.
+- **Cobertura Cenário 1 apurada:** A cobertura de 64.5% revela que `main.go` não possui testes e que caminhos de erro em `Transfer` e `Debit`/`Credit` ficam descobertos.
 - **`errcheck` Cenário 1 — risco transacional:** O retorno de `tx.Rollback()` não verificado em `service/transfer.go:31` representa um risco real: falhas silenciosas de rollback podem causar inconsistência de saldo sem qualquer log ou propagação de erro.
 - **`errcheck` Cenário 2 — baixo impacto:** As 4 violações residem em código de infraestrutura de resposta HTTP (`json.Encode`, `w.Write`) e na geração de UUID (`rand.Read`) — padrões aceitáveis conforme convenção idiomática Go para handlers HTTP.
 
