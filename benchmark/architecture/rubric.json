@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "scale": {
+    "0": "ausente, inadequado ou contradito por falha critica",
+    "1": "fraco; riscos fundamentais permanecem",
+    "2": "parcial; caminho principal razoavel com lacunas relevantes",
+    "3": "bom e adequado ao escopo; lacunas nao criticas",
+    "4": "robusto e demonstrado por evidencias independentes"
+  },
+  "dimensions": {
+    "clean_architecture": {"weight": 12, "question": "As regras centrais independem de mecanismos e as dependencias apontam para dentro?"},
+    "ddd": {"weight": 8, "question": "Tipos e operacoes de dominio protegem as invariantes financeiras?"},
+    "solid": {"weight": 10, "question": "Responsabilidades e contratos reduzem acoplamento real sem abstracoes artificiais?"},
+    "testability": {"weight": 10, "question": "Dependencias e falhas podem ser controladas de forma deterministica?"},
+    "test_quality": {"weight": 12, "question": "Os testes possuem poder de deteccao sobre regras, estado e falhas relevantes?"},
+    "transactional_integrity": {"weight": 15, "question": "Debito, credito e ledger sao atomicos e protegidos por invariantes?"},
+    "concurrency_design": {"weight": 15, "question": "O desenho evita double spending, lost updates e falhas indevidas sob contencao?"},
+    "observability": {"weight": 6, "question": "Sucessos e falhas podem ser diagnosticados e correlacionados?"},
+    "operational_readiness": {"weight": 6, "question": "Build, configuracao, migration, readiness e shutdown sao reproduziveis e seguros?"},
+    "simplicity_fit": {"weight": 6, "question": "A complexidade adicionada resolve riscos demonstraveis e e proporcional ao escopo?"}
+  },
+  "rules": [
+    "A mesma rubrica e aplicada aos dois cenarios.",
+    "Nomes de diretorios, comentarios e alegacoes documentais nao geram pontos sem confirmacao.",
+    "Falhas comportamentais independentes prevalecem sobre testes mockados ou intencao no codigo.",
+    "Go test com zero testes recebe nota zero em test_quality.",
+    "Complexidade total e quantidade de interfaces nao geram credito automatico.",
+    "TDD e uma variavel processual separada e nao integra o score sem historico red-green-refactor.",
+    "Perda de dinheiro, saldo negativo ou ledger divergente zeram transactional_integrity.",
+    "Double spending ou lost update reproduzido zeram concurrency_design.",
+    "Erros internos sob contencao limitam concurrency_design a dois, mesmo com integridade preservada."
+  ],
+  "formula": "sum(weight * score / 4)",
+  "bands": {
+    "0-39.99": "inadequado",
+    "40-59.99": "fragil",
+    "60-74.99": "parcialmente_adequado",
+    "75-89.99": "adequado",
+    "90-100": "robusto"
+  }
+}

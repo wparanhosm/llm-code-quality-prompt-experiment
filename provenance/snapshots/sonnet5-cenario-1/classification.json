@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-1",
+  "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+  "entries": [
+    {
+      "path": "billing_results.txt",
+      "category": "generation_metadata",
+      "rule": "billing-metadata",
+      "confidence": "high"
+    },
+    {
+      "path": "cmd/api/main.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "go.mod",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "go.sum",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/domain/transfer.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/handler/pix_handler.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/repository/wallet_repository.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/service/pix_service.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/001_init.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "application_source": 5,
+    "database_definition": 1,
+    "dependency_manifest": 2,
+    "generation_metadata": 1
+  }
+}

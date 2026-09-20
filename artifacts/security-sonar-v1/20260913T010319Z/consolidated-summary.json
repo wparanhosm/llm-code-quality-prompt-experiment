@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "local_execution": "20260912T233323Z",
+  "sonar_execution": "20260913T010319Z",
+  "runs": [
+    {
+      "run_id": "chatgpt56sol-cenario-1",
+      "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "govulncheck_findings": 0,
+      "gosec_issues": 0,
+      "gosec_severity": {},
+      "lint_issues": 1,
+      "lint_linters": {
+        "errcheck": 1
+      },
+      "sonar": {
+        "coverage": "39.1",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "2",
+        "code_smells": "1",
+        "complexity": "58",
+        "cognitive_complexity": "46",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "299",
+        "technical_debt_minutes": "7",
+        "issue_count": 1,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "chatgpt56sol-cenario-2",
+      "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+      "govulncheck_findings": 0,
+      "gosec_issues": 0,
+      "gosec_severity": {},
+      "lint_issues": 2,
+      "lint_linters": {
+        "errcheck": 2
+      },
+      "sonar": {
+        "coverage": "74.5",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "0",
+        "code_smells": "2",
+        "complexity": "94",
+        "cognitive_complexity": "81",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "452",
+        "technical_debt_minutes": "19",
+        "issue_count": 2,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-chatgpt56sol-cenario-2-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "gemini37flash-cenario-1",
+      "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+      "govulncheck_findings": 0,
+      "gosec_issues": 0,
+      "gosec_severity": {},
+      "lint_issues": 2,
+      "lint_linters": {
+        "errcheck": 2
+      },
+      "sonar": {
+        "coverage": "0.0",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "0",
+        "code_smells": "1",
+        "complexity": "20",
+        "cognitive_complexity": "14",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "129",
+        "technical_debt_minutes": "6",
+        "issue_count": 1,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-gemini37flash-cenario-1-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "gemini37flash-cenario-2",
+      "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+      "govulncheck_findings": 0,
+      "gosec_issues": 0,
+      "gosec_severity": {},
+      "lint_issues": 4,
+      "lint_linters": {
+        "errcheck": 3,
+        "staticcheck": 1
+      },
+      "sonar": {
+        "coverage": "86.9",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "0",
+        "code_smells": "2",
+        "complexity": "120",
+        "cognitive_complexity": "106",
+        "duplicated_lines_density": "5.4",
+        "ncloc": "806",
+        "technical_debt_minutes": "23",
+        "issue_count": 2,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-gemini37flash-cenario-2-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "grok46-cenario-1",
+      "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+      "govulncheck_findings": 0,
+      "gosec_issues": 1,
+      "gosec_severity": {
+        "low": 1
+      },
+      "lint_issues": 4,
+      "lint_linters": {
+        "errcheck": 4
+      },
+      "sonar": {
+        "coverage": "67.5",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "0",
+        "code_smells": "1",
+        "complexity": "31",
+        "cognitive_complexity": "24",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "199",
+        "technical_debt_minutes": "7",
+        "issue_count": 1,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-grok46-cenario-1-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "grok46-cenario-2",
+      "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+      "govulncheck_findings": 0,
+      "gosec_issues": 0,
+      "gosec_severity": {},
+      "lint_issues": 9,
+      "lint_linters": {
+        "errcheck": 8,
+        "staticcheck": 1
+      },
+      "sonar": {
+        "coverage": "81.5",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "0",
+        "code_smells": "1",
+        "complexity": "92",
+        "cognitive_complexity": "64",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "541",
+        "technical_debt_minutes": "6",
+        "issue_count": 1,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-grok46-cenario-2-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "kimik3-cenario-1",
+      "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+      "govulncheck_findings": 0,
+      "gosec_issues": 3,
+      "gosec_severity": {
+        "medium": 1,
+        "low": 2
+      },
+      "lint_issues": 9,
+      "lint_linters": {
+        "errcheck": 9
+      },
+      "sonar": {
+        "coverage": "55.7",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "0",
+        "code_smells": "2",
+        "complexity": "63",
+        "cognitive_complexity": "50",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "373",
+        "technical_debt_minutes": "17",
+        "issue_count": 2,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-kimik3-cenario-1-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "kimik3-cenario-2",
+      "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+      "govulncheck_findings": 0,
+      "gosec_issues": 0,
+      "gosec_severity": {},
+      "lint_issues": 6,
+      "lint_linters": {
+        "errcheck": 5,
+        "unused": 1
+      },
+      "sonar": {
+        "coverage": "97.6",
+        "bugs": "0",
+        "vulnerabilities": "1",
+        "security_hotspots": "0",
+        "code_smells": "2",
+        "complexity": "136",
+        "cognitive_complexity": "92",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "818",
+        "technical_debt_minutes": "14",
+        "issue_count": 3,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-kimik3-cenario-2-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "sonnet5-cenario-1",
+      "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+      "govulncheck_findings": 0,
+      "gosec_issues": 2,
+      "gosec_severity": {
+        "high": 1,
+        "low": 1
+      },
+      "lint_issues": 1,
+      "lint_linters": {
+        "errcheck": 1
+      },
+      "sonar": {
+        "coverage": "0.0",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "0",
+        "code_smells": "1",
+        "complexity": "62",
+        "cognitive_complexity": "46",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "404",
+        "technical_debt_minutes": "0",
+        "issue_count": 1,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-sonnet5-cenario-1-20260913T010319Z"
+      }
+    },
+    {
+      "run_id": "sonnet5-cenario-2",
+      "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+      "govulncheck_findings": 0,
+      "gosec_issues": 0,
+      "gosec_severity": {},
+      "lint_issues": 7,
+      "lint_linters": {
+        "errcheck": 4,
+        "staticcheck": 3
+      },
+      "sonar": {
+        "coverage": "97.4",
+        "bugs": "0",
+        "vulnerabilities": "0",
+        "security_hotspots": "2",
+        "code_smells": "3",
+        "complexity": "147",
+        "cognitive_complexity": "106",
+        "duplicated_lines_density": "0.0",
+        "ncloc": "888",
+        "technical_debt_minutes": "25",
+        "issue_count": 3,
+        "quality_gate": "OK",
+        "project_key": "lqcpe-sonnet5-cenario-2-20260913T010319Z"
+      }
+    }
+  ]
+}

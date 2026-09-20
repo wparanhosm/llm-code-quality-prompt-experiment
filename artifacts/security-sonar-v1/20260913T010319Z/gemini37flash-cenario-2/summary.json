@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-2",
+  "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+  "recovered_from_completed_artifacts": true,
+  "commands": {
+    "coverage": {
+      "name": "coverage",
+      "status": "completed",
+      "stdout": "logs/coverage.stdout.log",
+      "stderr": "logs/coverage.stderr.log"
+    },
+    "govulncheck": {
+      "name": "govulncheck",
+      "status": "completed",
+      "stdout": "logs/govulncheck.stdout.log",
+      "stderr": "logs/govulncheck.stderr.log"
+    },
+    "gosec": {
+      "name": "gosec",
+      "status": "completed",
+      "stdout": "logs/gosec.stdout.log",
+      "stderr": "logs/gosec.stderr.log"
+    },
+    "golangci_lint": {
+      "name": "golangci_lint",
+      "status": "completed",
+      "stdout": "logs/golangci_lint.stdout.log",
+      "stderr": "logs/golangci_lint.stderr.log"
+    },
+    "sonar": {
+      "name": "sonar",
+      "status": "completed",
+      "stdout": "logs/sonar.stdout.log",
+      "stderr": "logs/sonar.stderr.log"
+    }
+  },
+  "security": {
+    "govulncheck": {
+      "status": "completed",
+      "vulnerability_events": 0
+    },
+    "gosec": {
+      "status": "completed",
+      "issues": null,
+      "severity": {}
+    }
+  },
+  "lint": {
+    "status": "completed",
+    "issues": 4,
+    "linters": {
+      "errcheck": 3,
+      "staticcheck": 1
+    }
+  },
+  "sonar": {
+    "status": "passed",
+    "project_key": "lqcpe-gemini37flash-cenario-2-20260913T010319Z",
+    "ce_task_id": "91889124-26b0-468f-bed6-19d43f7d4230",
+    "server_version": "26.6.0.123539",
+    "measures": {
+      "coverage": "86.9",
+      "complexity": "120",
+      "bugs": "0",
+      "duplicated_lines_density": "5.4",
+      "code_smells": "2",
+      "cognitive_complexity": "106",
+      "ncloc": "806",
+      "violations": "2",
+      "vulnerabilities": "0",
+      "security_hotspots": "0",
+      "sqale_index": "23"
+    },
+    "issue_count": 2,
+    "quality_gate": "OK"
+  }
+}

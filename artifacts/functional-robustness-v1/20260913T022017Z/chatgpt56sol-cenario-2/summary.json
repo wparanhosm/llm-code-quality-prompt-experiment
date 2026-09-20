@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "run_id": "chatgpt56sol-cenario-2",
+  "status": "passed",
+  "error": null,
+  "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+  "cases": [
+    {
+      "id": "same_account",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "invalid transfer"
+        },
+        "body": "{\"error\":\"invalid transfer\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "zero",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "invalid transfer"
+        },
+        "body": "{\"error\":\"invalid transfer\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "negative",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "invalid transfer"
+        },
+        "body": "{\"error\":\"invalid transfer\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "missing_wallet",
+      "status": "passed",
+      "response": {
+        "status_code": 404,
+        "expected": true,
+        "json": {
+          "error": "wallet not found"
+        },
+        "body": "{\"error\":\"wallet not found\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "insufficient_funds",
+      "status": "passed",
+      "response": {
+        "status_code": 409,
+        "expected": true,
+        "json": {
+          "error": "insufficient funds"
+        },
+        "body": "{\"error\":\"insufficient funds\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "concurrency",
+      "status": "passed",
+      "checks": {
+        "bounded_successes": true,
+        "balances_match_successes": true,
+        "total_conserved": true,
+        "ledger_matches_successes": true,
+        "non_negative_balances": true,
+        "all_requests_accounted": true
+      },
+      "observed": {
+        "requests": 10,
+        "successes": 5,
+        "responses": [
+          201,
+          201,
+          201,
+          409,
+          409,
+          409,
+          201,
+          201,
+          409,
+          409
+        ],
+        "balances": [
+          0,
+          12000
+        ],
+        "ledger_rows": 5
+      }
+    }
+  ]
+}

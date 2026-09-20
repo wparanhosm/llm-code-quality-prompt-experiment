@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-1",
+  "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+  "entries": [
+    {
+      "path": "billing_result.txt",
+      "category": "generation_metadata",
+      "rule": "billing-metadata",
+      "confidence": "high"
+    },
+    {
+      "path": "go.mod",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "go.sum",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "main.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "pix_wallets.db",
+      "category": "generation_artifact",
+      "rule": "known-runtime-database",
+      "confidence": "high",
+      "notes": "Banco SQLite preexistente; nao deve ser tratado como resultado do benchmark."
+    }
+  ],
+  "summary": {
+    "application_source": 1,
+    "dependency_manifest": 2,
+    "generation_artifact": 1,
+    "generation_metadata": 1
+  }
+}

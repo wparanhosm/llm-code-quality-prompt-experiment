@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-1",
+  "source_path": "runs/sonnet5/cenario-1",
+  "hash_algorithm": "sha256",
+  "root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+  "entries": [
+    {
+      "path": "billing_results.txt",
+      "type": "file",
+      "mode": "0777",
+      "size": 62,
+      "sha256": "0f4bbdb8e8aaca767f868dc84ae7cb61e07208492dd3be612c3c66b8088b1d03"
+    },
+    {
+      "path": "cmd/api/main.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1803,
+      "sha256": "001d4920a2ae276e17a6af1b526549218607af1a82e1827f754051e51a8a606a"
+    },
+    {
+      "path": "go.mod",
+      "type": "file",
+      "mode": "0777",
+      "size": 429,
+      "sha256": "54efa417f8ebe1531fd7740d593641155b657b4073e5f51ca2c2aafcc66ed95d"
+    },
+    {
+      "path": "go.sum",
+      "type": "file",
+      "mode": "0777",
+      "size": 2617,
+      "sha256": "7000b1db0eeb8972309a56fecc1433ee84b3699fd0728771b2afd9e2aae5d3ca"
+    },
+    {
+      "path": "internal/domain/transfer.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1934,
+      "sha256": "aebda4dae13663d84e17d3aeca16ab4b50176bd97c1035ada24fa689191cefc4"
+    },
+    {
+      "path": "internal/handler/pix_handler.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 4571,
+      "sha256": "94c3342ba1bf1c338e867ddc5cad9a9ae05b9702a7040a05751a96b596a58ecf"
+    },
+    {
+      "path": "internal/repository/wallet_repository.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 5636,
+      "sha256": "d3231e7b716cac219c1eca5d490da794358ad264c7255e18d87f77782ab6d2f8"
+    },
+    {
+      "path": "internal/service/pix_service.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 2035,
+      "sha256": "b782c49dbb601d1818b32b503ebdf25660ff5cc8514802d9721d78e29bf1f162"
+    },
+    {
+      "path": "migrations/001_init.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 1531,
+      "sha256": "a7f11fa9582887fa043eca0984be0e03267f661cc8fed744add2e0b129b254e9"
+    }
+  ]
+}

@@ -1,0 +1,773 @@
+{
+  "campaign": "security-sonar-v1",
+  "execution_id": "20260913T010319Z",
+  "recovered": true,
+  "runs": [
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-1",
+      "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": 0,
+          "severity": {}
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": null,
+        "linters": {}
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z",
+        "ce_task_id": "4135fa6f-f941-476f-9ca8-a64278bc7750",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "39.1",
+          "complexity": "58",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "1",
+          "cognitive_complexity": "46",
+          "ncloc": "299",
+          "violations": "1",
+          "vulnerabilities": "0",
+          "security_hotspots": "2",
+          "sqale_index": "7"
+        },
+        "issue_count": 1,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-2",
+      "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": null,
+          "severity": {}
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": null,
+        "linters": {}
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-chatgpt56sol-cenario-2-20260913T010319Z",
+        "ce_task_id": "a04fdad9-0990-42b7-adce-3d18cfa8aeb5",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "74.5",
+          "complexity": "94",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "2",
+          "cognitive_complexity": "81",
+          "ncloc": "452",
+          "violations": "2",
+          "vulnerabilities": "0",
+          "security_hotspots": "0",
+          "sqale_index": "19"
+        },
+        "issue_count": 2,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-1",
+      "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": 0,
+          "severity": {}
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": null,
+        "linters": {}
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-gemini37flash-cenario-1-20260913T010319Z",
+        "ce_task_id": "89369295-f02d-4cc3-aaa8-9d8c6de3f50f",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "0.0",
+          "complexity": "20",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "1",
+          "cognitive_complexity": "14",
+          "ncloc": "129",
+          "violations": "1",
+          "vulnerabilities": "0",
+          "security_hotspots": "0",
+          "sqale_index": "6"
+        },
+        "issue_count": 1,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-2",
+      "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": null,
+          "severity": {}
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": 4,
+        "linters": {
+          "errcheck": 3,
+          "staticcheck": 1
+        }
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-gemini37flash-cenario-2-20260913T010319Z",
+        "ce_task_id": "91889124-26b0-468f-bed6-19d43f7d4230",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "86.9",
+          "complexity": "120",
+          "bugs": "0",
+          "duplicated_lines_density": "5.4",
+          "code_smells": "2",
+          "cognitive_complexity": "106",
+          "ncloc": "806",
+          "violations": "2",
+          "vulnerabilities": "0",
+          "security_hotspots": "0",
+          "sqale_index": "23"
+        },
+        "issue_count": 2,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-1",
+      "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": 1,
+          "severity": {
+            "low": 1
+          }
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": 4,
+        "linters": {
+          "errcheck": 4
+        }
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-grok46-cenario-1-20260913T010319Z",
+        "ce_task_id": "170fbf3b-e118-4642-bdd0-7ad7075230b9",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "67.5",
+          "complexity": "31",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "1",
+          "cognitive_complexity": "24",
+          "ncloc": "199",
+          "violations": "1",
+          "vulnerabilities": "0",
+          "security_hotspots": "0",
+          "sqale_index": "7"
+        },
+        "issue_count": 1,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-2",
+      "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": null,
+          "severity": {}
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": null,
+        "linters": {}
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-grok46-cenario-2-20260913T010319Z",
+        "ce_task_id": "04df2098-8166-4b1f-864e-8f9effbeb3a3",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "81.5",
+          "complexity": "92",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "1",
+          "cognitive_complexity": "64",
+          "ncloc": "541",
+          "violations": "1",
+          "vulnerabilities": "0",
+          "security_hotspots": "0",
+          "sqale_index": "6"
+        },
+        "issue_count": 1,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-1",
+      "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": 3,
+          "severity": {
+            "medium": 1,
+            "low": 2
+          }
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": null,
+        "linters": {}
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-kimik3-cenario-1-20260913T010319Z",
+        "ce_task_id": "e2c0dab4-a03d-4135-9ffa-1249a31cad20",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "55.7",
+          "complexity": "63",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "2",
+          "cognitive_complexity": "50",
+          "ncloc": "373",
+          "violations": "2",
+          "vulnerabilities": "0",
+          "security_hotspots": "0",
+          "sqale_index": "17"
+        },
+        "issue_count": 2,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-2",
+      "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": 0,
+          "severity": {}
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": 6,
+        "linters": {
+          "errcheck": 5,
+          "unused": 1
+        }
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-kimik3-cenario-2-20260913T010319Z",
+        "ce_task_id": "c4a21ca3-fdfa-405b-ae52-ee19c72c5825",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "97.6",
+          "complexity": "136",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "2",
+          "cognitive_complexity": "92",
+          "ncloc": "818",
+          "violations": "3",
+          "vulnerabilities": "1",
+          "security_hotspots": "0",
+          "sqale_index": "14"
+        },
+        "issue_count": 3,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-1",
+      "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": 2,
+          "severity": {
+            "high": 1,
+            "low": 1
+          }
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": null,
+        "linters": {}
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-sonnet5-cenario-1-20260913T010319Z",
+        "ce_task_id": "df130223-0f9e-4580-a640-342d64fbaef4",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "0.0",
+          "complexity": "62",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "1",
+          "cognitive_complexity": "46",
+          "ncloc": "404",
+          "violations": "1",
+          "vulnerabilities": "0",
+          "security_hotspots": "0",
+          "sqale_index": "0"
+        },
+        "issue_count": 1,
+        "quality_gate": "OK"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-2",
+      "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+      "recovered_from_completed_artifacts": true,
+      "commands": {
+        "coverage": {
+          "name": "coverage",
+          "status": "completed",
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        },
+        "govulncheck": {
+          "name": "govulncheck",
+          "status": "completed",
+          "stdout": "logs/govulncheck.stdout.log",
+          "stderr": "logs/govulncheck.stderr.log"
+        },
+        "gosec": {
+          "name": "gosec",
+          "status": "completed",
+          "stdout": "logs/gosec.stdout.log",
+          "stderr": "logs/gosec.stderr.log"
+        },
+        "golangci_lint": {
+          "name": "golangci_lint",
+          "status": "completed",
+          "stdout": "logs/golangci_lint.stdout.log",
+          "stderr": "logs/golangci_lint.stderr.log"
+        },
+        "sonar": {
+          "name": "sonar",
+          "status": "completed",
+          "stdout": "logs/sonar.stdout.log",
+          "stderr": "logs/sonar.stderr.log"
+        }
+      },
+      "security": {
+        "govulncheck": {
+          "status": "completed",
+          "vulnerability_events": 0
+        },
+        "gosec": {
+          "status": "completed",
+          "issues": null,
+          "severity": {}
+        }
+      },
+      "lint": {
+        "status": "completed",
+        "issues": null,
+        "linters": {}
+      },
+      "sonar": {
+        "status": "passed",
+        "project_key": "lqcpe-sonnet5-cenario-2-20260913T010319Z",
+        "ce_task_id": "0df61663-7965-46f9-bea1-a0e756e4c15c",
+        "server_version": "26.6.0.123539",
+        "measures": {
+          "coverage": "97.4",
+          "complexity": "147",
+          "bugs": "0",
+          "duplicated_lines_density": "0.0",
+          "code_smells": "3",
+          "cognitive_complexity": "106",
+          "ncloc": "888",
+          "violations": "3",
+          "vulnerabilities": "0",
+          "security_hotspots": "2",
+          "sqale_index": "25"
+        },
+        "issue_count": 3,
+        "quality_gate": "OK"
+      }
+    }
+  ]
+}

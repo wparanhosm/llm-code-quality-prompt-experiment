@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: pix
+      POSTGRES_USER: pix
+      POSTGRES_PASSWORD: pix
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pix -d pix"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./migrations:/docker-entrypoint-initdb.d:ro
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgres://pix:pix@db:5432/pix?sslmode=disable
+      HTTP_ADDR: :8080
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres-data:

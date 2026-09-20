@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-2",
+  "status": "passed",
+  "error": null,
+  "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+  "cases": [
+    {
+      "id": "same_account",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "invalid_input",
+          "message": "carteira de origem e destino devem ser diferentes",
+          "request_id": "fb81bd6f-e8b1-4b50-bfac-838b11bad911"
+        },
+        "body": "{\"error\":\"invalid_input\",\"message\":\"carteira de origem e destino devem ser diferentes\",\"request_id\":\"fb81bd6f-e8b1-4b50-bfac-838b11bad911\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "zero",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "invalid_input",
+          "message": "valor monetário inválido",
+          "request_id": "5af01203-cc24-4cfd-9fc6-dbd63498668a"
+        },
+        "body": "{\"error\":\"invalid_input\",\"message\":\"valor monetário inválido\",\"request_id\":\"5af01203-cc24-4cfd-9fc6-dbd63498668a\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "negative",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "invalid_input",
+          "message": "valor monetário inválido",
+          "request_id": "f933f562-2486-41e7-a81a-2b60777d33b2"
+        },
+        "body": "{\"error\":\"invalid_input\",\"message\":\"valor monetário inválido\",\"request_id\":\"f933f562-2486-41e7-a81a-2b60777d33b2\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "missing_wallet",
+      "status": "passed",
+      "response": {
+        "status_code": 404,
+        "expected": true,
+        "json": {
+          "error": "wallet_not_found",
+          "message": "carteira de origem ou destino não encontrada",
+          "request_id": "cd6e4f8c-d6ea-4a69-b56c-14ecdb3aab38"
+        },
+        "body": "{\"error\":\"wallet_not_found\",\"message\":\"carteira de origem ou destino não encontrada\",\"request_id\":\"cd6e4f8c-d6ea-4a69-b56c-14ecdb3aab38\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "insufficient_funds",
+      "status": "passed",
+      "response": {
+        "status_code": 422,
+        "expected": true,
+        "json": {
+          "error": "insufficient_funds",
+          "message": "saldo insuficiente na carteira de origem",
+          "request_id": "57cac894-46a6-4568-bab2-807dce235cfc"
+        },
+        "body": "{\"error\":\"insufficient_funds\",\"message\":\"saldo insuficiente na carteira de origem\",\"request_id\":\"57cac894-46a6-4568-bab2-807dce235cfc\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "concurrency",
+      "status": "passed",
+      "checks": {
+        "bounded_successes": true,
+        "balances_match_successes": true,
+        "total_conserved": true,
+        "ledger_matches_successes": true,
+        "non_negative_balances": true,
+        "all_requests_accounted": true
+      },
+      "observed": {
+        "requests": 10,
+        "successes": 5,
+        "responses": [
+          201,
+          201,
+          201,
+          422,
+          422,
+          422,
+          422,
+          201,
+          422,
+          201
+        ],
+        "balances": [
+          0,
+          12000
+        ],
+        "ledger_rows": 5
+      }
+    }
+  ]
+}

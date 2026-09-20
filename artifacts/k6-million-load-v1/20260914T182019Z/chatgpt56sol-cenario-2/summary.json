@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "run_id": "chatgpt56sol-cenario-2",
+  "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+  "status": "passed",
+  "error": null,
+  "planned_iterations": 1000000,
+  "pairs": 100,
+  "vus": 50,
+  "k6": {
+    "exit_code": 0,
+    "duration_seconds": 548.452,
+    "metrics": {
+      "iterations": 1000000,
+      "http_reqs": 1000000,
+      "successful_transfers": 1000000,
+      "unexpected_statuses": 0,
+      "status_counts": {
+        "200": 0,
+        "201": 1000000,
+        "400": 0,
+        "404": 0,
+        "409": 0,
+        "422": 0,
+        "500": 0,
+        "other": 0
+      },
+      "http_req_failed_rate": null,
+      "requests_per_second": 1827.6159642695686,
+      "latency_avg_ms": 26.83909366857216,
+      "latency_med_ms": 22.4074855,
+      "latency_p90_ms": 42.09765639999999,
+      "latency_p95_ms": 55.499438749999975,
+      "latency_p99_ms": 101.17997749
+    }
+  },
+  "reconciliation": {
+    "observed": {
+      "wallet_count": 200,
+      "source_total": 0,
+      "destination_total": 1000000,
+      "total_balance": 1000000,
+      "negative_wallets": 0,
+      "ledger_rows": 1000000,
+      "ledger_amount": 1000000
+    },
+    "expected": {
+      "wallet_count": 200,
+      "source_total": 0,
+      "destination_total": 1000000,
+      "total_balance": 1000000,
+      "negative_wallets": 0,
+      "ledger_rows": 1000000,
+      "ledger_amount": 1000000
+    },
+    "checks": {
+      "wallet_count": true,
+      "source_total": true,
+      "destination_total": true,
+      "total_balance": true,
+      "negative_wallets": true,
+      "ledger_rows": true,
+      "ledger_amount": true
+    },
+    "passed": true
+  },
+  "operational_assistance": [
+    "snapshot_materialized",
+    "database_provisioned",
+    "seed_applied_external",
+    "environment_injected",
+    "application_logs_discarded_during_load"
+  ]
+}

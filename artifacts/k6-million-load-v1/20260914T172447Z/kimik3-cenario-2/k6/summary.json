@@ -1,0 +1,165 @@
+{
+    "metrics": {
+        "http_req_connecting": {
+            "min": 0,
+            "max": 0,
+            "count": 1000000,
+            "avg": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0
+        },
+        "unexpected_statuses": {
+            "count": 1000000,
+            "rate": 7538.357416769232,
+            "thresholds": {
+                "count==0": true
+            }
+        },
+        "iterations": {
+            "count": 1000000,
+            "rate": 7538.357416769232,
+            "thresholds": {
+                "count==1000000": false
+            }
+        },
+        "checks": {
+            "passes": 0,
+            "fails": 1000000,
+            "thresholds": {
+                "rate==1": true
+            },
+            "value": 0
+        },
+        "vus": {
+            "value": 50,
+            "min": 50,
+            "max": 50
+        },
+        "successful_transfers": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count==1000000": true
+            }
+        },
+        "http_req_tls_handshaking": {
+            "min": 0,
+            "max": 0,
+            "count": 1000000,
+            "avg": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0
+        },
+        "http_req_duration": {
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "min": 0,
+            "max": 0,
+            "count": 1000000,
+            "avg": 0
+        },
+        "http_req_blocked": {
+            "avg": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "min": 0,
+            "max": 0,
+            "count": 1000000
+        },
+        "data_received": {
+            "rate": 0,
+            "count": 0
+        },
+        "http_req_receiving": {
+            "min": 0,
+            "max": 0,
+            "count": 1000000,
+            "avg": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0
+        },
+        "http_reqs": {
+            "count": 1000000,
+            "rate": 7538.357416769232,
+            "thresholds": {
+                "count==1000000": false
+            }
+        },
+        "http_req_waiting": {
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "min": 0,
+            "max": 0,
+            "count": 1000000,
+            "avg": 0
+        },
+        "data_sent": {
+            "count": 0,
+            "rate": 0
+        },
+        "http_req_sending": {
+            "avg": 0,
+            "med": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "p(99)": 0,
+            "min": 0,
+            "max": 0,
+            "count": 1000000
+        },
+        "vus_max": {
+            "value": 50,
+            "min": 50,
+            "max": 50
+        },
+        "iteration_duration": {
+            "avg": 6.611354032771992,
+            "med": 5.9136524999999995,
+            "p(90)": 10.7590961,
+            "p(95)": 12.7373526,
+            "p(99)": 17.212619290000003,
+            "min": 0.869992,
+            "max": 1343.262576,
+            "count": 1000000
+        },
+        "http_req_failed": {
+            "passes": 1000000,
+            "fails": 0,
+            "thresholds": {
+                "rate==0": true
+            },
+            "value": 1
+        },
+        "responses_other": {
+            "count": 1000000,
+            "rate": 7538.357416769232
+        }
+    },
+    "root_group": {
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "expected success status": {
+                    "id": "c55955270fb4de6c4a1eef7ebf4415cb",
+                    "passes": 0,
+                    "fails": 1000000,
+                    "name": "expected success status",
+                    "path": "::expected success status"
+                }
+            },
+        "name": "",
+        "path": ""
+    }
+}

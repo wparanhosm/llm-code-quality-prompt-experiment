@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/classification.schema.json",
+  "title": "Source snapshot classification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "source_root_hash", "entries", "summary"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "source_root_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "category", "rule", "confidence"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "category": {
+            "enum": [
+              "application_source",
+              "generated_test",
+              "dependency_manifest",
+              "database_definition",
+              "model_operational_config",
+              "generation_context",
+              "documentation",
+              "generation_metadata",
+              "generation_artifact",
+              "unknown"
+            ]
+          },
+          "rule": {"type": "string", "minLength": 1},
+          "confidence": {"enum": ["high", "medium", "low"]},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    }
+  }
+}

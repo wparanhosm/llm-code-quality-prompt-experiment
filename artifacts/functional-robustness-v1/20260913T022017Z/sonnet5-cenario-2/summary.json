@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-2",
+  "status": "passed",
+  "error": null,
+  "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+  "cases": [
+    {
+      "id": "same_account",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "carteira de origem e destino não podem ser iguais"
+        },
+        "body": "{\"error\":\"carteira de origem e destino não podem ser iguais\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "zero",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "valor da transferência deve ser positivo"
+        },
+        "body": "{\"error\":\"valor da transferência deve ser positivo\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "negative",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "valor da transferência deve ser positivo"
+        },
+        "body": "{\"error\":\"valor da transferência deve ser positivo\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "missing_wallet",
+      "status": "passed",
+      "response": {
+        "status_code": 404,
+        "expected": true,
+        "json": {
+          "error": "carteira não encontrada"
+        },
+        "body": "{\"error\":\"carteira não encontrada\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "insufficient_funds",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "saldo insuficiente para realizar a transferência"
+        },
+        "body": "{\"error\":\"saldo insuficiente para realizar a transferência\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "concurrency",
+      "status": "passed",
+      "checks": {
+        "bounded_successes": true,
+        "balances_match_successes": true,
+        "total_conserved": true,
+        "ledger_matches_successes": true,
+        "non_negative_balances": true,
+        "all_requests_accounted": true
+      },
+      "observed": {
+        "requests": 10,
+        "successes": 5,
+        "responses": [
+          200,
+          200,
+          200,
+          400,
+          400,
+          400,
+          400,
+          200,
+          200,
+          400
+        ],
+        "balances": [
+          0,
+          12000
+        ],
+        "ledger_rows": 5
+      }
+    }
+  ]
+}

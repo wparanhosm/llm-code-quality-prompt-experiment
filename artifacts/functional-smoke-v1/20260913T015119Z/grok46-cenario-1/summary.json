@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-1",
+  "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "cli",
+    "response": null,
+    "state": {
+      "source_before_cents": 100000,
+      "destination_before_cents": 25000,
+      "source_after_cents": 98750,
+      "destination_after_cents": 26250,
+      "total_before_cents": 125000,
+      "total_after_cents": 125000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 3,
+    "assistance": [
+      "build_command_supplied",
+      "cli_arguments_supplied",
+      "working_directory_isolated"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 0.324
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 3.53,
+      "exit_code": 0
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.12,
+      "exit_code": 0
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.016
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "method": "already_stopped"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

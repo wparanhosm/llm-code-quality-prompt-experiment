@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "run_id": "chatgpt56sol-cenario-1",
+  "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+  "status": "failed",
+  "error": "build falhou",
+  "planned_iterations": 100,
+  "pairs": 100,
+  "vus": 50,
+  "k6": {},
+  "reconciliation": {
+    "passed": false
+  },
+  "operational_assistance": [
+    "snapshot_materialized",
+    "database_provisioned",
+    "seed_applied_external",
+    "environment_injected",
+    "application_logs_discarded_during_load"
+  ]
+}

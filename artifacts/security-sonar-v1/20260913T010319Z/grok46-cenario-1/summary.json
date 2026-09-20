@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-1",
+  "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+  "recovered_from_completed_artifacts": true,
+  "commands": {
+    "coverage": {
+      "name": "coverage",
+      "status": "completed",
+      "stdout": "logs/coverage.stdout.log",
+      "stderr": "logs/coverage.stderr.log"
+    },
+    "govulncheck": {
+      "name": "govulncheck",
+      "status": "completed",
+      "stdout": "logs/govulncheck.stdout.log",
+      "stderr": "logs/govulncheck.stderr.log"
+    },
+    "gosec": {
+      "name": "gosec",
+      "status": "completed",
+      "stdout": "logs/gosec.stdout.log",
+      "stderr": "logs/gosec.stderr.log"
+    },
+    "golangci_lint": {
+      "name": "golangci_lint",
+      "status": "completed",
+      "stdout": "logs/golangci_lint.stdout.log",
+      "stderr": "logs/golangci_lint.stderr.log"
+    },
+    "sonar": {
+      "name": "sonar",
+      "status": "completed",
+      "stdout": "logs/sonar.stdout.log",
+      "stderr": "logs/sonar.stderr.log"
+    }
+  },
+  "security": {
+    "govulncheck": {
+      "status": "completed",
+      "vulnerability_events": 0
+    },
+    "gosec": {
+      "status": "completed",
+      "issues": 1,
+      "severity": {
+        "low": 1
+      }
+    }
+  },
+  "lint": {
+    "status": "completed",
+    "issues": 4,
+    "linters": {
+      "errcheck": 4
+    }
+  },
+  "sonar": {
+    "status": "passed",
+    "project_key": "lqcpe-grok46-cenario-1-20260913T010319Z",
+    "ce_task_id": "170fbf3b-e118-4642-bdd0-7ad7075230b9",
+    "server_version": "26.6.0.123539",
+    "measures": {
+      "coverage": "67.5",
+      "complexity": "31",
+      "bugs": "0",
+      "duplicated_lines_density": "0.0",
+      "code_smells": "1",
+      "cognitive_complexity": "24",
+      "ncloc": "199",
+      "violations": "1",
+      "vulnerabilities": "0",
+      "security_hotspots": "0",
+      "sqale_index": "7"
+    },
+    "issue_count": 1,
+    "quality_gate": "OK"
+  }
+}

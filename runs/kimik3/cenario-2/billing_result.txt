@@ -1,0 +1,4 @@
+model=kimik3
+time=31m 45s
+tokens=67640
+spent= $1.90

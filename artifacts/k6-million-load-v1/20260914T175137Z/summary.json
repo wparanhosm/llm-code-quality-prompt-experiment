@@ -1,0 +1,81 @@
+{
+  "campaign": "k6-million-load-v1",
+  "execution_id": "20260914T175137Z",
+  "iterations_per_run": 100,
+  "runs": [
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-1",
+      "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "status": "passed",
+      "error": null,
+      "planned_iterations": 100,
+      "pairs": 100,
+      "vus": 50,
+      "k6": {
+        "exit_code": 0,
+        "duration_seconds": 1.127,
+        "metrics": {
+          "iterations": 100,
+          "http_reqs": 100,
+          "successful_transfers": 100,
+          "unexpected_statuses": 0,
+          "status_counts": {
+            "200": 0,
+            "201": 100,
+            "400": 0,
+            "404": 0,
+            "409": 0,
+            "422": 0,
+            "500": 0,
+            "other": 0
+          },
+          "http_req_failed_rate": null,
+          "requests_per_second": 741.0630153227155,
+          "latency_avg_ms": 55.735675300000004,
+          "latency_med_ms": 49.795953999999995,
+          "latency_p90_ms": 93.2231834,
+          "latency_p95_ms": 94.60687769999998,
+          "latency_p99_ms": 97.85948804000004
+        }
+      },
+      "reconciliation": {
+        "observed": {
+          "wallet_count": 200,
+          "source_total": 0,
+          "destination_total": 100,
+          "total_balance": 100,
+          "negative_wallets": 0,
+          "ledger_rows": 100,
+          "ledger_amount": 100
+        },
+        "expected": {
+          "wallet_count": 200,
+          "source_total": 0,
+          "destination_total": 100,
+          "total_balance": 100,
+          "negative_wallets": 0,
+          "ledger_rows": 100,
+          "ledger_amount": 100
+        },
+        "checks": {
+          "wallet_count": true,
+          "source_total": true,
+          "destination_total": true,
+          "total_balance": true,
+          "negative_wallets": true,
+          "ledger_rows": true,
+          "ledger_amount": true
+        },
+        "passed": true
+      },
+      "operational_assistance": [
+        "snapshot_materialized",
+        "database_provisioned",
+        "seed_applied_external",
+        "environment_injected",
+        "application_logs_discarded_during_load"
+      ]
+    }
+  ]
+}

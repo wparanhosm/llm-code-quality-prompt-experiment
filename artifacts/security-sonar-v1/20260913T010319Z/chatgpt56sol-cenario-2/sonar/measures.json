@@ -1,0 +1,62 @@
+{
+  "component": {
+    "key": "lqcpe-chatgpt56sol-cenario-2-20260913T010319Z",
+    "name": "chatgpt56sol-cenario-2",
+    "qualifier": "TRK",
+    "measures": [
+      {
+        "metric": "coverage",
+        "value": "74.5",
+        "bestValue": false
+      },
+      {
+        "metric": "complexity",
+        "value": "94"
+      },
+      {
+        "metric": "bugs",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "duplicated_lines_density",
+        "value": "0.0",
+        "bestValue": true
+      },
+      {
+        "metric": "code_smells",
+        "value": "2",
+        "bestValue": false
+      },
+      {
+        "metric": "cognitive_complexity",
+        "value": "81",
+        "bestValue": false
+      },
+      {
+        "metric": "ncloc",
+        "value": "452"
+      },
+      {
+        "metric": "violations",
+        "value": "2",
+        "bestValue": false
+      },
+      {
+        "metric": "vulnerabilities",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "security_hotspots",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "sqale_index",
+        "value": "19",
+        "bestValue": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "component": {
+    "key": "lqcpe-grok46-cenario-2-20260913T010319Z",
+    "name": "grok46-cenario-2",
+    "qualifier": "TRK",
+    "measures": [
+      {
+        "metric": "coverage",
+        "value": "81.5",
+        "bestValue": false
+      },
+      {
+        "metric": "complexity",
+        "value": "92"
+      },
+      {
+        "metric": "bugs",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "duplicated_lines_density",
+        "value": "0.0",
+        "bestValue": true
+      },
+      {
+        "metric": "code_smells",
+        "value": "1",
+        "bestValue": false
+      },
+      {
+        "metric": "cognitive_complexity",
+        "value": "64",
+        "bestValue": false
+      },
+      {
+        "metric": "ncloc",
+        "value": "541"
+      },
+      {
+        "metric": "violations",
+        "value": "1",
+        "bestValue": false
+      },
+      {
+        "metric": "vulnerabilities",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "security_hotspots",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "sqale_index",
+        "value": "6",
+        "bestValue": false
+      }
+    ]
+  }
+}

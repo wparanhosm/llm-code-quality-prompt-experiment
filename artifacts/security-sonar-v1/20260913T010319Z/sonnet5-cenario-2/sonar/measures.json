@@ -1,0 +1,62 @@
+{
+  "component": {
+    "key": "lqcpe-sonnet5-cenario-2-20260913T010319Z",
+    "name": "sonnet5-cenario-2",
+    "qualifier": "TRK",
+    "measures": [
+      {
+        "metric": "coverage",
+        "value": "97.4",
+        "bestValue": false
+      },
+      {
+        "metric": "complexity",
+        "value": "147"
+      },
+      {
+        "metric": "bugs",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "duplicated_lines_density",
+        "value": "0.0",
+        "bestValue": true
+      },
+      {
+        "metric": "code_smells",
+        "value": "3",
+        "bestValue": false
+      },
+      {
+        "metric": "cognitive_complexity",
+        "value": "106",
+        "bestValue": false
+      },
+      {
+        "metric": "ncloc",
+        "value": "888"
+      },
+      {
+        "metric": "violations",
+        "value": "3",
+        "bestValue": false
+      },
+      {
+        "metric": "vulnerabilities",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "security_hotspots",
+        "value": "2",
+        "bestValue": false
+      },
+      {
+        "metric": "sqale_index",
+        "value": "25",
+        "bestValue": false
+      }
+    ]
+  }
+}

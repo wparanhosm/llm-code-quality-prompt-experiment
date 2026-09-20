@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-2",
+  "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "http",
+    "response": {
+      "status_code": 201,
+      "expected": true,
+      "json": {
+        "transaction_id": "38c8b3be-d956-472b-aab4-36ea07ae16ae",
+        "from_wallet_id": "11111111-1111-1111-1111-111111111111",
+        "to_wallet_id": "22222222-2222-2222-2222-222222222222",
+        "amount_cents": 1250,
+        "from_new_balance_cents": 8750,
+        "to_new_balance_cents": 3250
+      },
+      "body": "{\"transaction_id\":\"38c8b3be-d956-472b-aab4-36ea07ae16ae\",\"from_wallet_id\":\"11111111-1111-1111-1111-111111111111\",\"to_wallet_id\":\"22222222-2222-2222-2222-222222222222\",\"amount_cents\":1250,\"from_new_balance_cents\":8750,\"to_new_balance_cents\":3250}\n"
+    },
+    "state": {
+      "source_before_cents": 10000,
+      "destination_before_cents": 2000,
+      "source_after_cents": 8750,
+      "destination_after_cents": 3250,
+      "total_before_cents": 12000,
+      "total_after_cents": 12000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 6,
+    "assistance": [
+      "database_provisioned",
+      "migration_applied_external",
+      "seed_applied_external",
+      "environment_injected",
+      "build_command_supplied",
+      "readiness_probe_supplied"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 128.335
+    },
+    "database": {
+      "status": "passed",
+      "duration_seconds": 2.727,
+      "image": "postgres:16-alpine"
+    },
+    "migration": {
+      "status": "passed",
+      "duration_seconds": 0.146,
+      "source": "migrations/000001_create_wallets_and_transactions.up.sql"
+    },
+    "seed": {
+      "status": "passed",
+      "duration_seconds": 0.095,
+      "source": "benchmark/functional/sql/kimik3-cenario-2.sql"
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 4.431,
+      "exit_code": 0
+    },
+    "startup": {
+      "status": "passed",
+      "duration_seconds": 0.007,
+      "pid": 74784
+    },
+    "readiness": {
+      "status": "passed",
+      "duration_seconds": 0.504,
+      "type": "http"
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.011,
+      "status_code": 201
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.18
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.008,
+      "method": "graceful"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

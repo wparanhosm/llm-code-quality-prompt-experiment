@@ -1,0 +1,1492 @@
+{
+  "campaign": "functional-robustness-v1",
+  "execution_id": "20260913T022017Z",
+  "runs": [
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-1",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "source and destination must be different and amount must be positive"
+            },
+            "body": "{\"error\":\"source and destination must be different and amount must be positive\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "amount must be a positive decimal with at most two fractional digits"
+            },
+            "body": "{\"error\":\"amount must be a positive decimal with at most two fractional digits\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "amount must be a positive decimal with at most two fractional digits"
+            },
+            "body": "{\"error\":\"amount must be a positive decimal with at most two fractional digits\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "error": "wallet not found"
+            },
+            "body": "{\"error\":\"wallet not found\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 409,
+            "expected": true,
+            "json": {
+              "error": "insufficient funds"
+            },
+            "body": "{\"error\":\"insufficient funds\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 5,
+            "responses": [
+              201,
+              201,
+              201,
+              409,
+              409,
+              409,
+              409,
+              201,
+              409,
+              201
+            ],
+            "balances": [
+              0,
+              12000
+            ],
+            "ledger_rows": 5
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-2",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "invalid transfer"
+            },
+            "body": "{\"error\":\"invalid transfer\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "invalid transfer"
+            },
+            "body": "{\"error\":\"invalid transfer\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "invalid transfer"
+            },
+            "body": "{\"error\":\"invalid transfer\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "error": "wallet not found"
+            },
+            "body": "{\"error\":\"wallet not found\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 409,
+            "expected": true,
+            "json": {
+              "error": "insufficient funds"
+            },
+            "body": "{\"error\":\"insufficient funds\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 5,
+            "responses": [
+              201,
+              201,
+              201,
+              409,
+              409,
+              409,
+              201,
+              201,
+              409,
+              409
+            ],
+            "balances": [
+              0,
+              12000
+            ],
+            "ledger_rows": 5
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-1",
+      "status": "unsupported",
+      "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+      "reason": "A CLI executa uma unica transferencia fixa e nao aceita parametros.",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "unsupported"
+        },
+        {
+          "id": "zero",
+          "status": "unsupported"
+        },
+        {
+          "id": "negative",
+          "status": "unsupported"
+        },
+        {
+          "id": "missing_wallet",
+          "status": "unsupported"
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "unsupported"
+        },
+        {
+          "id": "concurrency",
+          "status": "unsupported"
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-2",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 422,
+            "expected": true,
+            "json": {
+              "error": "transfer validation error: cannot transfer money to the same account"
+            },
+            "body": "{\"error\":\"transfer validation error: cannot transfer money to the same account\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "amount_cents must be strictly greater than zero"
+            },
+            "body": "{\"error\":\"amount_cents must be strictly greater than zero\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "amount_cents must be strictly greater than zero"
+            },
+            "body": "{\"error\":\"amount_cents must be strictly greater than zero\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "error": "transaction failed: account not found: account ID 999999"
+            },
+            "body": "{\"error\":\"transaction failed: account not found: account ID 999999\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 422,
+            "expected": true,
+            "json": {
+              "error": "transaction failed: debit failed: insufficient balance: account 101 balance 10000 is less than required 100000"
+            },
+            "body": "{\"error\":\"transaction failed: debit failed: insufficient balance: account 101 balance 10000 is less than required 100000\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 5,
+            "responses": [
+              422,
+              201,
+              201,
+              201,
+              201,
+              422,
+              201,
+              422,
+              422,
+              422
+            ],
+            "balances": [
+              0,
+              12000
+            ],
+            "ledger_rows": 5
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-1",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "exit_code": 1,
+            "expected": true,
+            "stderr": "2026/09/12 23:25:35 origem e destino nao podem ser iguais\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              100000,
+              25000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "exit_code": 2,
+            "expected": true,
+            "stderr": "uso: pix -from=1 -to=2 -amount=1500\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              100000,
+              25000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "exit_code": 1,
+            "expected": true,
+            "stderr": "2026/09/12 23:25:35 valor deve ser maior que zero\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              100000,
+              25000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "exit_code": 1,
+            "expected": true,
+            "stderr": "2026/09/12 23:25:35 destino: carteira nao encontrada\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              100000,
+              25000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "exit_code": 1,
+            "expected": true,
+            "stderr": "2026/09/12 23:25:36 saldo insuficiente\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              100000,
+              25000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 10,
+            "responses": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "balances": [
+              80000,
+              45000
+            ],
+            "ledger_rows": 10
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-2",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "origin and destination wallets must differ"
+            },
+            "body": "{\"error\":\"origin and destination wallets must differ\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "transfer amount must be greater than zero"
+            },
+            "body": "{\"error\":\"transfer amount must be greater than zero\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "transfer amount must be greater than zero"
+            },
+            "body": "{\"error\":\"transfer amount must be greater than zero\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "error": "execute transfer: wallet missing-wallet: wallet not found"
+            },
+            "body": "{\"error\":\"execute transfer: wallet missing-wallet: wallet not found\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 409,
+            "expected": true,
+            "json": {
+              "error": "execute transfer: wallet bench-a: insufficient funds"
+            },
+            "body": "{\"error\":\"execute transfer: wallet bench-a: insufficient funds\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 5,
+            "responses": [
+              201,
+              201,
+              201,
+              201,
+              409,
+              409,
+              409,
+              201,
+              409,
+              409
+            ],
+            "balances": [
+              0,
+              12000
+            ],
+            "ledger_rows": 5
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-1",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "erro": "carteira de origem e destino são iguais"
+            },
+            "body": "{\"erro\":\"carteira de origem e destino são iguais\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "erro": "valor da transferência deve ser maior que zero"
+            },
+            "body": "{\"erro\":\"valor da transferência deve ser maior que zero\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "erro": "valor da transferência deve ser maior que zero"
+            },
+            "body": "{\"erro\":\"valor da transferência deve ser maior que zero\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "erro": "carteira não encontrada: missing-wallet"
+            },
+            "body": "{\"erro\":\"carteira não encontrada: missing-wallet\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 422,
+            "expected": true,
+            "json": {
+              "erro": "saldo insuficiente"
+            },
+            "body": "{\"erro\":\"saldo insuficiente\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 5,
+            "responses": [
+              200,
+              422,
+              200,
+              422,
+              422,
+              200,
+              200,
+              200,
+              422,
+              422
+            ],
+            "balances": [
+              0,
+              12000
+            ],
+            "ledger_rows": 5
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-2",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "invalid_input",
+              "message": "carteira de origem e destino devem ser diferentes",
+              "request_id": "fb81bd6f-e8b1-4b50-bfac-838b11bad911"
+            },
+            "body": "{\"error\":\"invalid_input\",\"message\":\"carteira de origem e destino devem ser diferentes\",\"request_id\":\"fb81bd6f-e8b1-4b50-bfac-838b11bad911\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "invalid_input",
+              "message": "valor monetário inválido",
+              "request_id": "5af01203-cc24-4cfd-9fc6-dbd63498668a"
+            },
+            "body": "{\"error\":\"invalid_input\",\"message\":\"valor monetário inválido\",\"request_id\":\"5af01203-cc24-4cfd-9fc6-dbd63498668a\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "invalid_input",
+              "message": "valor monetário inválido",
+              "request_id": "f933f562-2486-41e7-a81a-2b60777d33b2"
+            },
+            "body": "{\"error\":\"invalid_input\",\"message\":\"valor monetário inválido\",\"request_id\":\"f933f562-2486-41e7-a81a-2b60777d33b2\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "error": "wallet_not_found",
+              "message": "carteira de origem ou destino não encontrada",
+              "request_id": "cd6e4f8c-d6ea-4a69-b56c-14ecdb3aab38"
+            },
+            "body": "{\"error\":\"wallet_not_found\",\"message\":\"carteira de origem ou destino não encontrada\",\"request_id\":\"cd6e4f8c-d6ea-4a69-b56c-14ecdb3aab38\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 422,
+            "expected": true,
+            "json": {
+              "error": "insufficient_funds",
+              "message": "saldo insuficiente na carteira de origem",
+              "request_id": "57cac894-46a6-4568-bab2-807dce235cfc"
+            },
+            "body": "{\"error\":\"insufficient_funds\",\"message\":\"saldo insuficiente na carteira de origem\",\"request_id\":\"57cac894-46a6-4568-bab2-807dce235cfc\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 5,
+            "responses": [
+              201,
+              201,
+              201,
+              422,
+              422,
+              422,
+              422,
+              201,
+              422,
+              201
+            ],
+            "balances": [
+              0,
+              12000
+            ],
+            "ledger_rows": 5
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-1",
+      "status": "failed",
+      "error": null,
+      "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "conta de origem e destino não podem ser iguais"
+            },
+            "body": "{\"error\":\"conta de origem e destino não podem ser iguais\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "valor da transferência deve ser positivo"
+            },
+            "body": "{\"error\":\"valor da transferência deve ser positivo\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "valor da transferência deve ser positivo"
+            },
+            "body": "{\"error\":\"valor da transferência deve ser positivo\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "error": "executar transferência: carteira não encontrada: user_id=99999999-9999-9999-9999-999999999999"
+            },
+            "body": "{\"error\":\"executar transferência: carteira não encontrada: user_id=99999999-9999-9999-9999-999999999999\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 422,
+            "expected": true,
+            "json": {
+              "error": "executar transferência: saldo insuficiente"
+            },
+            "body": "{\"error\":\"executar transferência: saldo insuficiente\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "failed",
+          "checks": {
+            "bounded_successes": false,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 3,
+            "responses": [
+              200,
+              500,
+              500,
+              500,
+              500,
+              500,
+              500,
+              200,
+              500,
+              200
+            ],
+            "balances": [
+              4000,
+              8000
+            ],
+            "ledger_rows": 3
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-2",
+      "status": "passed",
+      "error": null,
+      "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+      "cases": [
+        {
+          "id": "same_account",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "carteira de origem e destino não podem ser iguais"
+            },
+            "body": "{\"error\":\"carteira de origem e destino não podem ser iguais\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "zero",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "valor da transferência deve ser positivo"
+            },
+            "body": "{\"error\":\"valor da transferência deve ser positivo\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "negative",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "valor da transferência deve ser positivo"
+            },
+            "body": "{\"error\":\"valor da transferência deve ser positivo\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "missing_wallet",
+          "status": "passed",
+          "response": {
+            "status_code": 404,
+            "expected": true,
+            "json": {
+              "error": "carteira não encontrada"
+            },
+            "body": "{\"error\":\"carteira não encontrada\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "insufficient_funds",
+          "status": "passed",
+          "response": {
+            "status_code": 400,
+            "expected": true,
+            "json": {
+              "error": "saldo insuficiente para realizar a transferência"
+            },
+            "body": "{\"error\":\"saldo insuficiente para realizar a transferência\"}\n"
+          },
+          "checks": {
+            "expected_rejection": true,
+            "balances_unchanged": true,
+            "ledger_unchanged": true
+          },
+          "observed": {
+            "balances": [
+              10000,
+              2000
+            ],
+            "ledger_rows": 0
+          }
+        },
+        {
+          "id": "concurrency",
+          "status": "passed",
+          "checks": {
+            "bounded_successes": true,
+            "balances_match_successes": true,
+            "total_conserved": true,
+            "ledger_matches_successes": true,
+            "non_negative_balances": true,
+            "all_requests_accounted": true
+          },
+          "observed": {
+            "requests": 10,
+            "successes": 5,
+            "responses": [
+              200,
+              200,
+              200,
+              400,
+              400,
+              400,
+              400,
+              200,
+              200,
+              400
+            ],
+            "balances": [
+              0,
+              12000
+            ],
+            "ledger_rows": 5
+          }
+        }
+      ]
+    }
+  ]
+}

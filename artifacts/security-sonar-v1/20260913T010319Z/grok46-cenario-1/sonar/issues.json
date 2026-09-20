@@ -1,0 +1,331 @@
+{
+  "total": 1,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 1
+  },
+  "effortTotal": 7,
+  "issues": [
+    {
+      "key": "e067c46b-abc4-44fd-81f3-4d9b1bcb3fd4",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+      "project": "lqcpe-grok46-cenario-1-20260913T010319Z",
+      "line": 39,
+      "hash": "4f19d9bcdfe803d8b0f71638a725fd49",
+      "textRange": {
+        "startLine": 39,
+        "endLine": 39,
+        "startOffset": 18,
+        "endOffset": 32
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 40,
+                "endLine": 40,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 43,
+                "endLine": 43,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 48,
+                "endLine": 48,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 58,
+                "endLine": 58,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 61,
+                "endLine": 61,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 70,
+                "endLine": 70,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 73,
+                "endLine": 73,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 77,
+                "endLine": 77,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 85,
+                "endLine": 85,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 89,
+                "endLine": 89,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 92,
+                "endLine": 92,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 100,
+                "endLine": 100,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 104,
+                "endLine": 104,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 107,
+                "endLine": 107,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 116,
+                "endLine": 116,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 120,
+                "endLine": 120,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+              "textRange": {
+                "startLine": 124,
+                "endLine": 124,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.",
+      "effort": "7min",
+      "debt": "7min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:04:22+0000",
+      "updateDate": "2026-09-13T01:04:22+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-grok46-cenario-1-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "grok46-cenario-1",
+      "longName": "grok46-cenario-1"
+    },
+    {
+      "key": "lqcpe-grok46-cenario-1-20260913T010319Z:internal/wallet/wallet.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "wallet.go",
+      "longName": "internal/wallet/wallet.go",
+      "path": "internal/wallet/wallet.go"
+    }
+  ],
+  "facets": []
+}

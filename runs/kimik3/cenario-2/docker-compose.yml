@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: wallet-p2p-postgres
+    environment:
+      POSTGRES_USER: wallet
+      POSTGRES_PASSWORD: wallet
+      POSTGRES_DB: wallet_p2p
+    ports:
+      - "5432:5432"
+    volumes:
+      # Migrations aplicadas automaticamente na primeira subida do container.
+      - ./migrations/000001_create_wallets_and_transactions.up.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./migrations/000002_seed_dev.up.sql:/docker-entrypoint-initdb.d/02_seed.sql:ro
+      - wallet-p2p-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wallet -d wallet_p2p"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  wallet-p2p-pgdata:

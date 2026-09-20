@@ -1,0 +1,6 @@
+projectKey=lqcpe-kimik3-cenario-2-20260913T010319Z
+serverUrl=http://sonarqube:9000
+serverVersion=26.6.0.123539
+dashboardUrl=http://sonarqube:9000/dashboard?id=lqcpe-kimik3-cenario-2-20260913T010319Z
+ceTaskId=c4a21ca3-fdfa-405b-ae52-ee19c72c5825
+ceTaskUrl=http://sonarqube:9000/api/ce/task?id=c4a21ca3-fdfa-405b-ae52-ee19c72c5825

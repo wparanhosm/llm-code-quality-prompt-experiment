@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-1",
+  "source_path": "runs/grok46/cenario-1",
+  "hash_algorithm": "sha256",
+  "root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+  "entries": [
+    {
+      "path": "billing_result.txt",
+      "type": "file",
+      "mode": "0777",
+      "size": 54,
+      "sha256": "7ec04e5540aa59f67f735ba46d9ef72d04179d92ae7b350379e4e1b3a5b5e5b6"
+    },
+    {
+      "path": "cmd/pix/main.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 959,
+      "sha256": "08edeb581f7391f0e9b3fb79c780140a3dc4440cbba0f585603db648c7c9634b"
+    },
+    {
+      "path": "go.mod",
+      "type": "file",
+      "mode": "0777",
+      "size": 70,
+      "sha256": "759815988002b8b9a26a9faf75e372ee7f08394c9be6a669bf54c58ac75724ee"
+    },
+    {
+      "path": "go.sum",
+      "type": "file",
+      "mode": "0777",
+      "size": 177,
+      "sha256": "21b69ad8182cd241ffd4d1fba7199ae55303f22a7f3554761101d58c3b8f5f6d"
+    },
+    {
+      "path": "internal/db/db.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1158,
+      "sha256": "0e1c6571b0d8ccaece24e44b3f62176e9b08455df0b58da156238570f7776b29"
+    },
+    {
+      "path": "internal/wallet/wallet.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 2945,
+      "sha256": "fc20d18292e0d70693adcfa9018c01de0fef1da5332bee543d2e030119d6c43b"
+    },
+    {
+      "path": "internal/wallet/wallet_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 917,
+      "sha256": "61dc9e727e343e0bc62b5b28c4e60afec18660d9d040f5101616bf3bea6c0f0a"
+    }
+  ]
+}

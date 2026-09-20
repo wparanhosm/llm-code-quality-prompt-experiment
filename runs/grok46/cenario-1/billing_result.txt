@@ -1,0 +1,4 @@
+model=grok4.6
+time=1m 22s
+tokens=10637
+spent= $0.06

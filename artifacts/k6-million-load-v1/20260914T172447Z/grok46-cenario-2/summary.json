@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-2",
+  "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+  "status": "failed",
+  "error": null,
+  "planned_iterations": 1000000,
+  "pairs": 100,
+  "vus": 50,
+  "k6": {
+    "exit_code": 99,
+    "duration_seconds": 128.259,
+    "metrics": {
+      "iterations": null,
+      "http_reqs": null,
+      "successful_transfers": null,
+      "unexpected_statuses": null,
+      "status_counts": {
+        "200": 0,
+        "201": 0,
+        "400": 0,
+        "404": 0,
+        "409": 0,
+        "422": 0,
+        "500": 0,
+        "other": 0
+      },
+      "http_req_failed_rate": null,
+      "requests_per_second": null,
+      "latency_avg_ms": null,
+      "latency_med_ms": null,
+      "latency_p90_ms": null,
+      "latency_p95_ms": null,
+      "latency_p99_ms": null
+    }
+  },
+  "reconciliation": {
+    "observed": {
+      "wallet_count": 200,
+      "source_total": 1000000,
+      "destination_total": 0,
+      "total_balance": 1000000,
+      "negative_wallets": 0,
+      "ledger_rows": 0,
+      "ledger_amount": 0
+    },
+    "expected": {
+      "wallet_count": 200,
+      "source_total": 0,
+      "destination_total": 1000000,
+      "total_balance": 1000000,
+      "negative_wallets": 0,
+      "ledger_rows": 1000000,
+      "ledger_amount": 1000000
+    },
+    "checks": {
+      "wallet_count": true,
+      "source_total": false,
+      "destination_total": false,
+      "total_balance": true,
+      "negative_wallets": true,
+      "ledger_rows": false,
+      "ledger_amount": false
+    },
+    "passed": false
+  },
+  "operational_assistance": [
+    "snapshot_materialized",
+    "database_provisioned",
+    "seed_applied_external",
+    "environment_injected",
+    "application_logs_discarded_during_load"
+  ]
+}

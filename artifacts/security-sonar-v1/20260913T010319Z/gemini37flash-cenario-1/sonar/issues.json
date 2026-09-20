@@ -1,0 +1,106 @@
+{
+  "total": 1,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 1
+  },
+  "effortTotal": 6,
+  "issues": [
+    {
+      "key": "3b29f269-4d10-4455-aa6a-8387c0baa526",
+      "rule": "go:S1192",
+      "severity": "CRITICAL",
+      "component": "lqcpe-gemini37flash-cenario-1-20260913T010319Z:main.go",
+      "project": "lqcpe-gemini37flash-cenario-1-20260913T010319Z",
+      "line": 46,
+      "hash": "bc4479ee86247cd74308c10359f4f855",
+      "textRange": {
+        "startLine": 46,
+        "endLine": 46,
+        "startOffset": 31,
+        "endOffset": 78
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-1-20260913T010319Z:main.go",
+              "textRange": {
+                "startLine": 60,
+                "endLine": 60,
+                "startOffset": 31,
+                "endOffset": 78
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-1-20260913T010319Z:main.go",
+              "textRange": {
+                "startLine": 94,
+                "endLine": 94,
+                "startOffset": 34,
+                "endOffset": 81
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Define a constant instead of duplicating this literal \"SELECT balance FROM wallets WHERE user_id = ?\" 3 times.",
+      "effort": "6min",
+      "debt": "6min",
+      "author": "",
+      "tags": [
+        "design"
+      ],
+      "creationDate": "2026-09-13T01:04:17+0000",
+      "updateDate": "2026-09-13T01:04:17+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "DISTINCT",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-gemini37flash-cenario-1-20260913T010319Z:main.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "main.go",
+      "longName": "main.go",
+      "path": "main.go"
+    },
+    {
+      "key": "lqcpe-gemini37flash-cenario-1-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "gemini37flash-cenario-1",
+      "longName": "gemini37flash-cenario-1"
+    }
+  ],
+  "facets": []
+}

@@ -1,0 +1,414 @@
+{
+  "total": 2,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 2
+  },
+  "effortTotal": 17,
+  "issues": [
+    {
+      "key": "4aebbf04-75c6-4dd0-b079-4387e806fb38",
+      "rule": "go:S1192",
+      "severity": "CRITICAL",
+      "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:main.go",
+      "project": "lqcpe-kimik3-cenario-1-20260913T010319Z",
+      "line": 119,
+      "hash": "de6ff6a95e68db81eabe9af0f781c0ff",
+      "textRange": {
+        "startLine": 119,
+        "endLine": 119,
+        "startOffset": 48,
+        "endOffset": 62
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:main.go",
+              "textRange": {
+                "startLine": 125,
+                "endLine": 125,
+                "startOffset": 48,
+                "endOffset": 62
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:main.go",
+              "textRange": {
+                "startLine": 143,
+                "endLine": 143,
+                "startOffset": 48,
+                "endOffset": 62
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:main.go",
+              "textRange": {
+                "startLine": 177,
+                "endLine": 177,
+                "startOffset": 49,
+                "endOffset": 63
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:main.go",
+              "textRange": {
+                "startLine": 194,
+                "endLine": 194,
+                "startOffset": 48,
+                "endOffset": 62
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Define a constant instead of duplicating this literal \"erro interno\" 5 times.",
+      "effort": "10min",
+      "debt": "10min",
+      "author": "",
+      "tags": [
+        "design"
+      ],
+      "creationDate": "2026-09-13T01:04:32+0000",
+      "updateDate": "2026-09-13T01:04:32+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "DISTINCT",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "cb4ab36d-544c-42c4-8b36-70ceaaffb976",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+      "project": "lqcpe-kimik3-cenario-1-20260913T010319Z",
+      "line": 36,
+      "hash": "62c67c3c561b9ed643d48af5350d8cf2",
+      "textRange": {
+        "startLine": 36,
+        "endLine": 36,
+        "startOffset": 18,
+        "endOffset": 29
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 37,
+                "endLine": 37,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 40,
+                "endLine": 40,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 45,
+                "endLine": 45,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 54,
+                "endLine": 54,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 59,
+                "endLine": 59,
+                "startOffset": 1,
+                "endOffset": 4
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 63,
+                "endLine": 63,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 66,
+                "endLine": 66,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 73,
+                "endLine": 73,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 82,
+                "endLine": 82,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 86,
+                "endLine": 86,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 89,
+                "endLine": 89,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 94,
+                "endLine": 94,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 105,
+                "endLine": 105,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 109,
+                "endLine": 109,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+              "textRange": {
+                "startLine": 113,
+                "endLine": 113,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.",
+      "effort": "7min",
+      "debt": "7min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:04:32+0000",
+      "updateDate": "2026-09-13T01:04:32+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-kimik3-cenario-1-20260913T010319Z:main.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "main.go",
+      "longName": "main.go",
+      "path": "main.go"
+    },
+    {
+      "key": "lqcpe-kimik3-cenario-1-20260913T010319Z:service.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "service.go",
+      "longName": "service.go",
+      "path": "service.go"
+    },
+    {
+      "key": "lqcpe-kimik3-cenario-1-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "kimik3-cenario-1",
+      "longName": "kimik3-cenario-1"
+    }
+  ],
+  "facets": []
+}

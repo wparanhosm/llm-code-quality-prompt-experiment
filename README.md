@@ -26,7 +26,7 @@ O experimento consiste na submissão de um mesmo requisito de negócio de alta c
 
 Para garantir o determinismo científico, a reprodutibilidade da pesquisa e a eliminação de vieses subjetivos, o ecossistema de testes foi blindado com as seguintes ferramentas:
 
-1.  **Rastreabilidade de IA (Langfuse):** Plataforma de observabilidade de LLM utilizada para capturar o rastro (*trace*) exato da execução da API, registrando *inputs*, *outputs*, consumo de *tokens* e hashes de auditoria imutáveis.
+1.  **Registro de execução (OpenCode):** Cada execução deve registrar o modelo, o cenário, os tokens e o custo nativo do OpenCode no arquivo `experiments.json`, mantendo a análise independente de plataformas externas de observabilidade.
 2.  **Análise Estática de Código (golangci-lint):** Agregador local de *linters* configurado rigidamente para disparar análises computacionais via `gocyclo` (complexidade), `errcheck` (erros omitidos) e `staticcheck` (concorrência e performance).
 3.  **Métricas de Qualidade Industriais (SonarCloud):** Centralizador de qualidade conectado a esteira que extrai os indicadores consolidados para a construção das tabelas comparativas.
 
@@ -36,49 +36,29 @@ Para garantir o determinismo científico, a reprodutibilidade da pesquisa e a el
 
 ### Pré-requisitos
 
-1. Suba o SonarQube:
+1. Suba a infraestrutura local:
 ```bash
-docker run -d --name sonarqube -p 9000:9000 sonarqube:community
+docker compose up -d
 ```
 
-2. Acesse `http://localhost:9000`, faça login (`admin`/`admin`) e gere um token em **My Account → Security → Generate Token**.
+2. Aguarde o SonarQube ficar disponível em `http://localhost:9000`, faça login (`admin`/`admin`) e gere um token em **My Account → Security → Generate Token**.
 
-3. Adicione ao arquivo `.env` na raiz do repositório:
-```
-SONAR_TOKEN="seu_token_aqui"
-SONAR_HOST_URL="http://localhost:9000"
+3. No PowerShell, defina o token apenas para a sessão atual:
+```powershell
+$env:SONAR_TOKEN = "<SEU_TOKEN>"
 ```
 
-4. Gere os relatórios de cobertura antes de rodar o scanner:
+### Executar e consolidar as análises
+
+Cadastre cada combinação modelo/cenário em `experiments.json`. O arquivo já define quatro modelos e dois cenários; para uma nova execução, inclua o diretório gerado, o modelo, o cenário e o custo retornado pelo OpenCode na lista `runs`.
+
 ```bash
-# Cenário 1
-cd cenario-1-vibecoding
-go test -coverprofile=coverage.out -coverpkg=./... -count=1 ./...
-
-# Cenário 2
-cd cenario-2-agente-engenheiro
-go test -coverprofile=coverage_r2.out -count=1 ./internal/...
+python scripts/analyze_experiments.py --execute
 ```
 
-### Rodar o scanner
+O comando executa os testes de cada execução cadastrada, gera a cobertura, envia a análise ao SonarQube, atualiza o `sonar_output.json` do diretório da execução e cria `analysis_report.md` com a matriz consolidada. Para somente consultar métricas já analisadas, execute `python scripts/analyze_experiments.py`.
 
-**Cenário 1 — Vibecoding:**
-```bash
-docker run --rm --network host \
-  --env-file "C:/Users/walte/workspace/llm-code-quality-prompt-experiment/.env" \
-  -v "C:/Users/walte/workspace/llm-code-quality-prompt-experiment/cenario-1-vibecoding:/usr/src" \
-  sonarsource/sonar-scanner-cli
-```
-
-**Cenário 2 — Agente Engenheiro:**
-```bash
-docker run --rm --network host \
-  --env-file "C:/Users/walte/workspace/llm-code-quality-prompt-experiment/.env" \
-  -v "C:/Users/walte/workspace/llm-code-quality-prompt-experiment/cenario-2-agente-engenheiro:/usr/src" \
-  sonarsource/sonar-scanner-cli
-```
-
-Os resultados ficam disponíveis em `http://localhost:9000` com os indicadores de **Bugs**, **Vulnerabilities**, **Code Smells**, **Coverage**, **Duplications** e **Security Hotspots** para cada cenário.
+Os resultados ficam disponíveis em `http://localhost:9000` e no relatório consolidado, com **Bugs**, **Vulnerabilities**, **Code Smells**, **Coverage**, **Complexidade** e **Dívida Técnica**.
 
 ---
 
@@ -99,17 +79,17 @@ A avaliação comparativa entre os códigos gerados nos dois cenários baseia-se
 
 ## ⚙️ Parâmetros de Reprodutibilidade
 
-As chamadas de API são registradas no Langfuse com os seguintes metadados para garantir rastreabilidade e reprodutibilidade:
+Cada execução é cadastrada em `experiments.json`, relacionando modelo, cenário, diretório dos artefatos e custo retornado pelo OpenCode. A configuração suporta quatro modelos e os dois cenários; novos modelos ou cenários são adicionados sem alterar o script de análise.
 
-| Parâmetro | Cenário 1 — Vibecoding | Cenário 2 — Agente Engenheiro |
-| :--- | :--- | :--- |
-| **Modelo** | `claude-opus-4-5-20260415` | `claude-opus-4-5-20260415` |
-| **Temperatura** | `1.0` | `default` |
-| **Trace ID** | `trace-pix-p2p-20260604-002` | `p2p-wallet-clean-arch-001` |
+| Parâmetro | Fonte |
+| :--- | :--- |
+| **Modelo e cenário** | `experiments.json` |
+| **Custo e tokens** | Saída nativa do OpenCode, registrada na execução |
+| **Cobertura e qualidade** | `scripts/analyze_experiments.py` + SonarQube |
 
 ---
 
-## 📊 Resultados Apurados (Rodada 2 — 2026-06-07)
+## 📊 Resultados Apurados (Rodada 1 — 2026-06-07)
 
 > Ferramentas executadas: `go test`, `go test -race`, `go vet`, `go build`, `golangci-lint` (errcheck, staticcheck), `gocyclo`. Ambiente: Go 1.26.0 / Windows amd64.
 
@@ -166,8 +146,7 @@ As chamadas de API são registradas no Langfuse com os seguintes metadados para 
 
 ```text
 ├── .agents/
-│   ├── decisions.md              # Template de instrução para registro de ADRs pelo agente
-│   └── system_instruction.md     # Instrução para geração de trace_langfuse.json (spans + tokens)
+│   └── decisions.md              # Registro de decisões arquiteturais
 ├── .github/
 │   ├── CODEOWNERS                # Proteção de branch e revisão obrigatória
 │   └── workflows/
@@ -181,8 +160,7 @@ As chamadas de API são registradas no Langfuse com os seguintes metadados para 
 │   ├── main_test.go              # 5 testes de integração (SQLite :memory:)
 │   ├── prompt.txt                # Prompt original enviado à LLM (vibecoding)
 │   ├── decisions.md              # ADR-001: decisões arquiteturais registradas pela IA
-│   ├── sonar_output.json         # Métricas SonarQube extraídas via API REST
-│   └── trace_langfuse.json       # Log de auditoria: spans, tokens e timestamps
+│   └── sonar_output.json         # Métricas SonarQube extraídas via API REST
 ├── cenario-2-agente-engenheiro/
 │   ├── cmd/api/main.go           # Entry point com DI manual de todas as dependências
 │   ├── internal/
@@ -195,9 +173,10 @@ As chamadas de API são registradas no Langfuse com os seguintes metadados para 
 │   ├── migrations/001_init.sql   # DDL de criação das tabelas wallets e transactions
 │   ├── prompt.txt                # Prompt estruturado de engenharia enviado à LLM
 │   ├── decisions.md              # ADR-001: Clean Architecture + decisões de concorrência
-│   ├── sonar_output.json         # Métricas SonarQube extraídas via API REST
-│   └── trace_langfuse.json       # Log de auditoria: spans, tokens e timestamps
-├── sync_traces.py                # Script Python para sincronização de traces com o Langfuse
+│   └── sonar_output.json         # Métricas SonarQube extraídas via API REST
+├── docker-compose.yaml           # PostgreSQL e SonarQube para análise local
+├── experiments.json              # Matriz configurável de modelos, cenários e execuções
+├── scripts/analyze_experiments.py # Automação de testes, scanner e relatório consolidado
 ├── Changelog.md                  # Histórico de alterações do projeto
 └── README.md                     # Documentação científica do laboratório
 ```

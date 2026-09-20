@@ -24,6 +24,9 @@ jspm_packages/
 *.db
 *.db-shm
 *.db-wal
+coverage
+coverage_*
+coverage.out
 
 # IDEs and editors
 .idea/
@@ -35,3 +38,7 @@ jspm_packages/
 *.sw?
 
 .abacusai/
+
+# Benchmark workspaces and caches
+work/
+cache/

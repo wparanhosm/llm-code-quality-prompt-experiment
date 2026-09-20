@@ -1,0 +1,75 @@
+{
+  "total": 1,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 1
+  },
+  "effortTotal": 0,
+  "issues": [
+    {
+      "key": "babe4002-c880-4a1d-8345-10d8f15c61ab",
+      "rule": "go:S1135",
+      "severity": "INFO",
+      "component": "lqcpe-sonnet5-cenario-1-20260913T010319Z:internal/repository/wallet_repository.go",
+      "project": "lqcpe-sonnet5-cenario-1-20260913T010319Z",
+      "line": 16,
+      "hash": "f123a9316769db3a57484a78bebeb12e",
+      "textRange": {
+        "startLine": 16,
+        "endLine": 16,
+        "startOffset": 32,
+        "endOffset": 36
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Complete the task associated to this TODO comment.",
+      "effort": "0min",
+      "debt": "0min",
+      "author": "",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-09-13T01:04:28+0000",
+      "updateDate": "2026-09-13T01:04:28+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "INFO"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-sonnet5-cenario-1-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "sonnet5-cenario-1",
+      "longName": "sonnet5-cenario-1"
+    },
+    {
+      "key": "lqcpe-sonnet5-cenario-1-20260913T010319Z:internal/repository/wallet_repository.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "wallet_repository.go",
+      "longName": "internal/repository/wallet_repository.go",
+      "path": "internal/repository/wallet_repository.go"
+    }
+  ],
+  "facets": []
+}

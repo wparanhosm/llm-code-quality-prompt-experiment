@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "security-sonar-v1",
+  "description": "Analise uniforme de vulnerabilidades, seguranca, lint e SonarQube.",
+  "base_campaign": "benchmark/campaigns/initial-quality.json",
+  "tools": {
+    "govulncheck": {
+      "version": "v1.1.4",
+      "path": "cache/tools/bin/govulncheck",
+      "command": ["{tool}", "-json", "./..."]
+    },
+    "gosec": {
+      "version": "v2.29.0",
+      "path": "cache/tools/bin/gosec",
+      "command": ["{tool}", "-no-fail", "-fmt=json", "-out={output}", "./..."]
+    },
+    "golangci_lint": {
+      "version": "v2.13.2",
+      "path": "cache/tools/bin/golangci-lint",
+      "command": ["{tool}", "run", "--no-config", "--default=standard", "--issues-exit-code=0", "--timeout=10m", "--output.json.path={output}"]
+    }
+  },
+  "timeouts_seconds": {
+    "govulncheck": 900,
+    "gosec": 900,
+    "golangci_lint": 900,
+    "sonar": 900
+  },
+  "sonar": {
+    "enabled": true,
+    "host_url": "http://localhost:9000",
+    "container_host_url": "http://sonarqube:9000",
+    "network": "llm-code-quality-prompt-experiment_default",
+    "scanner_image": "sonarsource/sonar-scanner-cli@sha256:23ca0f137965d9dff2198074043fd48d386280bc5d0ccac8c8349cea4cf096a9",
+    "metrics": "coverage,bugs,vulnerabilities,security_hotspots,code_smells,violations,complexity,cognitive_complexity,sqale_index,duplicated_lines_density,ncloc"
+  }
+}

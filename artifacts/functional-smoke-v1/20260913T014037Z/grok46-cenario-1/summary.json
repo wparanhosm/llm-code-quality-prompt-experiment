@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-1",
+  "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+  "status": "failed",
+  "error": "unable to open database file",
+  "functional": {
+    "interface": "cli",
+    "response": null,
+    "state": {
+      "source_before_cents": null,
+      "destination_before_cents": null,
+      "source_after_cents": null,
+      "destination_after_cents": null,
+      "total_before_cents": null,
+      "total_after_cents": null,
+      "matching_ledger_rows": 0
+    },
+    "checks": {}
+  },
+  "operational_effort": {
+    "assistance_count": 3,
+    "assistance": [
+      "build_command_supplied",
+      "cli_arguments_supplied",
+      "working_directory_isolated"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 0.248
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 3.732,
+      "exit_code": 0
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.121,
+      "exit_code": 0
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "method": "already_stopped"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "overrides": [
+    {
+      "run_id": "chatgpt56sol-cenario-2",
+      "path": "api",
+      "category": "generation_artifact",
+      "rule": "known-generated-binary",
+      "confidence": "high",
+      "notes": "Binario Go preexistente no snapshot."
+    },
+    {
+      "run_id": "gemini37flash-cenario-2",
+      "path": "bin/wallet-p2p-api",
+      "category": "generation_artifact",
+      "rule": "known-generated-binary",
+      "confidence": "high",
+      "notes": "Binario Go preexistente no snapshot."
+    },
+    {
+      "run_id": "gemini37flash-cenario-1",
+      "path": "pix_wallets.db",
+      "category": "generation_artifact",
+      "rule": "known-runtime-database",
+      "confidence": "high",
+      "notes": "Banco SQLite preexistente; nao deve ser tratado como resultado do benchmark."
+    }
+  ]
+}

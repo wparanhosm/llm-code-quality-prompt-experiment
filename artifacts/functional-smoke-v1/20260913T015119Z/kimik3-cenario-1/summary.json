@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-1",
+  "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "http",
+    "response": {
+      "status_code": 200,
+      "expected": true,
+      "json": {
+        "id": 1,
+        "origem": "bench-a",
+        "destino": "bench-b",
+        "valor": 12.5,
+        "status": "completed"
+      },
+      "body": "{\"id\":1,\"origem\":\"bench-a\",\"destino\":\"bench-b\",\"valor\":12.5,\"status\":\"completed\"}\n"
+    },
+    "state": {
+      "source_before_cents": 10000,
+      "destination_before_cents": 2000,
+      "source_after_cents": 8750,
+      "destination_after_cents": 3250,
+      "total_before_cents": 12000,
+      "total_after_cents": 12000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 5,
+    "assistance": [
+      "build_command_supplied",
+      "working_directory_isolated",
+      "fixed_port_required",
+      "readiness_probe_supplied",
+      "seed_via_public_api"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 0.193
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 5.283,
+      "exit_code": 0
+    },
+    "startup": {
+      "status": "passed",
+      "duration_seconds": 0.007,
+      "pid": 74524
+    },
+    "readiness": {
+      "status": "passed",
+      "duration_seconds": 0.5,
+      "type": "tcp"
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.011,
+      "status_code": 200
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.011
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.008,
+      "method": "graceful"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

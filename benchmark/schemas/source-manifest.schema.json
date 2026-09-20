@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/source-manifest.schema.json",
+  "title": "Source snapshot manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "source_path", "hash_algorithm", "root_hash", "entries"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "source_path": {"type": "string", "pattern": "^runs/"},
+    "hash_algorithm": {"const": "sha256"},
+    "root_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "type", "mode", "size", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "type": {"enum": ["file", "symlink"]},
+          "mode": {"type": "string", "pattern": "^[0-7]{4}$"},
+          "size": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "target": {"type": "string"}
+        }
+      }
+    }
+  }
+}

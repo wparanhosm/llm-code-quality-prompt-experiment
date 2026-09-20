@@ -1,0 +1,534 @@
+{
+  "total": 3,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 3
+  },
+  "effortTotal": 25,
+  "issues": [
+    {
+      "key": "21b3ede1-69dd-4b92-a4c0-82686eae0767",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+      "project": "lqcpe-sonnet5-cenario-2-20260913T010319Z",
+      "line": 10,
+      "hash": "677db892e7e28af627af66f72cccf128",
+      "textRange": {
+        "startLine": 10,
+        "endLine": 10,
+        "startOffset": 5,
+        "endOffset": 23
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 16,
+                "endLine": 16,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 19,
+                "endLine": 19,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 22,
+                "endLine": 22,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 30,
+                "endLine": 30,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 38,
+                "endLine": 38,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 46,
+                "endLine": 46,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 54,
+                "endLine": 54,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+              "textRange": {
+                "startLine": 62,
+                "endLine": 62,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+      "effort": "6min",
+      "debt": "6min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:04:41+0000",
+      "updateDate": "2026-09-13T01:04:41+0000",
+      "type": "CODE_SMELL",
+      "scope": "TEST",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "fd91c766-6f79-44c6-93c8-884e5c6545d5",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+      "project": "lqcpe-sonnet5-cenario-2-20260913T010319Z",
+      "line": 76,
+      "hash": "5af96d806ab370ced4127a3369a0d008",
+      "textRange": {
+        "startLine": 76,
+        "endLine": 76,
+        "startOffset": 27,
+        "endOffset": 34
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 78,
+                "endLine": 78,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 81,
+                "endLine": 81,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 81,
+                "endLine": 81,
+                "startOffset": 26,
+                "endOffset": 28
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 84,
+                "endLine": 84,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 101,
+                "endLine": 101,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 106,
+                "endLine": 106,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 110,
+                "endLine": 110,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 114,
+                "endLine": 114,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 117,
+                "endLine": 117,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 121,
+                "endLine": 121,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 124,
+                "endLine": 124,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 129,
+                "endLine": 129,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 132,
+                "endLine": 132,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 147,
+                "endLine": 147,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.",
+      "effort": "13min",
+      "debt": "13min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:04:41+0000",
+      "updateDate": "2026-09-13T01:04:41+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "78882896-b5b8-48bc-b464-58be5b1bcf2a",
+      "rule": "go:S1192",
+      "severity": "CRITICAL",
+      "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+      "project": "lqcpe-sonnet5-cenario-2-20260913T010319Z",
+      "line": 79,
+      "hash": "28cd1d7a394d4a0bbd9159dfc26695e3",
+      "textRange": {
+        "startLine": 79,
+        "endLine": 79,
+        "startOffset": 25,
+        "endOffset": 53
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 82,
+                "endLine": 82,
+                "startOffset": 25,
+                "endOffset": 53
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 85,
+                "endLine": 85,
+                "startOffset": 25,
+                "endOffset": 53
+              },
+              "msg": "Duplication",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Define a constant instead of duplicating this literal \"transferência inválida: %w\" 3 times.",
+      "effort": "6min",
+      "debt": "6min",
+      "author": "",
+      "tags": [
+        "design"
+      ],
+      "creationDate": "2026-09-13T01:04:41+0000",
+      "updateDate": "2026-09-13T01:04:41+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "DISTINCT",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-sonnet5-cenario-2-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "sonnet5-cenario-2",
+      "longName": "sonnet5-cenario-2"
+    },
+    {
+      "key": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/domain/transaction_test.go",
+      "enabled": true,
+      "qualifier": "UTS",
+      "name": "transaction_test.go",
+      "longName": "internal/domain/transaction_test.go",
+      "path": "internal/domain/transaction_test.go"
+    },
+    {
+      "key": "lqcpe-sonnet5-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "transfer.go",
+      "longName": "internal/usecase/transfer.go",
+      "path": "internal/usecase/transfer.go"
+    }
+  ],
+  "facets": []
+}

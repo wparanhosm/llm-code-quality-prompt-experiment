@@ -1,0 +1,6 @@
+projectKey=lqcpe-sonnet5-cenario-1-20260913T005834Z
+serverUrl=http://sonarqube:9000
+serverVersion=26.6.0.123539
+dashboardUrl=http://sonarqube:9000/dashboard?id=lqcpe-sonnet5-cenario-1-20260913T005834Z
+ceTaskId=e5003020-9a56-4d50-a222-69b35b740612
+ceTaskUrl=http://sonarqube:9000/api/ce/task?id=e5003020-9a56-4d50-a222-69b35b740612

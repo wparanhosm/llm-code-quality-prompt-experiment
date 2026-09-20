@@ -1,0 +1,422 @@
+{
+  "schema_version": "1.0",
+  "rubric": "benchmark/architecture/rubric.json",
+  "reviews": "benchmark/architecture/reviews.json",
+  "runs": [
+    {
+      "run_id": "chatgpt56sol-cenario-1",
+      "model": "chatgpt56sol",
+      "scenario": "1",
+      "score": 58.5,
+      "classification": "fragil",
+      "dimension_scores": {
+        "clean_architecture": 2,
+        "ddd": 1,
+        "solid": 2,
+        "testability": 2,
+        "test_quality": 2,
+        "transactional_integrity": 3,
+        "concurrency_design": 3,
+        "observability": 1,
+        "operational_readiness": 3,
+        "simplicity_fit": 4
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "Ha testes, mas nenhum historico red-green-refactor verificavel."
+      },
+      "critical_risks": [
+        {
+          "severity": "high",
+          "risk": "Retries podem duplicar transferencias por ausencia de idempotencia.",
+          "evidence": [
+            "internal/httpapi/handler.go:23-27",
+            "internal/transfer/service.go:95-104"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "chatgpt56sol-cenario-2",
+      "model": "chatgpt56sol",
+      "scenario": "2",
+      "score": 82.75,
+      "classification": "adequado",
+      "dimension_scores": {
+        "clean_architecture": 4,
+        "ddd": 3,
+        "solid": 3,
+        "testability": 4,
+        "test_quality": 3,
+        "transactional_integrity": 4,
+        "concurrency_design": 3,
+        "observability": 3,
+        "operational_readiness": 2,
+        "simplicity_fit": 3
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "Suite ampla sem evidencia temporal do processo TDD."
+      },
+      "critical_risks": [
+        {
+          "severity": "high",
+          "risk": "Ausencia de idempotencia permite duplicacao em retry ambiguo.",
+          "evidence": [
+            "internal/application/transfer.go:33-37",
+            "internal/infrastructure/postgres/repository.go:77-85"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "gemini37flash-cenario-1",
+      "model": "gemini37flash",
+      "scenario": "1",
+      "score": 29.5,
+      "classification": "inadequado",
+      "dimension_scores": {
+        "clean_architecture": 0,
+        "ddd": 1,
+        "solid": 1,
+        "testability": 1,
+        "test_quality": 0,
+        "transactional_integrity": 3,
+        "concurrency_design": 1,
+        "observability": 1,
+        "operational_readiness": 1,
+        "simplicity_fit": 3
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": false,
+        "rationale": "O snapshot nao possui testes nem historico de desenvolvimento."
+      },
+      "critical_risks": [
+        {
+          "severity": "critical",
+          "risk": "INSERT OR REPLACE redefine saldos em toda execucao.",
+          "evidence": [
+            "main.go:136-140"
+          ]
+        },
+        {
+          "severity": "high",
+          "risk": "Interface fixa impede validar requisitos negativos e concorrencia.",
+          "evidence": [
+            "main.go:142-150"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "gemini37flash-cenario-2",
+      "model": "gemini37flash",
+      "scenario": "2",
+      "score": 70.5,
+      "classification": "parcialmente adequado",
+      "dimension_scores": {
+        "clean_architecture": 3,
+        "ddd": 3,
+        "solid": 3,
+        "testability": 3,
+        "test_quality": 3,
+        "transactional_integrity": 3,
+        "concurrency_design": 3,
+        "observability": 3,
+        "operational_readiness": 1,
+        "simplicity_fit": 2
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "Testes extensos nao comprovam a sequencia red-green-refactor."
+      },
+      "critical_risks": [
+        {
+          "severity": "critical",
+          "risk": "Snapshot nao fornece schema ou migration e exige reconstrucao externa.",
+          "evidence": [
+            "internal/adapter/postgres/repository.go:31-36",
+            "cmd/api/main.go:34-58"
+          ]
+        },
+        {
+          "severity": "critical",
+          "risk": "Money.Add nao verifica overflow de int64.",
+          "evidence": [
+            "pkg/money/money.go:49-52"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "grok46-cenario-1",
+      "model": "grok46",
+      "scenario": "1",
+      "score": 44.75,
+      "classification": "fragil",
+      "dimension_scores": {
+        "clean_architecture": 1,
+        "ddd": 1,
+        "solid": 1,
+        "testability": 2,
+        "test_quality": 1,
+        "transactional_integrity": 3,
+        "concurrency_design": 2,
+        "observability": 1,
+        "operational_readiness": 2,
+        "simplicity_fit": 4
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "Um teste basico existe, sem historico temporal."
+      },
+      "critical_risks": [
+        {
+          "severity": "high",
+          "risk": "Sem idempotencia e com serializacao limitada ao processo.",
+          "evidence": [
+            "internal/db/db.go:10-17",
+            "internal/wallet/wallet.go:111-125"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "grok46-cenario-2",
+      "model": "grok46",
+      "scenario": "2",
+      "score": 78.25,
+      "classification": "adequado",
+      "dimension_scores": {
+        "clean_architecture": 3,
+        "ddd": 3,
+        "solid": 3,
+        "testability": 4,
+        "test_quality": 3,
+        "transactional_integrity": 4,
+        "concurrency_design": 3,
+        "observability": 2,
+        "operational_readiness": 2,
+        "simplicity_fit": 3
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "Ha testes, sem historico temporal de TDD."
+      },
+      "critical_risks": [
+        {
+          "severity": "high",
+          "risk": "Gerador denominado uuidGen concatena relogios e pode colidir sob carga.",
+          "evidence": [
+            "internal/adapter/postgres/repository.go:18-22"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "kimik3-cenario-1",
+      "model": "kimik3",
+      "scenario": "1",
+      "score": 53.0,
+      "classification": "fragil",
+      "dimension_scores": {
+        "clean_architecture": 1,
+        "ddd": 1,
+        "solid": 1,
+        "testability": 2,
+        "test_quality": 3,
+        "transactional_integrity": 4,
+        "concurrency_design": 2,
+        "observability": 1,
+        "operational_readiness": 1,
+        "simplicity_fit": 4
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "Presenca de testes nao prova sua ordem de criacao."
+      },
+      "critical_risks": [
+        {
+          "severity": "high",
+          "risk": "Pool de uma conexao inviabiliza throughput concorrente.",
+          "evidence": [
+            "main.go:39-41"
+          ]
+        },
+        {
+          "severity": "medium",
+          "risk": "API monetaria usa float64.",
+          "evidence": [
+            "main.go:71-85",
+            "store.go:31-38"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "kimik3-cenario-2",
+      "model": "kimik3",
+      "scenario": "2",
+      "score": 93.5,
+      "classification": "robusto",
+      "dimension_scores": {
+        "clean_architecture": 4,
+        "ddd": 3,
+        "solid": 4,
+        "testability": 4,
+        "test_quality": 4,
+        "transactional_integrity": 4,
+        "concurrency_design": 4,
+        "observability": 3,
+        "operational_readiness": 3,
+        "simplicity_fit": 3
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "Suite extensa sem historico red-green-refactor."
+      },
+      "critical_risks": [
+        {
+          "severity": "high",
+          "risk": "Senha PostgreSQL padrao embutida no codigo.",
+          "evidence": [
+            "cmd/wallet-p2p-api/main.go:41",
+            "artifacts/security-sonar-v1/20260913T010319Z/kimik3-cenario-2/sonar/issues.json:12-54"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "sonnet5-cenario-1",
+      "model": "sonnet5",
+      "scenario": "1",
+      "score": 49.0,
+      "classification": "fragil",
+      "dimension_scores": {
+        "clean_architecture": 2,
+        "ddd": 2,
+        "solid": 2,
+        "testability": 1,
+        "test_quality": 0,
+        "transactional_integrity": 4,
+        "concurrency_design": 2,
+        "observability": 1,
+        "operational_readiness": 2,
+        "simplicity_fit": 3
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": false,
+        "rationale": "O snapshot nao possui testes nem historico de desenvolvimento."
+      },
+      "critical_risks": [
+        {
+          "severity": "high",
+          "risk": "Falhas SQLSTATE 40001 viram HTTP 500 sem retry, rejeitando transferencias ainda cobertas pelo saldo.",
+          "evidence": [
+            "artifacts/functional-robustness-v1/20260913T022017Z/sonnet5-cenario-1/logs/application.stderr.log:2-8"
+          ]
+        },
+        {
+          "severity": "high",
+          "risk": "Nenhum teste foi produzido.",
+          "evidence": [
+            "artifacts/initial-quality-v1/20260907T002744Z/report.md:15"
+          ]
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "run_id": "sonnet5-cenario-2",
+      "model": "sonnet5",
+      "scenario": "2",
+      "score": 82.25,
+      "classification": "adequado",
+      "dimension_scores": {
+        "clean_architecture": 4,
+        "ddd": 3,
+        "solid": 4,
+        "testability": 4,
+        "test_quality": 3,
+        "transactional_integrity": 4,
+        "concurrency_design": 3,
+        "observability": 2,
+        "operational_readiness": 2,
+        "simplicity_fit": 2
+      },
+      "tdd": {
+        "status": "not_provable",
+        "tests_present": true,
+        "rationale": "README declara TDD, mas snapshot final nao prova a ordem dos ciclos."
+      },
+      "critical_risks": [
+        {
+          "severity": "critical",
+          "risk": "Dockerfile declara Go 1.23 para modulo que exige Go 1.26.",
+          "evidence": [
+            "go.mod:3",
+            "Dockerfile:3"
+          ]
+        },
+        {
+          "severity": "medium",
+          "risk": "Sem idempotencia para retries ambiguos.",
+          "evidence": [
+            "internal/usecase/transfer.go:12-18",
+            "migrations/001_create_wallets_and_transactions.up.sql:17-25"
+          ]
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "paired_deltas": [
+    {
+      "model": "chatgpt56sol",
+      "cenario_1": 58.5,
+      "cenario_2": 82.75,
+      "delta": 24.25
+    },
+    {
+      "model": "gemini37flash",
+      "cenario_1": 29.5,
+      "cenario_2": 70.5,
+      "delta": 41.0
+    },
+    {
+      "model": "grok46",
+      "cenario_1": 44.75,
+      "cenario_2": 78.25,
+      "delta": 33.5
+    },
+    {
+      "model": "kimik3",
+      "cenario_1": 53.0,
+      "cenario_2": 93.5,
+      "delta": 40.5
+    },
+    {
+      "model": "sonnet5",
+      "cenario_1": 49.0,
+      "cenario_2": 82.25,
+      "delta": 33.25
+    }
+  ]
+}

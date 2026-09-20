@@ -1,0 +1,112 @@
+{
+  "campaign": "functional-smoke-v1",
+  "execution_id": "20260913T014837Z",
+  "runs": [
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-1",
+      "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 201,
+          "expected": true,
+          "json": {
+            "amount": "12.50",
+            "created_at": "2026-09-12T22:48:47.575203-03:00",
+            "destination_user_id": "bench-b",
+            "id": "04b4e190-d468-401b-9aaf-32a18cdf234e",
+            "source_user_id": "bench-a"
+          },
+          "body": "{\"amount\":\"12.50\",\"created_at\":\"2026-09-12T22:48:47.575203-03:00\",\"destination_user_id\":\"bench-b\",\"id\":\"04b4e190-d468-401b-9aaf-32a18cdf234e\",\"source_user_id\":\"bench-a\"}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "migration_applied_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 0.446
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.714,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.14,
+          "source": "migrations/001_init.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.11,
+          "source": "benchmark/functional/sql/chatgpt56sol-cenario-1.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 5.634,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.007,
+          "pid": 73083
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.513,
+          "type": "http"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.009,
+          "status_code": 201
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.199
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.008,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    }
+  ]
+}

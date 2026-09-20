@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-2",
+  "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "http",
+    "response": {
+      "status_code": 201,
+      "expected": true,
+      "json": {
+        "transfer_id": 1,
+        "from_account_id": 101,
+        "to_account_id": 102,
+        "amount_cents": 1250,
+        "from_account_balance_left": 8750,
+        "to_account_balance_left": 3250,
+        "status": "COMPLETED"
+      },
+      "body": "{\"transfer_id\":1,\"from_account_id\":101,\"to_account_id\":102,\"amount_cents\":1250,\"from_account_balance_left\":8750,\"to_account_balance_left\":3250,\"status\":\"COMPLETED\"}\n"
+    },
+    "state": {
+      "source_before_cents": 10000,
+      "destination_before_cents": 2000,
+      "source_after_cents": 8750,
+      "destination_after_cents": 3250,
+      "total_before_cents": 12000,
+      "total_after_cents": 12000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 6,
+    "assistance": [
+      "database_provisioned",
+      "schema_created_external",
+      "seed_applied_external",
+      "environment_injected",
+      "build_command_supplied",
+      "readiness_probe_supplied"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 125.969
+    },
+    "database": {
+      "status": "passed",
+      "duration_seconds": 2.711,
+      "image": "postgres:16-alpine"
+    },
+    "migration": {
+      "status": "passed",
+      "duration_seconds": 0.134,
+      "source": "benchmark/functional/sql/gemini37flash-cenario-2-schema.sql"
+    },
+    "seed": {
+      "status": "passed",
+      "duration_seconds": 0.078,
+      "source": "benchmark/functional/sql/gemini37flash-cenario-2.sql"
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 4.08,
+      "exit_code": 0
+    },
+    "startup": {
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "pid": 74003
+    },
+    "readiness": {
+      "status": "passed",
+      "duration_seconds": 0.506,
+      "type": "http"
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.01,
+      "status_code": 201
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.205
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.008,
+      "method": "graceful"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

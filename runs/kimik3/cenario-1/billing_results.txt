@@ -1,0 +1,4 @@
+model=kimik3
+time=6min 42s
+tokens=18057 tokens 
+spent=$0.26

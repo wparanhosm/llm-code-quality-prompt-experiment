@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-1",
+  "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "oneshot",
+    "response": null,
+    "state": {
+      "source_before_cents": 15000,
+      "destination_before_cents": 5000,
+      "source_after_cents": 10500,
+      "destination_after_cents": 9500,
+      "total_before_cents": 20000,
+      "total_after_cents": 20000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 2,
+    "assistance": [
+      "build_command_supplied",
+      "working_directory_isolated"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 0.126
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 4.636,
+      "exit_code": 0
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.124,
+      "exit_code": 0
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.015
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.001,
+      "method": "already_stopped"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-2",
+  "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "http",
+    "response": {
+      "status_code": 200,
+      "expected": true,
+      "json": {
+        "transaction_id": "2e5dd3ae-bd09-4828-b77a-8dcd67c82cf7",
+        "from_wallet_id": "bench-a",
+        "to_wallet_id": "bench-b",
+        "amount_cents": 1250,
+        "from_new_balance": 8750,
+        "to_new_balance": 3250
+      },
+      "body": "{\"transaction_id\":\"2e5dd3ae-bd09-4828-b77a-8dcd67c82cf7\",\"from_wallet_id\":\"bench-a\",\"to_wallet_id\":\"bench-b\",\"amount_cents\":1250,\"from_new_balance\":8750,\"to_new_balance\":3250}\n"
+    },
+    "state": {
+      "source_before_cents": 10000,
+      "destination_before_cents": 2000,
+      "source_after_cents": 8750,
+      "destination_after_cents": 3250,
+      "total_before_cents": 12000,
+      "total_after_cents": 12000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 6,
+    "assistance": [
+      "database_provisioned",
+      "migration_applied_external",
+      "seed_applied_external",
+      "environment_injected",
+      "build_command_supplied",
+      "readiness_probe_supplied"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 1.406
+    },
+    "database": {
+      "status": "passed",
+      "duration_seconds": 2.679,
+      "image": "postgres:16-alpine"
+    },
+    "migration": {
+      "status": "passed",
+      "duration_seconds": 0.133,
+      "source": "migrations/001_create_wallets_and_transactions.up.sql"
+    },
+    "seed": {
+      "status": "passed",
+      "duration_seconds": 0.093,
+      "source": "benchmark/functional/sql/sonnet5-cenario-2.sql"
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 5.534,
+      "exit_code": 0
+    },
+    "startup": {
+      "status": "passed",
+      "duration_seconds": 0.008,
+      "pid": 75301
+    },
+    "readiness": {
+      "status": "passed",
+      "duration_seconds": 0.503,
+      "type": "http"
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.016,
+      "status_code": 200
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.181
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.009,
+      "method": "graceful"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

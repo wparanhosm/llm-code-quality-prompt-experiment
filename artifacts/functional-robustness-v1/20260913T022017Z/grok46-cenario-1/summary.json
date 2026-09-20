@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-1",
+  "status": "passed",
+  "error": null,
+  "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+  "cases": [
+    {
+      "id": "same_account",
+      "status": "passed",
+      "response": {
+        "exit_code": 1,
+        "expected": true,
+        "stderr": "2026/09/12 23:25:35 origem e destino nao podem ser iguais\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          100000,
+          25000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "zero",
+      "status": "passed",
+      "response": {
+        "exit_code": 2,
+        "expected": true,
+        "stderr": "uso: pix -from=1 -to=2 -amount=1500\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          100000,
+          25000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "negative",
+      "status": "passed",
+      "response": {
+        "exit_code": 1,
+        "expected": true,
+        "stderr": "2026/09/12 23:25:35 valor deve ser maior que zero\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          100000,
+          25000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "missing_wallet",
+      "status": "passed",
+      "response": {
+        "exit_code": 1,
+        "expected": true,
+        "stderr": "2026/09/12 23:25:35 destino: carteira nao encontrada\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          100000,
+          25000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "insufficient_funds",
+      "status": "passed",
+      "response": {
+        "exit_code": 1,
+        "expected": true,
+        "stderr": "2026/09/12 23:25:36 saldo insuficiente\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          100000,
+          25000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "concurrency",
+      "status": "passed",
+      "checks": {
+        "bounded_successes": true,
+        "balances_match_successes": true,
+        "total_conserved": true,
+        "ledger_matches_successes": true,
+        "non_negative_balances": true,
+        "all_requests_accounted": true
+      },
+      "observed": {
+        "requests": 10,
+        "successes": 10,
+        "responses": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "balances": [
+          80000,
+          45000
+        ],
+        "ledger_rows": 10
+      }
+    }
+  ]
+}

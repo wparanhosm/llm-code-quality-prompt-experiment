@@ -1,0 +1,301 @@
+{
+  "total": 1,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 1
+  },
+  "effortTotal": 7,
+  "issues": [
+    {
+      "key": "f4e2ceec-c266-4b51-bbe7-77e83938b7da",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+      "project": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z",
+      "line": 39,
+      "hash": "9872bdf9dfe13d73ab02e14b411a2a8a",
+      "textRange": {
+        "startLine": 39,
+        "endLine": 39,
+        "startOffset": 18,
+        "endOffset": 25
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 40,
+                "endLine": 40,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 40,
+                "endLine": 40,
+                "startOffset": 19,
+                "endOffset": 21
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 45,
+                "endLine": 45,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 49,
+                "endLine": 49,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 49,
+                "endLine": 49,
+                "startOffset": 57,
+                "endOffset": 59
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 60,
+                "endLine": 60,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 65,
+                "endLine": 65,
+                "startOffset": 1,
+                "endOffset": 4
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 68,
+                "endLine": 68,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 75,
+                "endLine": 75,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 78,
+                "endLine": 78,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 81,
+                "endLine": 81,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 85,
+                "endLine": 85,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 88,
+                "endLine": 88,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 95,
+                "endLine": 95,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+              "textRange": {
+                "startLine": 102,
+                "endLine": 102,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.",
+      "effort": "7min",
+      "debt": "7min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:04:33+0000",
+      "updateDate": "2026-09-13T01:04:33+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z:internal/transfer/service.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "service.go",
+      "longName": "internal/transfer/service.go",
+      "path": "internal/transfer/service.go"
+    },
+    {
+      "key": "lqcpe-chatgpt56sol-cenario-1-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "chatgpt56sol-cenario-1",
+      "longName": "chatgpt56sol-cenario-1"
+    }
+  ],
+  "facets": []
+}

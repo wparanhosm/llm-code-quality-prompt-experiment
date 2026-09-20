@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "run_id": "chatgpt56sol-cenario-2",
+  "source_path": "runs/chatgpt56sol/cenario-2",
+  "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+  "declared_go_version": "1.23",
+  "billing": {
+    "status": "parsed",
+    "source_file": "billing_result.txt",
+    "model": "chatgpt5.6 sol",
+    "time_raw": "5m 5s",
+    "time_seconds": 305,
+    "tokens": 16930,
+    "spent_usd": 0.23
+  },
+  "commands": [
+    {
+      "name": "format",
+      "command": [
+        "gofmt",
+        "-l",
+        "."
+      ],
+      "started_at": "2026-09-07T00:31:40.133112+00:00",
+      "duration_seconds": 0.771,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/format.stdout.log",
+      "stderr": "logs/format.stderr.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "go",
+        "build",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:31:40.904221+00:00",
+      "duration_seconds": 23.35,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/build.stdout.log",
+      "stderr": "logs/build.stderr.log"
+    },
+    {
+      "name": "vet",
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:32:04.252345+00:00",
+      "duration_seconds": 8.298,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/vet.stdout.log",
+      "stderr": "logs/vet.stderr.log"
+    },
+    {
+      "name": "test",
+      "command": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:32:12.550624+00:00",
+      "duration_seconds": 8.356,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/test.stdout.log",
+      "stderr": "logs/test.stderr.log"
+    },
+    {
+      "name": "race",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:32:20.907141+00:00",
+      "duration_seconds": 28.534,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/race.stdout.log",
+      "stderr": "logs/race.stderr.log"
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-covermode=atomic",
+        "-coverpkg=./...",
+        "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/chatgpt56sol-cenario-2/coverage/generated-tests.out",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:32:49.438356+00:00",
+      "duration_seconds": 7.794,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/coverage.stdout.log",
+      "stderr": "logs/coverage.stderr.log"
+    }
+  ],
+  "tests": {
+    "tests_run": 55,
+    "tests_passed": 55,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "coverage_percent": 74.9
+  },
+  "quality": {
+    "format_clean": true,
+    "build_passed": true,
+    "vet_passed": true,
+    "tests_passed": true,
+    "race_passed": true,
+    "coverage_generated": true
+  },
+  "security": {
+    "govulncheck": {
+      "status": "not_run",
+      "available": false,
+      "path": null
+    },
+    "gosec": {
+      "status": "not_run",
+      "available": false,
+      "path": null
+    },
+    "golangci_lint": {
+      "status": "not_run",
+      "available": false,
+      "path": null
+    },
+    "sonar": {
+      "status": "not_run",
+      "reason": "requires explicit scanner credentials/configuration"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "run_id": "chatgpt56sol-cenario-2",
+  "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "http",
+    "response": {
+      "status_code": 201,
+      "expected": true,
+      "json": {
+        "ID": "be06264d27f29fa0e7a5aa6ffa06808a",
+        "Amount": "12.50",
+        "CreatedAt": "2026-09-13T01:53:55.835155891Z"
+      },
+      "body": "{\"ID\":\"be06264d27f29fa0e7a5aa6ffa06808a\",\"Amount\":\"12.50\",\"CreatedAt\":\"2026-09-13T01:53:55.835155891Z\"}\n"
+    },
+    "state": {
+      "source_before_cents": 10000,
+      "destination_before_cents": 2000,
+      "source_after_cents": 8750,
+      "destination_after_cents": 3250,
+      "total_before_cents": 12000,
+      "total_after_cents": 12000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 6,
+    "assistance": [
+      "database_provisioned",
+      "migration_applied_external",
+      "seed_applied_external",
+      "environment_injected",
+      "build_command_supplied",
+      "readiness_probe_supplied"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 138.447
+    },
+    "database": {
+      "status": "passed",
+      "duration_seconds": 2.768,
+      "image": "postgres:16-alpine"
+    },
+    "migration": {
+      "status": "passed",
+      "duration_seconds": 0.141,
+      "source": "migrations/001_init.sql"
+    },
+    "seed": {
+      "status": "passed",
+      "duration_seconds": 0.072,
+      "source": "benchmark/functional/sql/chatgpt56sol-cenario-2.sql"
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 4.03,
+      "exit_code": 0
+    },
+    "startup": {
+      "status": "passed",
+      "duration_seconds": 0.007,
+      "pid": 73643
+    },
+    "readiness": {
+      "status": "passed",
+      "duration_seconds": 0.501,
+      "type": "tcp"
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.013,
+      "status_code": 201
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.176
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.008,
+      "method": "graceful"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

@@ -1,0 +1,4 @@
+model=gemini 3.7 flash
+time=4m 19s
+tokens= 66500
+spent= $0.32

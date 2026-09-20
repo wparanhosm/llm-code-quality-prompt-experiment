@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-2",
+  "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+  "status": "passed",
+  "error": null,
+  "planned_iterations": 1000000,
+  "pairs": 100,
+  "vus": 50,
+  "k6": {
+    "exit_code": 0,
+    "duration_seconds": 563.451,
+    "metrics": {
+      "iterations": 1000000,
+      "http_reqs": 1000000,
+      "successful_transfers": 1000000,
+      "unexpected_statuses": 0,
+      "status_counts": {
+        "200": 1000000,
+        "201": 0,
+        "400": 0,
+        "404": 0,
+        "409": 0,
+        "422": 0,
+        "500": 0,
+        "other": 0
+      },
+      "http_req_failed_rate": null,
+      "requests_per_second": 1779.21651404441,
+      "latency_avg_ms": 27.532774080041957,
+      "latency_med_ms": 20.766280000000002,
+      "latency_p90_ms": 47.87338409999998,
+      "latency_p95_ms": 73.27661954999998,
+      "latency_p99_ms": 127.82712221
+    }
+  },
+  "reconciliation": {
+    "observed": {
+      "wallet_count": 200,
+      "source_total": 0,
+      "destination_total": 1000000,
+      "total_balance": 1000000,
+      "negative_wallets": 0,
+      "ledger_rows": 1000000,
+      "ledger_amount": 1000000
+    },
+    "expected": {
+      "wallet_count": 200,
+      "source_total": 0,
+      "destination_total": 1000000,
+      "total_balance": 1000000,
+      "negative_wallets": 0,
+      "ledger_rows": 1000000,
+      "ledger_amount": 1000000
+    },
+    "checks": {
+      "wallet_count": true,
+      "source_total": true,
+      "destination_total": true,
+      "total_balance": true,
+      "negative_wallets": true,
+      "ledger_rows": true,
+      "ledger_amount": true
+    },
+    "passed": true
+  },
+  "operational_assistance": [
+    "snapshot_materialized",
+    "database_provisioned",
+    "seed_applied_external",
+    "environment_injected",
+    "application_logs_discarded_during_load"
+  ]
+}

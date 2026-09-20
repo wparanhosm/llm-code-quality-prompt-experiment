@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "functional-smoke-v1",
+  "postgres_image": "postgres:16-alpine",
+  "postgres_user": "benchmark",
+  "postgres_password": "benchmark-local-only",
+  "timeouts_seconds": {"database": 60, "build": 900, "startup": 60, "request": 15, "shutdown": 10},
+  "runs": [
+    {
+      "id": "chatgpt56sol-cenario-1", "source": "runs/chatgpt56sol/cenario-1", "interface": "http", "database": "postgres",
+      "migration": "migrations/001_init.sql", "seed": "benchmark/functional/sql/chatgpt56sol-cenario-1.sql",
+      "build": ["go", "build", "-o", "{binary}", "./cmd/api"], "start": ["{binary}"],
+      "environment": {"DATABASE_URL": "{postgres_dsn}", "HTTP_ADDR": "127.0.0.1:{http_port}"},
+      "readiness": {"type": "http", "path": "/health"},
+      "request": {"method": "POST", "path": "/transfers", "body": {"source_user_id": "bench-a", "destination_user_id": "bench-b", "amount": "12.50"}, "expected_status": [201]},
+      "state": {"balances": "SELECT balance_cents FROM wallets WHERE id IN ('bench-a','bench-b') ORDER BY id", "ledger": "SELECT COUNT(*) FROM transfers WHERE source_wallet_id='bench-a' AND destination_wallet_id='bench-b' AND amount_cents=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["database_provisioned", "migration_applied_external", "seed_applied_external", "environment_injected", "build_command_supplied", "readiness_probe_supplied"]
+    },
+    {
+      "id": "chatgpt56sol-cenario-2", "source": "runs/chatgpt56sol/cenario-2", "interface": "http", "database": "postgres",
+      "migration": "migrations/001_init.sql", "seed": "benchmark/functional/sql/chatgpt56sol-cenario-2.sql",
+      "build": ["go", "build", "-o", "{binary}", "./cmd/api"], "start": ["{binary}"],
+      "environment": {"DATABASE_URL": "{postgres_dsn}", "HTTP_ADDR": "127.0.0.1:{http_port}", "DB_MAX_OPEN_CONNS": "20"},
+      "readiness": {"type": "tcp"},
+      "request": {"method": "POST", "path": "/v1/transfers", "body": {"source_wallet_id": "bench-a", "destination_wallet_id": "bench-b", "amount": "12.50"}, "expected_status": [201]},
+      "state": {"balances": "SELECT balance_cents FROM wallets WHERE id IN ('bench-a','bench-b') ORDER BY id", "ledger": "SELECT COUNT(*) FROM transfers WHERE source_wallet_id='bench-a' AND destination_wallet_id='bench-b' AND amount_cents=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["database_provisioned", "migration_applied_external", "seed_applied_external", "environment_injected", "build_command_supplied", "readiness_probe_supplied"]
+    },
+    {
+      "id": "gemini37flash-cenario-1", "source": "runs/gemini37flash/cenario-1", "interface": "oneshot", "database": "sqlite", "sqlite_file": "pix_wallets.db",
+      "build": ["go", "build", "-o", "{binary}", "."], "start": ["{binary}"],
+      "state": {"balances": "SELECT balance FROM wallets WHERE user_id IN ('user_alice','user_bob') ORDER BY user_id", "ledger": "SELECT COUNT(*) FROM pix_transactions WHERE sender_id='user_alice' AND receiver_id='user_bob' AND amount=4500"},
+      "expected": {"before": [15000, 5000], "after": [10500, 9500], "ledger": 1},
+      "assistance": ["build_command_supplied", "working_directory_isolated"]
+    },
+    {
+      "id": "gemini37flash-cenario-2", "source": "runs/gemini37flash/cenario-2", "interface": "http", "database": "postgres",
+      "migration_external": "benchmark/functional/sql/gemini37flash-cenario-2-schema.sql", "seed": "benchmark/functional/sql/gemini37flash-cenario-2.sql",
+      "build": ["go", "build", "-o", "{binary}", "./cmd/api"], "start": ["{binary}"],
+      "environment": {"DB_HOST": "127.0.0.1", "DB_PORT": "{postgres_port}", "DB_USER": "benchmark", "DB_PASSWORD": "benchmark-local-only", "DB_NAME": "{postgres_database}", "PORT": "{http_port}"},
+      "readiness": {"type": "http", "path": "/health"},
+      "request": {"method": "POST", "path": "/transfers", "body": {"from_account_id": 101, "to_account_id": 102, "amount_cents": 1250}, "expected_status": [201]},
+      "state": {"balances": "SELECT balance_cents FROM accounts WHERE id IN (101,102) ORDER BY id", "ledger": "SELECT COUNT(*) FROM transfers WHERE from_account_id=101 AND to_account_id=102 AND amount_cents=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["database_provisioned", "schema_created_external", "seed_applied_external", "environment_injected", "build_command_supplied", "readiness_probe_supplied"]
+    },
+    {
+      "id": "grok46-cenario-1", "source": "runs/grok46/cenario-1", "interface": "cli", "database": "sqlite", "sqlite_file": "runtime/pix.db",
+      "environment": {"CGO_ENABLED": "1"}, "build": ["go", "build", "-o", "{binary}", "./cmd/pix"],
+      "start": ["{binary}", "-db={sqlite_path}", "-from=1", "-to=2", "-amount=1250"],
+      "state": {"balances": "SELECT balance FROM wallets WHERE user_id IN (1,2) ORDER BY user_id", "ledger": "SELECT COUNT(*) FROM transfers WHERE from_user_id=1 AND to_user_id=2 AND amount=1250"},
+      "expected": {"before": [100000, 25000], "after": [98750, 26250], "ledger": 1},
+      "assistance": ["build_command_supplied", "cli_arguments_supplied", "working_directory_isolated"]
+    },
+    {
+      "id": "grok46-cenario-2", "source": "runs/grok46/cenario-2", "interface": "http", "database": "postgres",
+      "migration_external": "benchmark/functional/sql/grok46-cenario-2-schema.sql", "seed": "benchmark/functional/sql/grok46-cenario-2.sql",
+      "build": ["go", "build", "-o", "{binary}", "./cmd/p2p-transfer"], "start": ["{binary}"],
+      "environment": {"DATABASE_URL": "{postgres_dsn}", "HTTP_ADDR": "127.0.0.1:{http_port}"},
+      "readiness": {"type": "http", "path": "/health"},
+      "request": {"method": "POST", "path": "/transfers", "body": {"from_wallet_id": "bench-a", "to_wallet_id": "bench-b", "amount": 1250}, "expected_status": [201]},
+      "state": {"balances": "SELECT balance_cents FROM wallets WHERE id IN ('bench-a','bench-b') ORDER BY id", "ledger": "SELECT COUNT(*) FROM transfers WHERE from_wallet_id='bench-a' AND to_wallet_id='bench-b' AND amount_cents=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["database_provisioned", "migration_reconstructed_external", "seed_applied_external", "environment_injected", "build_command_supplied", "readiness_probe_supplied"]
+    },
+    {
+      "id": "kimik3-cenario-1", "source": "runs/kimik3/cenario-1", "interface": "http", "database": "sqlite", "sqlite_file": "pix.db", "fixed_http_port": 8080,
+      "build": ["go", "build", "-o", "{binary}", "."], "start": ["{binary}"],
+      "readiness": {"type": "tcp"},
+      "prepare_http": [{"method": "POST", "path": "/wallets", "body": {"id": "bench-a", "saldo_inicial": 100.0}, "expected_status": [201]}, {"method": "POST", "path": "/wallets", "body": {"id": "bench-b", "saldo_inicial": 20.0}, "expected_status": [201]}],
+      "request": {"method": "POST", "path": "/pix/transfer", "body": {"origem": "bench-a", "destino": "bench-b", "valor": 12.5}, "expected_status": [200]},
+      "state": {"balances": "SELECT balance_cents FROM wallets WHERE id IN ('bench-a','bench-b') ORDER BY id", "ledger": "SELECT COUNT(*) FROM transactions WHERE from_wallet_id='bench-a' AND to_wallet_id='bench-b' AND amount_cents=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["build_command_supplied", "working_directory_isolated", "fixed_port_required", "readiness_probe_supplied", "seed_via_public_api"]
+    },
+    {
+      "id": "kimik3-cenario-2", "source": "runs/kimik3/cenario-2", "interface": "http", "database": "postgres",
+      "migration": "migrations/000001_create_wallets_and_transactions.up.sql", "seed": "benchmark/functional/sql/kimik3-cenario-2.sql",
+      "build": ["go", "build", "-o", "{binary}", "./cmd/wallet-p2p-api"], "start": ["{binary}"],
+      "environment": {"DATABASE_DSN": "{postgres_dsn}", "HTTP_ADDR": "127.0.0.1:{http_port}"},
+      "readiness": {"type": "http", "path": "/readyz"},
+      "request": {"method": "POST", "path": "/v1/transfers", "body": {"from_wallet_id": "11111111-1111-1111-1111-111111111111", "to_wallet_id": "22222222-2222-2222-2222-222222222222", "amount_cents": 1250}, "expected_status": [201]},
+      "state": {"balances": "SELECT balance_cents FROM wallets WHERE id IN ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222') ORDER BY id", "ledger": "SELECT COUNT(*) FROM transactions WHERE from_wallet_id='11111111-1111-1111-1111-111111111111' AND to_wallet_id='22222222-2222-2222-2222-222222222222' AND amount_cents=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["database_provisioned", "migration_applied_external", "seed_applied_external", "environment_injected", "build_command_supplied", "readiness_probe_supplied"]
+    },
+    {
+      "id": "sonnet5-cenario-1", "source": "runs/sonnet5/cenario-1", "interface": "http", "database": "postgres",
+      "migration": "migrations/001_init.sql", "seed": "benchmark/functional/sql/sonnet5-cenario-1.sql",
+      "build": ["go", "build", "-o", "{binary}", "./cmd/api"], "start": ["{binary}"],
+      "environment": {"DATABASE_URL": "{postgres_dsn}", "HTTP_ADDR": "127.0.0.1:{http_port}"},
+      "readiness": {"type": "tcp"},
+      "request": {"method": "POST", "path": "/transfers", "body": {"from_user_id": "11111111-1111-1111-1111-111111111111", "to_user_id": "22222222-2222-2222-2222-222222222222", "amount_cents": 1250, "idempotency_key": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"}, "expected_status": [200]},
+      "state": {"balances": "SELECT balance_cents FROM wallets WHERE user_id IN ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222') ORDER BY user_id", "ledger": "SELECT COUNT(*) FROM transfers WHERE from_user_id='11111111-1111-1111-1111-111111111111' AND to_user_id='22222222-2222-2222-2222-222222222222' AND amount_cents=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["database_provisioned", "migration_applied_external", "seed_applied_external", "environment_injected", "build_command_supplied", "readiness_probe_supplied"]
+    },
+    {
+      "id": "sonnet5-cenario-2", "source": "runs/sonnet5/cenario-2", "interface": "http", "database": "postgres",
+      "migration": "migrations/001_create_wallets_and_transactions.up.sql", "seed": "benchmark/functional/sql/sonnet5-cenario-2.sql",
+      "build": ["go", "build", "-o", "{binary}", "./cmd/p2ptransfer"], "start": ["{binary}"],
+      "environment": {"DATABASE_DSN": "{postgres_dsn}", "HTTP_ADDR": "127.0.0.1:{http_port}", "LOG_LEVEL": "info"},
+      "readiness": {"type": "http", "path": "/healthz"},
+      "request": {"method": "POST", "path": "/transfers", "body": {"from_wallet_id": "bench-a", "to_wallet_id": "bench-b", "amount_cents": 1250}, "expected_status": [200]},
+      "state": {"balances": "SELECT balance FROM wallets WHERE id IN ('bench-a','bench-b') ORDER BY id", "ledger": "SELECT COUNT(*) FROM transactions WHERE from_wallet_id='bench-a' AND to_wallet_id='bench-b' AND amount=1250"},
+      "expected": {"before": [10000, 2000], "after": [8750, 3250], "ledger": 1},
+      "assistance": ["database_provisioned", "migration_applied_external", "seed_applied_external", "environment_injected", "build_command_supplied", "readiness_probe_supplied"]
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-2",
+  "status": "passed",
+  "error": null,
+  "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+  "cases": [
+    {
+      "id": "same_account",
+      "status": "passed",
+      "response": {
+        "status_code": 422,
+        "expected": true,
+        "json": {
+          "error": "transfer validation error: cannot transfer money to the same account"
+        },
+        "body": "{\"error\":\"transfer validation error: cannot transfer money to the same account\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "zero",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "amount_cents must be strictly greater than zero"
+        },
+        "body": "{\"error\":\"amount_cents must be strictly greater than zero\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "negative",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "amount_cents must be strictly greater than zero"
+        },
+        "body": "{\"error\":\"amount_cents must be strictly greater than zero\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "missing_wallet",
+      "status": "passed",
+      "response": {
+        "status_code": 404,
+        "expected": true,
+        "json": {
+          "error": "transaction failed: account not found: account ID 999999"
+        },
+        "body": "{\"error\":\"transaction failed: account not found: account ID 999999\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "insufficient_funds",
+      "status": "passed",
+      "response": {
+        "status_code": 422,
+        "expected": true,
+        "json": {
+          "error": "transaction failed: debit failed: insufficient balance: account 101 balance 10000 is less than required 100000"
+        },
+        "body": "{\"error\":\"transaction failed: debit failed: insufficient balance: account 101 balance 10000 is less than required 100000\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "concurrency",
+      "status": "passed",
+      "checks": {
+        "bounded_successes": true,
+        "balances_match_successes": true,
+        "total_conserved": true,
+        "ledger_matches_successes": true,
+        "non_negative_balances": true,
+        "all_requests_accounted": true
+      },
+      "observed": {
+        "requests": 10,
+        "successes": 5,
+        "responses": [
+          422,
+          201,
+          201,
+          201,
+          201,
+          422,
+          201,
+          422,
+          422,
+          422
+        ],
+        "balances": [
+          0,
+          12000
+        ],
+        "ledger_rows": 5
+      }
+    }
+  ]
+}

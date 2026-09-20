@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-2",
+  "status": "passed",
+  "error": null,
+  "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+  "cases": [
+    {
+      "id": "same_account",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "origin and destination wallets must differ"
+        },
+        "body": "{\"error\":\"origin and destination wallets must differ\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "zero",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "transfer amount must be greater than zero"
+        },
+        "body": "{\"error\":\"transfer amount must be greater than zero\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "negative",
+      "status": "passed",
+      "response": {
+        "status_code": 400,
+        "expected": true,
+        "json": {
+          "error": "transfer amount must be greater than zero"
+        },
+        "body": "{\"error\":\"transfer amount must be greater than zero\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "missing_wallet",
+      "status": "passed",
+      "response": {
+        "status_code": 404,
+        "expected": true,
+        "json": {
+          "error": "execute transfer: wallet missing-wallet: wallet not found"
+        },
+        "body": "{\"error\":\"execute transfer: wallet missing-wallet: wallet not found\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "insufficient_funds",
+      "status": "passed",
+      "response": {
+        "status_code": 409,
+        "expected": true,
+        "json": {
+          "error": "execute transfer: wallet bench-a: insufficient funds"
+        },
+        "body": "{\"error\":\"execute transfer: wallet bench-a: insufficient funds\"}\n"
+      },
+      "checks": {
+        "expected_rejection": true,
+        "balances_unchanged": true,
+        "ledger_unchanged": true
+      },
+      "observed": {
+        "balances": [
+          10000,
+          2000
+        ],
+        "ledger_rows": 0
+      }
+    },
+    {
+      "id": "concurrency",
+      "status": "passed",
+      "checks": {
+        "bounded_successes": true,
+        "balances_match_successes": true,
+        "total_conserved": true,
+        "ledger_matches_successes": true,
+        "non_negative_balances": true,
+        "all_requests_accounted": true
+      },
+      "observed": {
+        "requests": 10,
+        "successes": 5,
+        "responses": [
+          201,
+          201,
+          201,
+          201,
+          409,
+          409,
+          409,
+          201,
+          409,
+          409
+        ],
+        "balances": [
+          0,
+          12000
+        ],
+        "ledger_rows": 5
+      }
+    }
+  ]
+}

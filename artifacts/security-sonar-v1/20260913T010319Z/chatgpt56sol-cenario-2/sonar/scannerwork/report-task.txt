@@ -1,0 +1,6 @@
+projectKey=lqcpe-chatgpt56sol-cenario-2-20260913T010319Z
+serverUrl=http://sonarqube:9000
+serverVersion=26.6.0.123539
+dashboardUrl=http://sonarqube:9000/dashboard?id=lqcpe-chatgpt56sol-cenario-2-20260913T010319Z
+ceTaskId=a04fdad9-0990-42b7-adce-3d18cfa8aeb5
+ceTaskUrl=http://sonarqube:9000/api/ce/task?id=a04fdad9-0990-42b7-adce-3d18cfa8aeb5

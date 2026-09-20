@@ -1,0 +1,182 @@
+{
+  "schema_version": "1.0",
+  "rubric": "benchmark/architecture/rubric.json",
+  "evidence": {
+    "quality": "artifacts/initial-quality-v1/20260907T002744Z/summary.json",
+    "security": "artifacts/security-sonar-v1/20260913T010319Z/consolidated-summary.json",
+    "functional_smoke": "artifacts/functional-smoke-v1/20260913T015119Z/summary.json",
+    "functional_robustness": "artifacts/functional-robustness-v1/20260913T022017Z/summary.json"
+  },
+  "runs": [
+    {
+      "run_id": "chatgpt56sol-cenario-1", "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "Ha testes, mas nenhum historico red-green-refactor verificavel."},
+      "dimensions": {
+        "clean_architecture": {"score": 2, "rationale": "HTTP e dinheiro estao separados, mas o servico central depende diretamente de pgx e SQL.", "evidence": ["internal/httpapi/handler.go:15-34", "internal/transfer/service.go:9-20", "internal/transfer/service.go:38-105"]},
+        "ddd": {"score": 1, "rationale": "Money protege precisao, mas carteira e transferencia nao formam modelo rico; regras vivem no servico SQL.", "evidence": ["internal/money/money.go:10-50", "internal/transfer/service.go:26-32"]},
+        "solid": {"score": 2, "rationale": "Ha abstracao no handler, mas o servico acumula validacao, locking, persistencia e transacao.", "evidence": ["internal/httpapi/handler.go:15-21", "internal/transfer/service.go:38-105"]},
+        "testability": {"score": 2, "rationale": "Handler e Money sao isolaveis; transacao, repositorio, relogio e ID nao sao portas do nucleo.", "evidence": ["internal/httpapi/handler_test.go:15-22", "internal/transfer/service.go:18-20"]},
+        "test_quality": {"score": 2, "rationale": "Testa parsing e HTTP, mas nao o servico transacional, rollback ou concorrencia.", "evidence": ["internal/money/money_test.go:8-35", "internal/httpapi/handler_test.go:28-59", "artifacts/initial-quality-v1/20260907T002744Z/report.md:7"]},
+        "transactional_integrity": {"score": 3, "rationale": "Debito, credito e ledger sao atomicos e o smoke confirmou conservacao; faltam fault injection e idempotencia.", "evidence": ["internal/transfer/service.go:44-104", "migrations/001_init.sql:3-17", "artifacts/functional-smoke-v1/20260913T015119Z/report.md:7"]},
+        "concurrency_design": {"score": 3, "rationale": "Locks ordenados impediram double spending no teste real, sem retry ou teste de deadlock inverso.", "evidence": ["internal/transfer/service.go:54-89", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:7"]},
+        "observability": {"score": 1, "rationale": "Logs basicos sem correlacao, metricas ou tracing.", "evidence": ["internal/httpapi/handler.go:71-74", "cmd/api/main.go:55-59"]},
+        "operational_readiness": {"score": 3, "rationale": "Dockerfile, Compose, migration, timeouts e shutdown funcionam; health nao verifica banco.", "evidence": ["Dockerfile:1-11", "compose.yaml:1-29", "cmd/api/main.go:61-72"]},
+        "simplicity_fit": {"score": 4, "rationale": "Solucao compacta com garantias essenciais e pouca cerimonia.", "evidence": ["internal/transfer/service.go:18-35", "cmd/api/main.go:45-53"]}
+      },
+      "critical_risks": [{"severity": "high", "risk": "Retries podem duplicar transferencias por ausencia de idempotencia.", "evidence": ["internal/httpapi/handler.go:23-27", "internal/transfer/service.go:95-104"]}]
+    },
+    {
+      "run_id": "chatgpt56sol-cenario-2", "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "Suite ampla sem evidencia temporal do processo TDD."},
+      "dimensions": {
+        "clean_architecture": {"score": 4, "rationale": "Dominio, aplicacao, delivery e infraestrutura possuem dependencias direcionadas para dentro.", "evidence": ["internal/application/transfer.go:20-31", "internal/infrastructure/postgres/repository.go:10-19", "cmd/api/main.go:55-58"]},
+        "ddd": {"score": 3, "rationale": "Money e Wallet encapsulam invariantes; Transfer permanece um registro simples.", "evidence": ["internal/domain/money.go:10-44", "internal/domain/wallet.go:8-35"]},
+        "solid": {"score": 3, "rationale": "Portas pequenas e DI real, com algum acoplamento incidental a logger e repositorio multipapel.", "evidence": ["internal/application/transfer.go:20-47", "internal/infrastructure/postgres/repository.go:24-37"]},
+        "testability": {"score": 4, "rationale": "Transacao, repositorios, relogio, ID e executor HTTP sao substituiveis.", "evidence": ["internal/application/transfer.go:20-31", "internal/application/transfer_test.go:14-64", "pkg/runtime/runtime.go:10-22"]},
+        "test_quality": {"score": 3, "rationale": "Boa cobertura de dominio, aplicacao, HTTP e SQL mockado; falta PostgreSQL concorrente real na suite gerada.", "evidence": ["internal/application/transfer_test.go:66-136", "internal/infrastructure/postgres/repository_test.go:24-170", "artifacts/initial-quality-v1/20260907T002744Z/report.md:8"]},
+        "transactional_integrity": {"score": 4, "rationale": "Unit of work contem locks, updates e ledger; constraints e testes externos confirmam estado final.", "evidence": ["internal/application/transfer.go:66-92", "internal/infrastructure/postgres/repository.go:19-35", "migrations/001_init.sql:1-15"]},
+        "concurrency_design": {"score": 3, "rationale": "Locks ordenados passaram na contencao real, mas faltam retry e teste inverso repetido.", "evidence": ["internal/infrastructure/postgres/repository.go:39-59", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:8"]},
+        "observability": {"score": 3, "rationale": "Logs JSON, correlation ID e eventos de sucesso/falha; faltam metricas e tracing real.", "evidence": ["internal/delivery/httpapi/middleware.go:14-29", "internal/application/transfer.go:93-97"]},
+        "operational_readiness": {"score": 2, "rationale": "Pool e timeouts sao configurados, mas Compose sobe apenas DB e nao ha health HTTP ou Dockerfile.", "evidence": ["cmd/api/main.go:41-79", "compose.yaml:1-15"]},
+        "simplicity_fit": {"score": 3, "rationale": "Abstracoes sao majoritariamente proporcionais ao risco, com algum volume adicional de runtime e tracing.", "evidence": ["internal/application/transfer.go:20-47", "pkg/runtime/runtime.go:10-22"]}
+      },
+      "critical_risks": [{"severity": "high", "risk": "Ausencia de idempotencia permite duplicacao em retry ambiguo.", "evidence": ["internal/application/transfer.go:33-37", "internal/infrastructure/postgres/repository.go:77-85"]}]
+    },
+    {
+      "run_id": "gemini37flash-cenario-1", "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": false, "rationale": "O snapshot nao possui testes nem historico de desenvolvimento."},
+      "dimensions": {
+        "clean_architecture": {"score": 0, "rationale": "Dominio, SQL, schema, seed e execucao estao no mesmo arquivo.", "evidence": ["main.go:22-95", "main.go:98-160"]},
+        "ddd": {"score": 1, "rationale": "Termos e erros existem, mas nao ha entidades ou value objects protegendo invariantes.", "evidence": ["main.go:14-36", "main.go:44-89"]},
+        "solid": {"score": 1, "rationale": "WalletService concentra responsabilidades e depende de sql.DB concreto.", "evidence": ["main.go:22-28", "main.go:30-116"]},
+        "testability": {"score": 1, "rationale": "SQL, transacao e relogio sao concretos e a CLI nao aceita entradas variaveis.", "evidence": ["main.go:38-95", "main.go:122-160"]},
+        "test_quality": {"score": 0, "rationale": "Nao existem testes no snapshot.", "evidence": ["artifacts/initial-quality-v1/20260907T002744Z/report.md:9"]},
+        "transactional_integrity": {"score": 3, "rationale": "As mutacoes usam transacao serializable e o smoke confirmou conservacao; schema tem lacunas defensivas.", "evidence": ["main.go:38-89", "main.go:100-113", "artifacts/functional-smoke-v1/20260913T015119Z/report.md:9"]},
+        "concurrency_design": {"score": 1, "rationale": "Nao ha lock explicito, retry ou interface parametrizavel para testar concorrencia.", "evidence": ["main.go:38-75", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:9"]},
+        "observability": {"score": 1, "rationale": "Apenas mensagens de console e fatal logs.", "evidence": ["main.go:123-130", "main.go:142-159"]},
+        "operational_readiness": {"score": 1, "rationale": "Demonstrador one-shot sem configuracao, healthcheck ou migration versionada.", "evidence": ["main.go:98-160"]},
+        "simplicity_fit": {"score": 3, "rationale": "Simples para demonstracao, mas mistura responsabilidades e nao oferece funcionalidade reutilizavel.", "evidence": ["main.go:98-160"]}
+      },
+      "critical_risks": [{"severity": "critical", "risk": "INSERT OR REPLACE redefine saldos em toda execucao.", "evidence": ["main.go:136-140"]}, {"severity": "high", "risk": "Interface fixa impede validar requisitos negativos e concorrencia.", "evidence": ["main.go:142-150"]}]
+    },
+    {
+      "run_id": "gemini37flash-cenario-2", "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "Testes extensos nao comprovam a sequencia red-green-refactor."},
+      "dimensions": {
+        "clean_architecture": {"score": 3, "rationale": "Separacao real com wiring manual, apesar de tags tecnicas no dominio e portas amplas.", "evidence": ["internal/domain/repository.go:7-32", "internal/usecase/transfer.go:36-49", "cmd/api/main.go:54-63"]},
+        "ddd": {"score": 3, "rationale": "Account, Transfer e Money encapsulam regras, com fragilidade de overflow no credito.", "evidence": ["internal/domain/entity.go:31-95", "pkg/money/money.go:13-59"]},
+        "solid": {"score": 3, "rationale": "Caso de uso depende de interfaces; contratos e logger ainda sao mais amplos que o necessario.", "evidence": ["internal/domain/repository.go:7-32", "internal/usecase/transfer.go:30-48"]},
+        "testability": {"score": 3, "rationale": "Repositorios e unit of work sao substituiveis; time.Now e rollback do mock reduzem determinismo.", "evidence": ["internal/usecase/transfer_test.go:16-131", "internal/domain/entity.go:53-93"]},
+        "test_quality": {"score": 3, "rationale": "Suite ampla de dominio, HTTP e SQL; concorrencia gerada usa mutex, nao PostgreSQL real.", "evidence": ["internal/usecase/transfer_test.go:301-360", "internal/adapter/postgres/repository_test.go:314-380", "artifacts/initial-quality-v1/20260907T002744Z/report.md:10"]},
+        "transactional_integrity": {"score": 3, "rationale": "Unit of work e smoke confirmam atomicidade basica; snapshot nao forneceu schema defensivo.", "evidence": ["internal/usecase/transfer.go:72-130", "internal/adapter/postgres/repository.go:243-275", "artifacts/functional-smoke-v1/20260913T015119Z/report.md:10"]},
+        "concurrency_design": {"score": 3, "rationale": "Locks ordenados passaram no teste externo real; faltam retry e testes reais gerados.", "evidence": ["internal/usecase/transfer.go:72-103", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:10"]},
+        "observability": {"score": 3, "rationale": "Logs JSON, correlation ID e duracao; faltam metricas e tracing.", "evidence": ["pkg/logger/logger.go:14-51", "internal/delivery/http/handler.go:156-189"]},
+        "operational_readiness": {"score": 1, "rationale": "Nao ha migration, Compose ou README operacional e o servidor continua apos ping falhar.", "evidence": ["cmd/api/main.go:45-79", "artifacts/functional-smoke-v1/20260913T015119Z/summary.json:321-330"]},
+        "simplicity_fit": {"score": 2, "rationale": "Estrutura clara, mas CRUD e interfaces amplas adicionam escopo sem beneficio central.", "evidence": ["internal/domain/repository.go:7-32", "internal/adapter/postgres/repository.go:126-215"]}
+      },
+      "critical_risks": [{"severity": "critical", "risk": "Snapshot nao fornece schema ou migration e exige reconstrucao externa.", "evidence": ["internal/adapter/postgres/repository.go:31-36", "cmd/api/main.go:34-58"]}, {"severity": "critical", "risk": "Money.Add nao verifica overflow de int64.", "evidence": ["pkg/money/money.go:49-52"]}]
+    },
+    {
+      "run_id": "grok46-cenario-1", "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "Um teste basico existe, sem historico temporal."},
+      "dimensions": {
+        "clean_architecture": {"score": 1, "rationale": "CLI, banco e wallet sao pacotes separados, mas o servico depende diretamente de sql.DB.", "evidence": ["internal/wallet/wallet.go:31-135", "cmd/pix/main.go:25-42"]},
+        "ddd": {"score": 1, "rationale": "Request e result sao estruturas anemicas e dinheiro nao possui tipo proprio.", "evidence": ["internal/wallet/wallet.go:10-29", "internal/wallet/wallet.go:39-45"]},
+        "solid": {"score": 1, "rationale": "Service concentra validacao, SQL, transacao e resultado sem portas.", "evidence": ["internal/wallet/wallet.go:31-135"]},
+        "testability": {"score": 2, "rationale": "SQLite temporario permite teste real, mas SQL, tempo e contexto sao concretos.", "evidence": ["internal/wallet/wallet_test.go:9-20", "internal/wallet/wallet.go:39-51"]},
+        "test_quality": {"score": 1, "rationale": "Um teste cobre sucesso e insuficiencia, omitindo ledger, rollback e concorrencia.", "evidence": ["internal/wallet/wallet_test.go:9-43", "artifacts/initial-quality-v1/20260907T002744Z/report.md:11"]},
+        "transactional_integrity": {"score": 3, "rationale": "Debito condicional, credito e ledger usam uma transacao; smoke e negativos preservaram estado.", "evidence": ["internal/wallet/wallet.go:47-125", "internal/db/db.go:26-40"]},
+        "concurrency_design": {"score": 2, "rationale": "Update defensivo e SQLite evitaram saldo negativo, mas uma conexao serializa e nao representa alta concorrencia.", "evidence": ["internal/db/db.go:10-17", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:11"]},
+        "observability": {"score": 1, "rationale": "CLI imprime resultado sem logs estruturados ou correlacao.", "evidence": ["cmd/pix/main.go:25-42"]},
+        "operational_readiness": {"score": 2, "rationale": "Flags, schema automatico e DB configuravel, mas exige CGO e nao tem migration versionada.", "evidence": ["cmd/pix/main.go:13-29", "internal/db/db.go:10-49"]},
+        "simplicity_fit": {"score": 4, "rationale": "CLI curta e legivel com atomicidade basica e poucas abstracoes.", "evidence": ["cmd/pix/main.go:13-43", "internal/wallet/wallet.go:39-135"]}
+      },
+      "critical_risks": [{"severity": "high", "risk": "Sem idempotencia e com serializacao limitada ao processo.", "evidence": ["internal/db/db.go:10-17", "internal/wallet/wallet.go:111-125"]}]
+    },
+    {
+      "run_id": "grok46-cenario-2", "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "Ha testes, sem historico temporal de TDD."},
+      "dimensions": {
+        "clean_architecture": {"score": 3, "rationale": "Caso de uso depende de porta e composicao fica na borda; repositorio agrega papeis.", "evidence": ["internal/domain/repository.go:5-8", "internal/usecase/transfer_p2p.go:18-28", "internal/app/server.go:33-35"]},
+        "ddd": {"score": 3, "rationale": "Money, Wallet e Transfer expressam invariantes; adapter ainda concentra mutacao do agregado.", "evidence": ["internal/domain/wallet.go:18-60", "internal/domain/transfer.go:16-35"]},
+        "solid": {"score": 3, "rationale": "Interfaces pequenas e DIP real, com repositorio concentrando transacao e geracao de ID.", "evidence": ["internal/domain/repository.go:5-8", "internal/adapter/postgres/repository.go:24-40"]},
+        "testability": {"score": 4, "rationale": "Caso de uso, handler, clock e IDs possuem seams explicitos.", "evidence": ["internal/usecase/transfer_p2p.go:19-28", "internal/delivery/http/handler.go:17-30"]},
+        "test_quality": {"score": 3, "rationale": "Cobre regras, HTTP e SQL, mas sem PostgreSQL concorrente na suite gerada.", "evidence": ["internal/usecase/transfer_p2p_test.go:26-81", "internal/adapter/postgres/repository_test.go:18-100"]},
+        "transactional_integrity": {"score": 4, "rationale": "Debito, credito e historico compartilham sql.Tx e passaram na reconciliacao externa.", "evidence": ["internal/adapter/postgres/repository.go:43-104", "artifacts/functional-smoke-v1/20260913T015119Z/report.md:12"]},
+        "concurrency_design": {"score": 3, "rationale": "Locks ordenados passaram sob contencao real; faltam timeout/retry e inversao repetida.", "evidence": ["internal/adapter/postgres/repository.go:44-58", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:12"]},
+        "observability": {"score": 2, "rationale": "Logs estruturados e request ID parciais, sem metricas ou tracing.", "evidence": ["internal/usecase/transfer_p2p.go:42-54", "internal/delivery/http/middleware.go:14-23"]},
+        "operational_readiness": {"score": 2, "rationale": "Timeouts, pool, health e shutdown existem, mas sem container e com migration no startup.", "evidence": ["internal/app/server.go:37-44", "cmd/p2p-transfer/main.go:39-79"]},
+        "simplicity_fit": {"score": 3, "rationale": "Estrutura proporcional, com alguma cerimonia adicional em app/platform.", "evidence": ["internal/app/server.go:22-44", "internal/domain/repository.go:5-8"]}
+      },
+      "critical_risks": [{"severity": "high", "risk": "Gerador denominado uuidGen concatena relogios e pode colidir sob carga.", "evidence": ["internal/adapter/postgres/repository.go:18-22"]}]
+    },
+    {
+      "run_id": "kimik3-cenario-1", "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "Presenca de testes nao prova sua ordem de criacao."},
+      "dimensions": {
+        "clean_architecture": {"score": 1, "rationale": "Handler, composicao e schema compartilham pacote e servico depende de database/sql.", "evidence": ["main.go:15-67", "service.go:21-27"]},
+        "ddd": {"score": 1, "rationale": "Wallet e Transaction sao registros anemicos; regras ficam no servico e SQL.", "evidence": ["store.go:14-29", "service.go:36-104"]},
+        "solid": {"score": 1, "rationale": "Separacao basica, mas dependencias concretas e ausencia de portas.", "evidence": ["main.go:54-58", "service.go:21-115"]},
+        "testability": {"score": 2, "rationale": "SQLite temporario ajuda, mas falhas, tempo e IDs nao sao injetaveis.", "evidence": ["main_test.go:16-25", "service.go:22-27"]},
+        "test_quality": {"score": 3, "rationale": "Testa sucesso, validacoes, HTTP e concorrencia em SQLite real.", "evidence": ["main_test.go:43-170", "artifacts/initial-quality-v1/20260907T002744Z/report.md:13"]},
+        "transactional_integrity": {"score": 4, "rationale": "Uma transacao cobre as mutacoes e testes externos confirmaram ledger e conservacao.", "evidence": ["service.go:44-115", "main.go:17-30"]},
+        "concurrency_design": {"score": 2, "rationale": "Uma conexao e update defensivo preservam integridade, mas serializam toda a aplicacao.", "evidence": ["main.go:35-41", "service.go:77-90", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:13"]},
+        "observability": {"score": 1, "rationale": "Logs textuais pontuais sem correlacao, metricas ou tracing.", "evidence": ["main.go:176-177", "main.go:243-245"]},
+        "operational_readiness": {"score": 1, "rationale": "Porta e banco fixos, sem timeouts, health ou shutdown gracioso.", "evidence": ["main.go:223-245"]},
+        "simplicity_fit": {"score": 4, "rationale": "Implementacao compacta adequada ao ambiente local.", "evidence": ["main.go:54-67", "service.go:21-36"]}
+      },
+      "critical_risks": [{"severity": "high", "risk": "Pool de uma conexao inviabiliza throughput concorrente.", "evidence": ["main.go:39-41"]}, {"severity": "medium", "risk": "API monetaria usa float64.", "evidence": ["main.go:71-85", "store.go:31-38"]}]
+    },
+    {
+      "run_id": "kimik3-cenario-2", "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "Suite extensa sem historico red-green-refactor."},
+      "dimensions": {
+        "clean_architecture": {"score": 4, "rationale": "Dominio independente, portas no usecase, adapters e composition root claros.", "evidence": ["internal/usecase/ports.go:14-50", "internal/adapter/postgres/unit_of_work.go:14-24", "cmd/wallet-p2p-api/main.go:94-115"]},
+        "ddd": {"score": 3, "rationale": "Money, Wallet e Transaction protegem invariantes, com rotas de reconstrucao permissivas.", "evidence": ["internal/domain/money.go:11-53", "internal/domain/wallet.go:15-80"]},
+        "solid": {"score": 4, "rationale": "Responsabilidades coesas, interfaces pequenas e dependencias injetadas.", "evidence": ["internal/usecase/ports.go:14-50", "internal/usecase/transfer.go:38-52"]},
+        "testability": {"score": 4, "rationale": "UnitOfWork, repositorio, clock, readiness e lifecycle sao substituiveis.", "evidence": ["internal/usecase/ports.go:38-50", "cmd/wallet-p2p-api/main.go:94-181"]},
+        "test_quality": {"score": 4, "rationale": "Testes unitarios, SQL e integracao PostgreSQL cobrem rollback e concorrencia cruzada.", "evidence": ["internal/adapter/postgres/integration_test.go:69-218", "internal/usecase/transfer_test.go:79-200"]},
+        "transactional_integrity": {"score": 4, "rationale": "UnitOfWork e constraints protegem todas as mutacoes, confirmadas externamente.", "evidence": ["internal/adapter/postgres/unit_of_work.go:38-61", "internal/usecase/transfer.go:71-126", "migrations/000001_create_wallets_and_transactions.up.sql:5-26"]},
+        "concurrency_design": {"score": 4, "rationale": "Locks globais ordenados e testes PostgreSQL reais, alem do benchmark externo aprovado.", "evidence": ["internal/usecase/transfer.go:71-85", "internal/adapter/postgres/integration_test.go:135-181", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:14"]},
+        "observability": {"score": 3, "rationale": "Logs JSON, access logs e request ID; faltam metricas e tracing.", "evidence": ["internal/delivery/httpapi/middleware.go:16-55", "internal/usecase/transfer.go:127-142"]},
+        "operational_readiness": {"score": 3, "rationale": "Readiness real, timeouts, pool e shutdown; senha padrao embutida foi vulnerabilidade blocker no Sonar.", "evidence": ["cmd/wallet-p2p-api/main.go:24-47", "internal/delivery/httpapi/server.go:25-40", "artifacts/security-sonar-v1/20260913T010319Z/kimik3-cenario-2/sonar/issues.json:12-54"]},
+        "simplicity_fit": {"score": 3, "rationale": "A cerimonia e majoritariamente justificada pelos requisitos financeiros e operacionais.", "evidence": ["internal/usecase/ports.go:30-45", "internal/usecase/transfer.go:71-126"]}
+      },
+      "critical_risks": [{"severity": "high", "risk": "Senha PostgreSQL padrao embutida no codigo.", "evidence": ["cmd/wallet-p2p-api/main.go:41", "artifacts/security-sonar-v1/20260913T010319Z/kimik3-cenario-2/sonar/issues.json:12-54"]}]
+    },
+    {
+      "run_id": "sonnet5-cenario-1", "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": false, "rationale": "O snapshot nao possui testes nem historico de desenvolvimento."},
+      "dimensions": {
+        "clean_architecture": {"score": 2, "rationale": "Ha camadas, mas servico e handler dependem de implementacoes concretas externas.", "evidence": ["internal/service/pix_service.go:9-20", "internal/handler/pix_handler.go:11-21"]},
+        "ddd": {"score": 2, "rationale": "Linguagem de dominio e validacoes existem, mas entidades sao anemicas e regras centrais ficam no repository.", "evidence": ["internal/domain/transfer.go:20-68", "internal/repository/wallet_repository.go:35-118"]},
+        "solid": {"score": 2, "rationale": "Arquivos separam papeis, mas nao ha DIP e repository concentra responsabilidades.", "evidence": ["internal/service/pix_service.go:15-20", "internal/repository/wallet_repository.go:16-35"]},
+        "testability": {"score": 1, "rationale": "Concretos, UUID e tempo internos dificultam testes deterministas.", "evidence": ["internal/service/pix_service.go:15-43", "internal/handler/pix_handler.go:16-21"]},
+        "test_quality": {"score": 0, "rationale": "Nao existem testes automatizados.", "evidence": ["artifacts/initial-quality-v1/20260907T002744Z/report.md:15"]},
+        "transactional_integrity": {"score": 4, "rationale": "Transacao serializable, locks e ledger preservaram integridade inclusive sob falhas concorrentes.", "evidence": ["internal/repository/wallet_repository.go:35-113", "artifacts/functional-robustness-v1/20260913T022017Z/sonnet5-cenario-1/summary.json:129-159"]},
+        "concurrency_design": {"score": 2, "rationale": "Integridade foi preservada, mas sete de dez requisicoes retornaram 500 por falhas de serializacao sem retry.", "evidence": ["internal/repository/wallet_repository.go:35-65", "artifacts/functional-robustness-v1/20260913T022017Z/sonnet5-cenario-1/summary.json:129-159", "artifacts/functional-robustness-v1/20260913T022017Z/sonnet5-cenario-1/logs/application.stderr.log:2-8"]},
+        "observability": {"score": 1, "rationale": "Logs padrao sem correlacao, estrutura ou metricas.", "evidence": ["internal/handler/pix_handler.go:143-145", "cmd/api/main.go:60-74"]},
+        "operational_readiness": {"score": 2, "rationale": "Ping, header timeout e shutdown, mas sem health, pool ou artefatos operacionais.", "evidence": ["cmd/api/main.go:23-74"]},
+        "simplicity_fit": {"score": 3, "rationale": "Pequena e direta, embora camadas sem interfaces entreguem desacoplamento incompleto.", "evidence": ["internal/service/pix_service.go:15-20", "cmd/api/main.go:41-47"]}
+      },
+      "critical_risks": [{"severity": "high", "risk": "Falhas SQLSTATE 40001 viram HTTP 500 sem retry, rejeitando transferencias ainda cobertas pelo saldo.", "evidence": ["artifacts/functional-robustness-v1/20260913T022017Z/sonnet5-cenario-1/logs/application.stderr.log:2-8"]}, {"severity": "high", "risk": "Nenhum teste foi produzido.", "evidence": ["artifacts/initial-quality-v1/20260907T002744Z/report.md:15"]}]
+    },
+    {
+      "run_id": "sonnet5-cenario-2", "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337", "confidence": "high",
+      "tdd": {"status": "not_provable", "tests_present": true, "rationale": "README declara TDD, mas snapshot final nao prova a ordem dos ciclos."},
+      "dimensions": {
+        "clean_architecture": {"score": 4, "rationale": "Dominio e usecase independem da infraestrutura e portas sao montadas no composition root.", "evidence": ["internal/usecase/ports.go:27-78", "cmd/p2ptransfer/main.go:66-79"]},
+        "ddd": {"score": 3, "rationale": "Wallet, Money e Transaction encapsulam regras, com alguns tipos diretamente construiveis.", "evidence": ["internal/domain/wallet.go:34-136", "internal/domain/transaction.go:33-55"]},
+        "solid": {"score": 4, "rationale": "Interfaces segmentadas, DIP e UnitOfWork sem vazamento de sql.Tx.", "evidence": ["internal/usecase/ports.go:15-78", "internal/delivery/http/transfer_handler.go:25-30"]},
+        "testability": {"score": 4, "rationale": "Portas para transacao, repositorios e IDs, alem de lifecycle separado.", "evidence": ["internal/usecase/ports.go:15-50", "cmd/p2ptransfer/main.go:66-94"]},
+        "test_quality": {"score": 3, "rationale": "Suite ampla, mas concorrencia usa fake, ignora erros e nao testa PostgreSQL real.", "evidence": ["internal/usecase/transfer_test.go:63-213", "internal/usecase/transfer_test.go:483-521"]},
+        "transactional_integrity": {"score": 4, "rationale": "UnitOfWork garante rollback/commit em torno de todas as mutacoes e smoke confirmou estado.", "evidence": ["internal/adapter/repository/postgres/unit_of_work.go:41-70", "internal/usecase/transfer.go:99-145"]},
+        "concurrency_design": {"score": 3, "rationale": "FOR UPDATE ordenado passou sob contencao real; faltam retry e teste PostgreSQL gerado.", "evidence": ["internal/adapter/repository/postgres/wallet_repository.go:32-51", "artifacts/functional-robustness-v1/20260913T022017Z/report.md:16"]},
+        "observability": {"score": 2, "rationale": "Logs estruturados de negocio sem request ID, access log, metricas ou tracing.", "evidence": ["internal/usecase/transfer.go:90-161"]},
+        "operational_readiness": {"score": 2, "rationale": "Timeouts, health e shutdown existem, mas Docker builder Go 1.23 e incompativel com go.mod 1.26.", "evidence": ["go.mod:3", "Dockerfile:3-8", "cmd/p2ptransfer/main.go:81-122"]},
+        "simplicity_fit": {"score": 2, "rationale": "Arquitetura clara com abstracoes e estados nao utilizados para o fluxo entregue.", "evidence": ["internal/usecase/ports.go:21-25", "internal/domain/transaction.go:58-63"]}
+      },
+      "critical_risks": [{"severity": "critical", "risk": "Dockerfile declara Go 1.23 para modulo que exige Go 1.26.", "evidence": ["go.mod:3", "Dockerfile:3"]}, {"severity": "medium", "risk": "Sem idempotencia para retries ambiguos.", "evidence": ["internal/usecase/transfer.go:12-18", "migrations/001_create_wallets_and_transactions.up.sql:17-25"]}]
+    }
+  ]
+}

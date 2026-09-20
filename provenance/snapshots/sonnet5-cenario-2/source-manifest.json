@@ -1,0 +1,289 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-2",
+  "source_path": "runs/sonnet5/cenario-2",
+  "hash_algorithm": "sha256",
+  "root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+  "entries": [
+    {
+      "path": ".gitignore",
+      "type": "file",
+      "mode": "0777",
+      "size": 33,
+      "sha256": "c228e8fabf0a9fc29f61a0b1fbc4fa534f9ec1464cecfab9eb21f7a4ad516114"
+    },
+    {
+      "path": ".opencode/agent/agente-engenheiro.md",
+      "type": "file",
+      "mode": "0777",
+      "size": 3120,
+      "sha256": "1f2091d4bce9d3a0c4aa3a1b43cc139c4c6c405c43fc2930ad17c75581404da6"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "file",
+      "mode": "0777",
+      "size": 2136,
+      "sha256": "05c1afaff5622cd0f48909ffdd22f30991f09b22d24321c63eb3f6f0354c59c8"
+    },
+    {
+      "path": "Dockerfile",
+      "type": "file",
+      "mode": "0777",
+      "size": 370,
+      "sha256": "7ed75fecbddda2d2b3c817b6a8d05982a67cb74d747792079b1d5309b381aa2c"
+    },
+    {
+      "path": "Makefile",
+      "type": "file",
+      "mode": "0777",
+      "size": 689,
+      "sha256": "f899bbf2d4e03cce4d1959495e4d334371db56a82344314ff117ff384a4ae7b0"
+    },
+    {
+      "path": "README.md",
+      "type": "file",
+      "mode": "0777",
+      "size": 9882,
+      "sha256": "84c2d513486be0653fb08825fd29e1ff2e2206029f10ac2c071f8f749988f30c"
+    },
+    {
+      "path": "billing_result.txt",
+      "type": "file",
+      "mode": "0777",
+      "size": 56,
+      "sha256": "6ecff431a7461eb8c550a681a54f43d6dbee6dad9fcb90224fdee16598f2f4a9"
+    },
+    {
+      "path": "cmd/p2ptransfer/main.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 4967,
+      "sha256": "1da8391197af3529fab35e7191c83ee4e9bfddb940166ec77dbf5cc699df2b2d"
+    },
+    {
+      "path": "cmd/p2ptransfer/main_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 5358,
+      "sha256": "f7a661d193ccdf6c87bb062c8b462d5a86e263e5ad79b1736611d5296cf824cb"
+    },
+    {
+      "path": "docker-compose.yml",
+      "type": "file",
+      "mode": "0777",
+      "size": 669,
+      "sha256": "067e3b148f8e91a680786ab41a8a4fab511d48b6c50610754c2180ac74ee1e63"
+    },
+    {
+      "path": "go.mod",
+      "type": "file",
+      "mode": "0777",
+      "size": 412,
+      "sha256": "2d4e8c78f55bbb9f155db545723533414e1dbba4d8ed34797860c2cfd72a7116"
+    },
+    {
+      "path": "go.sum",
+      "type": "file",
+      "mode": "0777",
+      "size": 2762,
+      "sha256": "e287907fb188455ef854c9a71f2488105eac3a0ae9001e996d35b96c86c32c86"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/transaction_repository.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1652,
+      "sha256": "844c7535b33f404b76967e82faa030a418ee4cdd0a19ff62a34aeba7baf7586f"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/transaction_repository_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1986,
+      "sha256": "c879a61b788861476c4ebb1b8eec650466547c27591023f5378e9e67bdf83278"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/unit_of_work.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 2885,
+      "sha256": "36f2fea11cdbb345b21998e2dab49ca34230a0207ce3e1ce8d924bc3483af6fd"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/unit_of_work_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 3520,
+      "sha256": "c6499ff7be574611aefe794f48614fd8ecd01080155adf6b1b7fd3901732ee13"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/wallet_repository.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 5128,
+      "sha256": "376fff0cc16096bdff3de1fd40c1814f75b2c36b373a70d5ecbf75c3019f601e"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/wallet_repository_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 8020,
+      "sha256": "9320b3bf08f9bce046759d150668dc5a1374c6ad096c29c3dcaca9ab02b7027f"
+    },
+    {
+      "path": "internal/delivery/http/transfer_handler.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 6763,
+      "sha256": "4ad821f06563e5392c24b3c46b7b5244413d5d2cc8b2830147e33f998b68cc7d"
+    },
+    {
+      "path": "internal/delivery/http/transfer_handler_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 8582,
+      "sha256": "7a1cdd77c1307d87b4006bd6af2e1537794de1a3770ef8d0b21437f0df90fefc"
+    },
+    {
+      "path": "internal/domain/transaction.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1931,
+      "sha256": "66f3dcc9b33f1f6dbb39d058f575bc91fdb9d1795df9dbebe7642af4b9400a55"
+    },
+    {
+      "path": "internal/domain/transaction_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 2124,
+      "sha256": "48636fc5ec3e0f8df69906ca3b2ebe873fc80f59c3558db5d2719629e14c8ef9"
+    },
+    {
+      "path": "internal/domain/wallet.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 4539,
+      "sha256": "04258edc5033595bb492f9705b30bf17fe4b5794efea0f4bcf66a676e6eaaa74"
+    },
+    {
+      "path": "internal/domain/wallet_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 4927,
+      "sha256": "85fcd6b8f5f46db871d81fbed138ecefbac4ae92e4a149d6744850121592251f"
+    },
+    {
+      "path": "internal/platform/database/db.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1820,
+      "sha256": "5023a293f13f54a5e2247741d0d0f86c9847365b10a4946c70c2763609cf7808"
+    },
+    {
+      "path": "internal/platform/database/db_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1521,
+      "sha256": "507afd7bf8a0766a67291ff8f9363935af6991b761c310915d6cbfa86a6c83fc"
+    },
+    {
+      "path": "internal/platform/logger/logger.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 717,
+      "sha256": "23adaad9e3b042d78431b8a9f2957da90bd727d0f76d6bd85a0e9969dfec604b"
+    },
+    {
+      "path": "internal/platform/logger/logger_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 676,
+      "sha256": "fbca4be49d75b4bc6859709ee16f345d9b878e88339f094a1ed4c4a8646a5066"
+    },
+    {
+      "path": "internal/usecase/mocks/mocks.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 6424,
+      "sha256": "3c0cee775b304e21949544ab5aa9693d949bb205dcbb6c59254c3c6846252364"
+    },
+    {
+      "path": "internal/usecase/ports.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 3558,
+      "sha256": "a32b135d05254b865ccdd71bcc4fd6885a9ff9d1c677a537f8aa5e2d6e918db0"
+    },
+    {
+      "path": "internal/usecase/transfer.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 5613,
+      "sha256": "1304582a471771ec137479679bc64a1fdd1c07e06d23a98e0b88faec08981743"
+    },
+    {
+      "path": "internal/usecase/transfer_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 18099,
+      "sha256": "ef8837e0bb371ebbd5c5d83eca9d4896ef6595db3d6f10a9b394508fd4fd67af"
+    },
+    {
+      "path": "migrations/001_create_wallets_and_transactions.down.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 65,
+      "sha256": "01c8cb13092543b722cb8b5f6aa35d26e914f8f2363f6f6a7efa2a623e37bfac"
+    },
+    {
+      "path": "migrations/001_create_wallets_and_transactions.up.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 1485,
+      "sha256": "9d3927d885cf7b77f5d4b73e2a5c8016529f4d78b7823e88e77c84e24e15b69f"
+    },
+    {
+      "path": "migrations/002_seed_sample_wallets.down.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 80,
+      "sha256": "efe56a979b60a0f8a23b20a3a9866056d41efe48fed35440406963f11dac71d6"
+    },
+    {
+      "path": "migrations/002_seed_sample_wallets.up.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 393,
+      "sha256": "4df7a59e560e48c700051a13ca23d0e7cc0279aed91b8935db9fa4df27bd55fa"
+    },
+    {
+      "path": "migrations/init/001_create_wallets_and_transactions.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 1485,
+      "sha256": "9d3927d885cf7b77f5d4b73e2a5c8016529f4d78b7823e88e77c84e24e15b69f"
+    },
+    {
+      "path": "migrations/init/002_seed_sample_wallets.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 393,
+      "sha256": "4df7a59e560e48c700051a13ca23d0e7cc0279aed91b8935db9fa4df27bd55fa"
+    },
+    {
+      "path": "pkg/idgen/uuid.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 816,
+      "sha256": "01097f45f7c58473e71ccb3188fe34d222693564c43eda5c4f6127742a456a25"
+    },
+    {
+      "path": "pkg/idgen/uuid_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 447,
+      "sha256": "a41937b88320c088d8a61ea492e658c59a878edc2d99c86338f6b450614e63bc"
+    }
+  ]
+}

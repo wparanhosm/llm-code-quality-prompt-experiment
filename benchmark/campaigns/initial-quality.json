@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "initial-quality-v1",
+  "description": "Avaliacao inicial uniforme do codigo e dos testes fornecidos pelos modelos.",
+  "runs": [
+    {"id": "chatgpt56sol-cenario-1", "source": "runs/chatgpt56sol/cenario-1", "go_version": "1.23"},
+    {"id": "chatgpt56sol-cenario-2", "source": "runs/chatgpt56sol/cenario-2", "go_version": "1.23"},
+    {"id": "gemini37flash-cenario-1", "source": "runs/gemini37flash/cenario-1", "go_version": "1.25.0"},
+    {"id": "gemini37flash-cenario-2", "source": "runs/gemini37flash/cenario-2", "go_version": "1.24"},
+    {"id": "grok46-cenario-1", "source": "runs/grok46/cenario-1", "go_version": "1.22", "environment": {"CGO_ENABLED": "1"}},
+    {"id": "grok46-cenario-2", "source": "runs/grok46/cenario-2", "go_version": "1.22"},
+    {"id": "kimik3-cenario-1", "source": "runs/kimik3/cenario-1", "go_version": "1.26"},
+    {"id": "kimik3-cenario-2", "source": "runs/kimik3/cenario-2", "go_version": "1.26.0"},
+    {"id": "sonnet5-cenario-1", "source": "runs/sonnet5/cenario-1", "go_version": "1.22"},
+    {"id": "sonnet5-cenario-2", "source": "runs/sonnet5/cenario-2", "go_version": "1.26.0"}
+  ],
+  "commands": {
+    "format": ["gofmt", "-l", "."],
+    "build": ["go", "build", "./..."],
+    "vet": ["go", "vet", "./..."],
+    "test": ["go", "test", "-json", "-count=1", "./..."],
+    "race": ["go", "test", "-race", "-count=1", "./..."],
+    "coverage": ["go", "test", "-count=1", "-covermode=atomic", "-coverpkg=./...", "-coverprofile={coverage_output}", "./..."]
+  },
+  "timeouts_seconds": {
+    "format": 60,
+    "build": 600,
+    "vet": 600,
+    "test": 600,
+    "race": 900,
+    "coverage": 900
+  }
+}

@@ -1,0 +1,4 @@
+model=sonnet5
+time=19m 10s
+tokens=138064 
+spent=$2.49

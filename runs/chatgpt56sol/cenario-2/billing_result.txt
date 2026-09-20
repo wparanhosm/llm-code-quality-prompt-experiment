@@ -1,0 +1,4 @@
+model=chatgpt5.6 sol
+time=5m 5s
+tokens=16930
+spent= $0.23

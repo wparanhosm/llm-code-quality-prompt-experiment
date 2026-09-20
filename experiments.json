@@ -1,0 +1,27 @@
+{
+  "models": [
+    {"id": "anthropic-claude-opus-4-5", "opencode_model": "anthropic/claude-opus-4-5"},
+    {"id": "openai-gpt-5", "opencode_model": "openai/gpt-5"},
+    {"id": "google-gemini-2-5-pro", "opencode_model": "google/gemini-2.5-pro"},
+    {"id": "deepseek-deepseek-v3", "opencode_model": "deepseek/deepseek-v3"}
+  ],
+  "scenarios": [
+    {"id": "cenario-1-vibecoding", "test_command": ["go", "test", "-coverprofile", "coverage.out", "-coverpkg", "./...", "-count", "1", "./..."]},
+    {"id": "cenario-2-agente-engenheiro", "test_command": ["go", "test", "-coverprofile", "coverage_r2.out", "-count", "1", "./internal/..."]}
+  ],
+  "runs": [
+    {
+      "model": "anthropic-claude-opus-4-5",
+      "scenario": "cenario-1-vibecoding",
+      "path": "cenario-1-vibecoding",
+      "opencode_cost_usd": null
+    },
+    {
+      "model": "anthropic-claude-opus-4-5",
+      "scenario": "cenario-2-agente-engenheiro",
+      "path": "cenario-2-agente-engenheiro",
+      "opencode_cost_usd": null
+    }
+  ],
+  "new_run_path_template": "runs/{model}/{scenario}"
+}

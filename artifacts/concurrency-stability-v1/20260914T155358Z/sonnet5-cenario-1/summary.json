@@ -1,0 +1,2328 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-1",
+  "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+  "status": "failed",
+  "error": null,
+  "repetitions_completed": 30,
+  "tests_failed": 60,
+  "aggregate": {
+    "server_errors": 540,
+    "timeouts": 0,
+    "request_errors": 0,
+    "mean_round_latency_ms": 10.738,
+    "p95_round_latency_ms": 12.355
+  },
+  "repetitions": [
+    {
+      "repetition": 1,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 26.61,
+            "mean": 28.406,
+            "p50": 28.882,
+            "p95": 29.539,
+            "p99": 29.539,
+            "max": 29.539
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 10.342,
+            "mean": 11.991,
+            "p50": 11.877,
+            "p95": 13.796,
+            "p99": 13.796,
+            "max": 13.796
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 2,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 10.325,
+            "mean": 12.255,
+            "p50": 12.139,
+            "p95": 14.161,
+            "p99": 14.161,
+            "max": 14.161
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 11.188,
+            "mean": 12.268,
+            "p50": 12.522,
+            "p95": 13.086,
+            "p99": 13.086,
+            "max": 13.086
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 3,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 10.408,
+            "mean": 12.355,
+            "p50": 12.402,
+            "p95": 13.842,
+            "p99": 13.842,
+            "max": 13.842
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 10.483,
+            "mean": 11.993,
+            "p50": 11.981,
+            "p95": 13.761,
+            "p99": 13.761,
+            "max": 13.761
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 4,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.659,
+            "mean": 11.55,
+            "p50": 11.417,
+            "p95": 13.885,
+            "p99": 13.885,
+            "max": 13.885
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.132,
+            "mean": 10.072,
+            "p50": 9.835,
+            "p95": 11.574,
+            "p99": 11.574,
+            "max": 11.574
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 5,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.785,
+            "mean": 9.495,
+            "p50": 9.581,
+            "p95": 11.002,
+            "p99": 11.002,
+            "max": 11.002
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 10.092,
+            "mean": 11.778,
+            "p50": 11.422,
+            "p95": 13.312,
+            "p99": 13.312,
+            "max": 13.312
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 6,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 9.82,
+            "mean": 11.99,
+            "p50": 11.776,
+            "p95": 13.549,
+            "p99": 13.549,
+            "max": 13.549
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.981,
+            "mean": 12.354,
+            "p50": 12.947,
+            "p95": 13.419,
+            "p99": 13.419,
+            "max": 13.419
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 7,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.508,
+            "mean": 10.424,
+            "p50": 10.634,
+            "p95": 12.198,
+            "p99": 12.198,
+            "max": 12.198
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.627,
+            "mean": 10.988,
+            "p50": 11.476,
+            "p95": 12.12,
+            "p99": 12.12,
+            "max": 12.12
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 8,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.46,
+            "mean": 9.64,
+            "p50": 9.866,
+            "p95": 11.432,
+            "p99": 11.432,
+            "max": 11.432
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 11.173,
+            "mean": 12.899,
+            "p50": 12.922,
+            "p95": 14.093,
+            "p99": 14.093,
+            "max": 14.093
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 9,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.988,
+            "mean": 10.123,
+            "p50": 10.001,
+            "p95": 11.46,
+            "p99": 11.46,
+            "max": 11.46
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.452,
+            "mean": 9.709,
+            "p50": 9.762,
+            "p95": 11.229,
+            "p99": 11.229,
+            "max": 11.229
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 10,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.909,
+            "mean": 10.127,
+            "p50": 9.833,
+            "p95": 11.545,
+            "p99": 11.545,
+            "max": 11.545
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.74,
+            "mean": 10.371,
+            "p50": 10.234,
+            "p95": 12.005,
+            "p99": 12.005,
+            "max": 12.005
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 11,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 11.085,
+            "mean": 12.527,
+            "p50": 12.227,
+            "p95": 13.754,
+            "p99": 13.754,
+            "max": 13.754
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.602,
+            "mean": 9.766,
+            "p50": 9.582,
+            "p95": 10.836,
+            "p99": 10.836,
+            "max": 10.836
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 12,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.888,
+            "mean": 10.179,
+            "p50": 9.874,
+            "p95": 11.292,
+            "p99": 11.292,
+            "max": 11.292
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 9.316,
+            "mean": 10.183,
+            "p50": 9.978,
+            "p95": 11.211,
+            "p99": 11.211,
+            "max": 11.211
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 13,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.389,
+            "mean": 10.78,
+            "p50": 9.755,
+            "p95": 14.178,
+            "p99": 14.178,
+            "max": 14.178
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.411,
+            "mean": 10.152,
+            "p50": 9.914,
+            "p95": 12.237,
+            "p99": 12.237,
+            "max": 12.237
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 14,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.296,
+            "mean": 10.612,
+            "p50": 10.468,
+            "p95": 12.278,
+            "p99": 12.278,
+            "max": 12.278
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.717,
+            "mean": 9.774,
+            "p50": 9.936,
+            "p95": 11.214,
+            "p99": 11.214,
+            "max": 11.214
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 15,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.764,
+            "mean": 9.765,
+            "p50": 9.566,
+            "p95": 11.27,
+            "p99": 11.27,
+            "max": 11.27
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.846,
+            "mean": 10.078,
+            "p50": 9.907,
+            "p95": 11.941,
+            "p99": 11.941,
+            "max": 11.941
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 16,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.504,
+            "mean": 10.104,
+            "p50": 9.554,
+            "p95": 11.674,
+            "p99": 11.674,
+            "max": 11.674
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.758,
+            "mean": 12.069,
+            "p50": 12.107,
+            "p95": 14.123,
+            "p99": 14.123,
+            "max": 14.123
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 17,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.626,
+            "mean": 10.435,
+            "p50": 10.08,
+            "p95": 11.826,
+            "p99": 11.826,
+            "max": 11.826
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.865,
+            "mean": 9.195,
+            "p50": 9.244,
+            "p95": 10.225,
+            "p99": 10.225,
+            "max": 10.225
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 18,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.601,
+            "mean": 9.567,
+            "p50": 9.634,
+            "p95": 10.209,
+            "p99": 10.209,
+            "max": 10.209
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.136,
+            "mean": 9.759,
+            "p50": 9.452,
+            "p95": 11.192,
+            "p99": 11.192,
+            "max": 11.192
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 19,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.626,
+            "mean": 9.447,
+            "p50": 9.277,
+            "p95": 10.81,
+            "p99": 10.81,
+            "max": 10.81
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.548,
+            "mean": 9.869,
+            "p50": 9.393,
+            "p95": 11.305,
+            "p99": 11.305,
+            "max": 11.305
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 20,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 9.171,
+            "mean": 10.183,
+            "p50": 10.081,
+            "p95": 11.302,
+            "p99": 11.302,
+            "max": 11.302
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 10.644,
+            "mean": 11.581,
+            "p50": 11.819,
+            "p95": 12.34,
+            "p99": 12.34,
+            "max": 12.34
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 21,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 9.49,
+            "mean": 10.531,
+            "p50": 10.479,
+            "p95": 11.38,
+            "p99": 11.38,
+            "max": 11.38
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 9.218,
+            "mean": 9.984,
+            "p50": 9.658,
+            "p95": 10.817,
+            "p99": 10.817,
+            "max": 10.817
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 22,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.761,
+            "mean": 10.62,
+            "p50": 11.116,
+            "p95": 11.809,
+            "p99": 11.809,
+            "max": 11.809
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.686,
+            "mean": 10.117,
+            "p50": 9.694,
+            "p95": 12.099,
+            "p99": 12.099,
+            "max": 12.099
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 23,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.572,
+            "mean": 10.102,
+            "p50": 10.046,
+            "p95": 11.803,
+            "p99": 11.803,
+            "max": 11.803
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.729,
+            "mean": 9.284,
+            "p50": 9.33,
+            "p95": 10.72,
+            "p99": 10.72,
+            "max": 10.72
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 24,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.334,
+            "mean": 9.729,
+            "p50": 9.339,
+            "p95": 11.004,
+            "p99": 11.004,
+            "max": 11.004
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.952,
+            "mean": 9.354,
+            "p50": 9.37,
+            "p95": 10.386,
+            "p99": 10.386,
+            "max": 10.386
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 25,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.893,
+            "mean": 9.374,
+            "p50": 9.58,
+            "p95": 10.544,
+            "p99": 10.544,
+            "max": 10.544
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.148,
+            "mean": 9.546,
+            "p50": 9.606,
+            "p95": 10.469,
+            "p99": 10.469,
+            "max": 10.469
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 26,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.53,
+            "mean": 9.951,
+            "p50": 9.814,
+            "p95": 10.692,
+            "p99": 10.692,
+            "max": 10.692
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.773,
+            "mean": 9.797,
+            "p50": 9.626,
+            "p95": 10.895,
+            "p99": 10.895,
+            "max": 10.895
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 27,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.38,
+            "mean": 10.12,
+            "p50": 9.991,
+            "p95": 11.374,
+            "p99": 11.374,
+            "max": 11.374
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.285,
+            "mean": 9.738,
+            "p50": 9.786,
+            "p95": 11.046,
+            "p99": 11.046,
+            "max": 11.046
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 28,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.045,
+            "mean": 9.555,
+            "p50": 9.392,
+            "p95": 11.013,
+            "p99": 11.013,
+            "max": 11.013
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.493,
+            "mean": 8.825,
+            "p50": 8.81,
+            "p95": 9.74,
+            "p99": 9.74,
+            "max": 9.74
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 29,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 8.125,
+            "mean": 9.348,
+            "p50": 9.404,
+            "p95": 10.109,
+            "p99": 10.109,
+            "max": 10.109
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 7.83,
+            "mean": 9.666,
+            "p50": 9.852,
+            "p95": 11.006,
+            "p99": 11.006,
+            "max": 11.006
+          },
+          "balances": [
+            10100,
+            1900
+          ],
+          "ledger_rows": 1
+        }
+      }
+    },
+    {
+      "repetition": 30,
+      "contention": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 10.327,
+            "mean": 11.165,
+            "p50": 10.749,
+            "p95": 12.307,
+            "p99": 12.307,
+            "max": 12.307
+          },
+          "balances": [
+            8000,
+            4000
+          ],
+          "ledger_rows": 1
+        }
+      },
+      "inverse": {
+        "status": "failed",
+        "checks": {
+          "expected_successes": false,
+          "no_server_errors": false,
+          "no_timeouts_or_client_errors": true,
+          "balances_match": false,
+          "total_conserved": true,
+          "ledger_matches": true,
+          "non_negative": true
+        },
+        "observed": {
+          "requests": 10,
+          "successes": 1,
+          "rejections": 9,
+          "timeouts": 0,
+          "errors": 0,
+          "server_errors": 9,
+          "status_counts": {
+            "200": 1,
+            "500": 9
+          },
+          "latency_ms": {
+            "min": 9.479,
+            "mean": 10.652,
+            "p50": 10.605,
+            "p95": 12.333,
+            "p99": 12.333,
+            "max": 12.333
+          },
+          "balances": [
+            9900,
+            2100
+          ],
+          "ledger_rows": 1
+        }
+      }
+    }
+  ]
+}

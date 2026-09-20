@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-2",
+  "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+  "commands": {
+    "govulncheck": {
+      "name": "govulncheck",
+      "command": [
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/cache/tools/bin/govulncheck",
+        "-json",
+        "./..."
+      ],
+      "started_at": "2026-09-13T00:51:09.262534+00:00",
+      "duration_seconds": 9.631,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/govulncheck.stdout.log",
+      "stderr": "logs/govulncheck.stderr.log"
+    },
+    "golangci_lint": {
+      "name": "golangci_lint",
+      "command": [
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/cache/tools/bin/golangci-lint",
+        "run",
+        "--no-config",
+        "--default=standard",
+        "--issues-exit-code=0",
+        "--timeout=10m",
+        "--output.json.path=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260913T004741Z/kimik3-cenario-2/lint/golangci-lint.json"
+      ],
+      "started_at": "2026-09-13T00:51:09.262637+00:00",
+      "duration_seconds": 10.576,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/golangci_lint.stdout.log",
+      "stderr": "logs/golangci_lint.stderr.log"
+    },
+    "coverage": {
+      "name": "coverage",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-covermode=atomic",
+        "-coverpkg=./...",
+        "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260913T004741Z/kimik3-cenario-2/coverage/generated-tests.out",
+        "./..."
+      ],
+      "started_at": "2026-09-13T00:51:09.259211+00:00",
+      "duration_seconds": 14.445,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/coverage.stdout.log",
+      "stderr": "logs/coverage.stderr.log"
+    },
+    "gosec": {
+      "name": "gosec",
+      "command": [
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/cache/tools/bin/gosec",
+        "-no-fail",
+        "-fmt=json",
+        "-out=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260913T004741Z/kimik3-cenario-2/security/gosec.json",
+        "./..."
+      ],
+      "started_at": "2026-09-13T00:51:09.263001+00:00",
+      "duration_seconds": 24.68,
+      "status": "failed",
+      "exit_code": -2,
+      "error": null,
+      "stdout": "logs/gosec.stdout.log",
+      "stderr": "logs/gosec.stderr.log"
+    }
+  },
+  "tools": {
+    "govulncheck": {
+      "version": "v1.1.4",
+      "path": "cache/tools/bin/govulncheck"
+    },
+    "gosec": {
+      "version": "v2.29.0",
+      "path": "cache/tools/bin/gosec"
+    },
+    "golangci_lint": {
+      "version": "v2.13.2",
+      "path": "cache/tools/bin/golangci-lint"
+    }
+  },
+  "security": {
+    "govulncheck": {
+      "status": "passed",
+      "vulnerability_events": 0
+    },
+    "gosec": {
+      "status": "failed",
+      "issues": null,
+      "severity": {}
+    }
+  },
+  "lint": {
+    "status": "passed",
+    "issues": 6,
+    "linters": {
+      "errcheck": 5,
+      "unused": 1
+    }
+  },
+  "sonar": {
+    "status": "failed",
+    "project_key": "lqcpe-kimik3-cenario-2-20260913T004741Z",
+    "command": {
+      "name": "sonar",
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "llm-code-quality-prompt-experiment_default",
+        "-e",
+        "SONAR_HOST_URL=http://sonarqube:9000",
+        "-e",
+        "SONAR_TOKEN",
+        "-v",
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/work/20260913T004741Z/kimik3-cenario-2/source:/workspace/source:ro",
+        "-v",
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260913T004741Z/kimik3-cenario-2/sonar:/workspace/artifacts",
+        "-v",
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260913T004741Z/kimik3-cenario-2/coverage:/workspace/coverage:ro",
+        "sonarsource/sonar-scanner-cli@sha256:23ca0f137965d9dff2198074043fd48d386280bc5d0ccac8c8349cea4cf096a9",
+        "-D",
+        "sonar.projectKey=lqcpe-kimik3-cenario-2-20260913T004741Z",
+        "-D",
+        "sonar.projectName=kimik3-cenario-2",
+        "-D",
+        "sonar.projectBaseDir=/workspace/source",
+        "-D",
+        "sonar.sources=.",
+        "-D",
+        "sonar.exclusions=**/*_test.go,**/.opencode/**,**/node_modules/**,**/coverage.out,**/*.db,**/bin/**",
+        "-D",
+        "sonar.tests=.",
+        "-D",
+        "sonar.test.inclusions=**/*_test.go",
+        "-D",
+        "sonar.go.coverage.reportPaths=/workspace/coverage/generated-tests.out",
+        "-D",
+        "sonar.working.directory=/workspace/artifacts/scannerwork"
+      ],
+      "started_at": "2026-09-13T00:51:33.969879+00:00",
+      "duration_seconds": 2.378,
+      "status": "failed",
+      "exit_code": 130,
+      "error": null,
+      "stdout": "logs/sonar.stdout.log",
+      "stderr": "logs/sonar.stderr.log"
+    }
+  }
+}

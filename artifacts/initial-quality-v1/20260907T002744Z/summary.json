@@ -1,0 +1,1526 @@
+{
+  "campaign": "initial-quality-v1",
+  "execution_id": "20260907T002744Z",
+  "runs": [
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-1",
+      "source_path": "runs/chatgpt56sol/cenario-1",
+      "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "declared_go_version": "1.23",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_results.txt",
+        "model": "chatgpt5.6 sol",
+        "time_raw": "2m 35s",
+        "time_seconds": 155,
+        "tokens": 22535,
+        "spent_usd": 0.45
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:27:44.810759+00:00",
+          "duration_seconds": 0.12,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:27:44.931341+00:00",
+          "duration_seconds": 45.78,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:28:30.710558+00:00",
+          "duration_seconds": 10.169,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:28:40.876829+00:00",
+          "duration_seconds": 11.088,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:28:51.964902+00:00",
+          "duration_seconds": 36.341,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/chatgpt56sol-cenario-1/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:29:28.303580+00:00",
+          "duration_seconds": 8.601,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 18,
+        "tests_passed": 18,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 40.8
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-2",
+      "source_path": "runs/chatgpt56sol/cenario-2",
+      "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+      "declared_go_version": "1.23",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_result.txt",
+        "model": "chatgpt5.6 sol",
+        "time_raw": "5m 5s",
+        "time_seconds": 305,
+        "tokens": 16930,
+        "spent_usd": 0.23
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:31:40.133112+00:00",
+          "duration_seconds": 0.771,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:31:40.904221+00:00",
+          "duration_seconds": 23.35,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:32:04.252345+00:00",
+          "duration_seconds": 8.298,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:32:12.550624+00:00",
+          "duration_seconds": 8.356,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:32:20.907141+00:00",
+          "duration_seconds": 28.534,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/chatgpt56sol-cenario-2/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:32:49.438356+00:00",
+          "duration_seconds": 7.794,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 55,
+        "tests_passed": 55,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 74.9
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-1",
+      "source_path": "runs/gemini37flash/cenario-1",
+      "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+      "declared_go_version": "1.25.0",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_result.txt",
+        "model": "gemini 3.7 flash",
+        "time_raw": "46s",
+        "time_seconds": 46,
+        "tokens": 9225,
+        "spent_usd": 0.03
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:32:58.846800+00:00",
+          "duration_seconds": 0.038,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:32:58.884667+00:00",
+          "duration_seconds": 92.14,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:34:31.018593+00:00",
+          "duration_seconds": 9.303,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:34:40.319894+00:00",
+          "duration_seconds": 8.962,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:34:49.281851+00:00",
+          "duration_seconds": 39.628,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/gemini37flash-cenario-1/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:35:28.907647+00:00",
+          "duration_seconds": 6.442,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 0,
+        "tests_passed": 0,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 0.0
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-2",
+      "source_path": "runs/gemini37flash/cenario-2",
+      "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+      "declared_go_version": "1.24",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_result.txt",
+        "model": "gemini 3.7 flash",
+        "time_raw": "4m 19s",
+        "time_seconds": 259,
+        "tokens": 66500,
+        "spent_usd": 0.32
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:37:49.956834+00:00",
+          "duration_seconds": 0.821,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:37:50.778316+00:00",
+          "duration_seconds": 25.568,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:38:16.344989+00:00",
+          "duration_seconds": 8.262,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:38:24.607437+00:00",
+          "duration_seconds": 9.208,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:38:33.812857+00:00",
+          "duration_seconds": 28.919,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/gemini37flash-cenario-2/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:39:02.730921+00:00",
+          "duration_seconds": 8.15,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 41,
+        "tests_passed": 41,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 83.3
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-1",
+      "source_path": "runs/grok46/cenario-1",
+      "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+      "declared_go_version": "1.22",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_result.txt",
+        "model": "grok4.6",
+        "time_raw": "1m 22s",
+        "time_seconds": 82,
+        "tokens": 10637,
+        "spent_usd": 0.06
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:39:12.633363+00:00",
+          "duration_seconds": 0.069,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:39:12.702430+00:00",
+          "duration_seconds": 3.277,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:39:15.979690+00:00",
+          "duration_seconds": 2.075,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:39:18.054376+00:00",
+          "duration_seconds": 3.679,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:39:21.733417+00:00",
+          "duration_seconds": 4.782,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/grok46-cenario-1/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:39:26.515252+00:00",
+          "duration_seconds": 4.58,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 1,
+        "tests_passed": 1,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 53.1
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-2",
+      "source_path": "runs/grok46/cenario-2",
+      "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+      "declared_go_version": "1.22",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_result.txt",
+        "model": "grok4.6",
+        "time_raw": "3m 44s",
+        "time_seconds": 224,
+        "tokens": 30812,
+        "spent_usd": 0.37
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:41:33.357107+00:00",
+          "duration_seconds": 0.824,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:41:34.181432+00:00",
+          "duration_seconds": 23.948,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:41:58.129517+00:00",
+          "duration_seconds": 8.363,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:42:06.490706+00:00",
+          "duration_seconds": 10.336,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:42:16.827017+00:00",
+          "duration_seconds": 33.839,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/grok46-cenario-2/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:42:50.663660+00:00",
+          "duration_seconds": 9.959,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 45,
+        "tests_passed": 45,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 79.1
+      },
+      "quality": {
+        "format_clean": false,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-1",
+      "source_path": "runs/kimik3/cenario-1",
+      "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+      "declared_go_version": "1.26",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_results.txt",
+        "model": "kimik3",
+        "time_raw": "6min 42s",
+        "time_seconds": 402,
+        "tokens": 18057,
+        "spent_usd": 0.26
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:43:02.522466+00:00",
+          "duration_seconds": 0.037,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:43:02.559971+00:00",
+          "duration_seconds": 55.835,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:43:58.390927+00:00",
+          "duration_seconds": 12.746,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:44:11.136737+00:00",
+          "duration_seconds": 13.689,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:44:24.826148+00:00",
+          "duration_seconds": 53.409,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/kimik3-cenario-1/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:45:18.231855+00:00",
+          "duration_seconds": 7.695,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 10,
+        "tests_passed": 10,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 51.3
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-2",
+      "source_path": "runs/kimik3/cenario-2",
+      "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+      "declared_go_version": "1.26.0",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_result.txt",
+        "model": "kimik3",
+        "time_raw": "31m 45s",
+        "time_seconds": 1905,
+        "tokens": 67640,
+        "spent_usd": 1.9
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:47:45.644795+00:00",
+          "duration_seconds": 0.922,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:47:46.567182+00:00",
+          "duration_seconds": 28.473,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:48:15.038587+00:00",
+          "duration_seconds": 14.016,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:48:29.054332+00:00",
+          "duration_seconds": 12.425,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:48:41.478401+00:00",
+          "duration_seconds": 36.053,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/kimik3-cenario-2/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:49:17.529791+00:00",
+          "duration_seconds": 8.853,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 108,
+        "tests_passed": 108,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 96.7
+      },
+      "quality": {
+        "format_clean": false,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-1",
+      "source_path": "runs/sonnet5/cenario-1",
+      "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+      "declared_go_version": "1.22",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_results.txt",
+        "model": "sonnet5",
+        "time_raw": "2m 16s",
+        "time_seconds": 136,
+        "tokens": 23337,
+        "spent_usd": 0.08
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:49:28.430364+00:00",
+          "duration_seconds": 0.069,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:49:28.499729+00:00",
+          "duration_seconds": 44.677,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:50:13.173421+00:00",
+          "duration_seconds": 9.516,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:50:22.689457+00:00",
+          "duration_seconds": 9.357,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:50:32.045488+00:00",
+          "duration_seconds": 32.028,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/sonnet5-cenario-1/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:51:04.072050+00:00",
+          "duration_seconds": 12.101,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 0,
+        "tests_passed": 0,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 0.0
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-2",
+      "source_path": "runs/sonnet5/cenario-2",
+      "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+      "declared_go_version": "1.26.0",
+      "billing": {
+        "status": "parsed",
+        "source_file": "billing_result.txt",
+        "model": "sonnet5",
+        "time_raw": "19m 10s",
+        "time_seconds": 1150,
+        "tokens": 138064,
+        "spent_usd": 2.49
+      },
+      "commands": [
+        {
+          "name": "format",
+          "command": [
+            "gofmt",
+            "-l",
+            "."
+          ],
+          "started_at": "2026-09-07T00:51:19.917850+00:00",
+          "duration_seconds": 0.122,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/format.stdout.log",
+          "stderr": "logs/format.stderr.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "go",
+            "build",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:51:20.039539+00:00",
+          "duration_seconds": 46.876,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/build.stdout.log",
+          "stderr": "logs/build.stderr.log"
+        },
+        {
+          "name": "vet",
+          "command": [
+            "go",
+            "vet",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:52:06.912742+00:00",
+          "duration_seconds": 11.089,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/vet.stdout.log",
+          "stderr": "logs/vet.stderr.log"
+        },
+        {
+          "name": "test",
+          "command": [
+            "go",
+            "test",
+            "-json",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T00:52:18.002296+00:00",
+          "duration_seconds": 19.002,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/test.stdout.log",
+          "stderr": "logs/test.stderr.log"
+        },
+        {
+          "name": "race",
+          "command": [
+            "go",
+            "test",
+            "-race",
+            "-count=1",
+            "./..."
+          ],
+          "started_at": "2026-09-07T01:26:52.983376+00:00",
+          "duration_seconds": 38.714,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/race.stdout.log",
+          "stderr": "logs/race.stderr.log"
+        },
+        {
+          "name": "coverage",
+          "command": [
+            "go",
+            "test",
+            "-count=1",
+            "-covermode=atomic",
+            "-coverpkg=./...",
+            "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/sonnet5-cenario-2/coverage/generated-tests.out",
+            "./..."
+          ],
+          "started_at": "2026-09-07T01:27:31.694709+00:00",
+          "duration_seconds": 10.903,
+          "status": "passed",
+          "exit_code": 0,
+          "error": null,
+          "stdout": "logs/coverage.stdout.log",
+          "stderr": "logs/coverage.stderr.log"
+        }
+      ],
+      "tests": {
+        "tests_run": 118,
+        "tests_passed": 118,
+        "tests_failed": 0,
+        "tests_skipped": 0,
+        "coverage_percent": 96.7
+      },
+      "quality": {
+        "format_clean": true,
+        "build_passed": true,
+        "vet_passed": true,
+        "tests_passed": true,
+        "race_passed": true,
+        "coverage_generated": true
+      },
+      "security": {
+        "govulncheck": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "gosec": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "golangci_lint": {
+          "status": "not_run",
+          "available": false,
+          "path": null
+        },
+        "sonar": {
+          "status": "not_run",
+          "reason": "requires explicit scanner credentials/configuration"
+        }
+      }
+    }
+  ]
+}

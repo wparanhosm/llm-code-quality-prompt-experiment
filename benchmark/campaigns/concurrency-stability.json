@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "concurrency-stability-v1",
+  "base_campaign": "benchmark/campaigns/functional-smoke.json",
+  "robustness_campaign": "benchmark/campaigns/functional-robustness.json",
+  "repetitions": 30,
+  "workers": 10,
+  "contention_amount_cents": 2000,
+  "inverse_amount_cents": 100,
+  "eligible_runs": [
+    "chatgpt56sol-cenario-1",
+    "chatgpt56sol-cenario-2",
+    "gemini37flash-cenario-2",
+    "grok46-cenario-2",
+    "kimik3-cenario-1",
+    "kimik3-cenario-2",
+    "sonnet5-cenario-1",
+    "sonnet5-cenario-2"
+  ],
+  "ledger_total_queries": {
+    "chatgpt56sol-cenario-1": "SELECT COUNT(*) FROM transfers WHERE source_wallet_id IN ('bench-a','bench-b') AND destination_wallet_id IN ('bench-a','bench-b')",
+    "chatgpt56sol-cenario-2": "SELECT COUNT(*) FROM transfers WHERE source_wallet_id IN ('bench-a','bench-b') AND destination_wallet_id IN ('bench-a','bench-b')",
+    "gemini37flash-cenario-2": "SELECT COUNT(*) FROM transfers WHERE from_account_id IN (101,102) AND to_account_id IN (101,102)",
+    "grok46-cenario-2": "SELECT COUNT(*) FROM transfers WHERE from_wallet_id IN ('bench-a','bench-b') AND to_wallet_id IN ('bench-a','bench-b')",
+    "kimik3-cenario-1": "SELECT COUNT(*) FROM transactions WHERE from_wallet_id IN ('bench-a','bench-b') AND to_wallet_id IN ('bench-a','bench-b')",
+    "kimik3-cenario-2": "SELECT COUNT(*) FROM transactions WHERE from_wallet_id IN ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222') AND to_wallet_id IN ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222')",
+    "sonnet5-cenario-1": "SELECT COUNT(*) FROM transfers WHERE from_user_id IN ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222') AND to_user_id IN ('11111111-1111-1111-1111-111111111111','22222222-2222-2222-2222-222222222222')",
+    "sonnet5-cenario-2": "SELECT COUNT(*) FROM transactions WHERE from_wallet_id IN ('bench-a','bench-b') AND to_wallet_id IN ('bench-a','bench-b')"
+  }
+}

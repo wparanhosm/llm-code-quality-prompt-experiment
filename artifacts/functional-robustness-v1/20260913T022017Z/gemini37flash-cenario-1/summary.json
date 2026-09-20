@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-1",
+  "status": "unsupported",
+  "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+  "reason": "A CLI executa uma unica transferencia fixa e nao aceita parametros.",
+  "cases": [
+    {
+      "id": "same_account",
+      "status": "unsupported"
+    },
+    {
+      "id": "zero",
+      "status": "unsupported"
+    },
+    {
+      "id": "negative",
+      "status": "unsupported"
+    },
+    {
+      "id": "missing_wallet",
+      "status": "unsupported"
+    },
+    {
+      "id": "insufficient_funds",
+      "status": "unsupported"
+    },
+    {
+      "id": "concurrency",
+      "status": "unsupported"
+    }
+  ]
+}

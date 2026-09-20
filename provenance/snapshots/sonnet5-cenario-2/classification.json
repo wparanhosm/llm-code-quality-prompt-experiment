@@ -1,0 +1,257 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sonnet5-cenario-2",
+  "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+  "entries": [
+    {
+      "path": ".gitignore",
+      "category": "model_operational_config",
+      "rule": "model-provided-operational-config",
+      "confidence": "high"
+    },
+    {
+      "path": ".opencode/agent/agente-engenheiro.md",
+      "category": "generation_context",
+      "rule": "generation-agent-context",
+      "confidence": "high"
+    },
+    {
+      "path": "AGENTS.md",
+      "category": "generation_context",
+      "rule": "generation-agent-context",
+      "confidence": "high"
+    },
+    {
+      "path": "Dockerfile",
+      "category": "model_operational_config",
+      "rule": "model-provided-operational-config",
+      "confidence": "high"
+    },
+    {
+      "path": "Makefile",
+      "category": "model_operational_config",
+      "rule": "model-provided-operational-config",
+      "confidence": "high"
+    },
+    {
+      "path": "README.md",
+      "category": "documentation",
+      "rule": "project-documentation",
+      "confidence": "high"
+    },
+    {
+      "path": "billing_result.txt",
+      "category": "generation_metadata",
+      "rule": "billing-metadata",
+      "confidence": "high"
+    },
+    {
+      "path": "cmd/p2ptransfer/main.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "cmd/p2ptransfer/main_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "docker-compose.yml",
+      "category": "model_operational_config",
+      "rule": "model-provided-operational-config",
+      "confidence": "high"
+    },
+    {
+      "path": "go.mod",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "go.sum",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/transaction_repository.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/transaction_repository_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/unit_of_work.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/unit_of_work_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/wallet_repository.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/adapter/repository/postgres/wallet_repository_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/delivery/http/transfer_handler.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/delivery/http/transfer_handler_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/domain/transaction.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/domain/transaction_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/domain/wallet.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/domain/wallet_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/platform/database/db.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/platform/database/db_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/platform/logger/logger.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/platform/logger/logger_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/usecase/mocks/mocks.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/usecase/ports.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/usecase/transfer.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/usecase/transfer_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/001_create_wallets_and_transactions.down.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/001_create_wallets_and_transactions.up.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/002_seed_sample_wallets.down.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/002_seed_sample_wallets.up.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/init/001_create_wallets_and_transactions.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/init/002_seed_sample_wallets.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    },
+    {
+      "path": "pkg/idgen/uuid.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "pkg/idgen/uuid_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "application_source": 13,
+    "database_definition": 6,
+    "dependency_manifest": 2,
+    "documentation": 1,
+    "generated_test": 11,
+    "generation_context": 2,
+    "generation_metadata": 1,
+    "model_operational_config": 4
+  }
+}

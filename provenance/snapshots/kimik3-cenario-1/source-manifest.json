@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-1",
+  "source_path": "runs/kimik3/cenario-1",
+  "hash_algorithm": "sha256",
+  "root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+  "entries": [
+    {
+      "path": "billing_results.txt",
+      "type": "file",
+      "mode": "0777",
+      "size": 62,
+      "sha256": "5f8fe89f007d726f64becc7ebd59e970d5756a659ca41be01ec7c73d676e0d4f"
+    },
+    {
+      "path": "go.mod",
+      "type": "file",
+      "mode": "0777",
+      "size": 502,
+      "sha256": "e7484989f43fdec68d2752beab538cac23120b4ef1928b4725177c2d56d0bbee"
+    },
+    {
+      "path": "go.sum",
+      "type": "file",
+      "mode": "0777",
+      "size": 4135,
+      "sha256": "59d6f9f0590f841c826c0c2003f906b038b16397a886eaef7a562ac031b68d6b"
+    },
+    {
+      "path": "main.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 6998,
+      "sha256": "e7c49fea1d08de8e3ca2903ee745a60649c576068a262d17f25f548248d50ca9"
+    },
+    {
+      "path": "main_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 5937,
+      "sha256": "0aa080ae93e3a7b81243593709f269c59e5cf678aa1072b1b8301348476fec25"
+    },
+    {
+      "path": "service.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 3840,
+      "sha256": "76582e982009b31e33fb74b656a8f87e38e1961227a39fd1b10981d29c98d211"
+    },
+    {
+      "path": "store.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 2676,
+      "sha256": "2a1d7d08fdd3c8a3e9f1189ae3a1433f888d2ac69c2b28d9364a0f4465503b6e"
+    }
+  ]
+}

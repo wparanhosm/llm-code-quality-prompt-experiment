@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-2",
+  "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+  "status": "passed",
+  "error": null,
+  "planned_iterations": 100,
+  "pairs": 100,
+  "vus": 50,
+  "k6": {
+    "exit_code": 0,
+    "duration_seconds": 1.339,
+    "metrics": {
+      "iterations": 100,
+      "http_reqs": 100,
+      "successful_transfers": 100,
+      "unexpected_statuses": 0,
+      "status_counts": {
+        "200": 0,
+        "201": 100,
+        "400": 0,
+        "404": 0,
+        "409": 0,
+        "422": 0,
+        "500": 0,
+        "other": 0
+      },
+      "http_req_failed_rate": null,
+      "requests_per_second": 316.96952788086156,
+      "latency_avg_ms": 119.8646460499999,
+      "latency_med_ms": 96.42891449999999,
+      "latency_p90_ms": 224.37631410000003,
+      "latency_p95_ms": 249.69123395,
+      "latency_p99_ms": 255.2188192
+    }
+  },
+  "reconciliation": {
+    "observed": {
+      "wallet_count": 200,
+      "source_total": 0,
+      "destination_total": 100,
+      "total_balance": 100,
+      "negative_wallets": 0,
+      "ledger_rows": 100,
+      "ledger_amount": 100
+    },
+    "expected": {
+      "wallet_count": 200,
+      "source_total": 0,
+      "destination_total": 100,
+      "total_balance": 100,
+      "negative_wallets": 0,
+      "ledger_rows": 100,
+      "ledger_amount": 100
+    },
+    "checks": {
+      "wallet_count": true,
+      "source_total": true,
+      "destination_total": true,
+      "total_balance": true,
+      "negative_wallets": true,
+      "ledger_rows": true,
+      "ledger_amount": true
+    },
+    "passed": true
+  },
+  "operational_assistance": [
+    "snapshot_materialized",
+    "database_provisioned",
+    "seed_applied_external",
+    "environment_injected",
+    "application_logs_discarded_during_load"
+  ]
+}

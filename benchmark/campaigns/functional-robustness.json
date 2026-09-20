@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "campaign_id": "functional-robustness-v1",
+  "base_campaign": "benchmark/campaigns/functional-smoke.json",
+  "concurrency": {"requests": 10, "amount_cents": 2000},
+  "runs": {
+    "chatgpt56sol-cenario-1": {
+      "amount_scale": 100,
+      "fields": {"source": "source_user_id", "destination": "destination_user_id", "amount": "amount"},
+      "values": {"missing": "missing-wallet", "zero": "0", "negative": "-1.00", "insufficient": "1000.00", "concurrent": "20.00"},
+      "statuses": {"same_account": [400], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [409], "concurrency_failure": [409]}
+    },
+    "chatgpt56sol-cenario-2": {
+      "amount_scale": 100,
+      "fields": {"source": "source_wallet_id", "destination": "destination_wallet_id", "amount": "amount"},
+      "values": {"missing": "missing-wallet", "zero": "0", "negative": "-1.00", "insufficient": "1000.00", "concurrent": "20.00"},
+      "statuses": {"same_account": [400], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [409], "concurrency_failure": [409]}
+    },
+    "gemini37flash-cenario-1": {"unsupported": ["same_account", "zero", "negative", "missing_wallet", "insufficient_funds", "concurrency"], "reason": "A CLI executa uma unica transferencia fixa e nao aceita parametros."},
+    "gemini37flash-cenario-2": {
+      "amount_scale": 1,
+      "fields": {"source": "from_account_id", "destination": "to_account_id", "amount": "amount_cents"},
+      "values": {"missing": 999999, "zero": 0, "negative": -100, "insufficient": 100000, "concurrent": 2000},
+      "statuses": {"same_account": [422], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [422], "concurrency_failure": [422]}
+    },
+    "grok46-cenario-1": {
+      "cli": true,
+      "amount_scale": 1,
+      "values": {"missing": 999999, "zero": 0, "negative": -100, "insufficient": 200000, "concurrent": 2000},
+      "exit_codes": {"same_account": [1], "zero": [2], "negative": [1], "missing_wallet": [1], "insufficient_funds": [1], "concurrency_failure": [1]}
+    },
+    "grok46-cenario-2": {
+      "amount_scale": 1,
+      "fields": {"source": "from_wallet_id", "destination": "to_wallet_id", "amount": "amount"},
+      "values": {"missing": "missing-wallet", "zero": 0, "negative": -100, "insufficient": 100000, "concurrent": 2000},
+      "statuses": {"same_account": [400], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [409], "concurrency_failure": [409]}
+    },
+    "kimik3-cenario-1": {
+      "amount_scale": 100,
+      "fields": {"source": "origem", "destination": "destino", "amount": "valor"},
+      "values": {"missing": "missing-wallet", "zero": 0, "negative": -1, "insufficient": 1000, "concurrent": 20},
+      "statuses": {"same_account": [400], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [422], "concurrency_failure": [422]}
+    },
+    "kimik3-cenario-2": {
+      "amount_scale": 1,
+      "fields": {"source": "from_wallet_id", "destination": "to_wallet_id", "amount": "amount_cents"},
+      "values": {"missing": "99999999-9999-9999-9999-999999999999", "zero": 0, "negative": -100, "insufficient": 100000, "concurrent": 2000},
+      "statuses": {"same_account": [400], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [422], "concurrency_failure": [422]}
+    },
+    "sonnet5-cenario-1": {
+      "amount_scale": 1,
+      "fields": {"source": "from_user_id", "destination": "to_user_id", "amount": "amount_cents"},
+      "values": {"missing": "99999999-9999-9999-9999-999999999999", "zero": 0, "negative": -100, "insufficient": 100000, "concurrent": 2000},
+      "statuses": {"same_account": [400], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [422], "concurrency_failure": [422]}
+    },
+    "sonnet5-cenario-2": {
+      "amount_scale": 1,
+      "fields": {"source": "from_wallet_id", "destination": "to_wallet_id", "amount": "amount_cents"},
+      "values": {"missing": "missing-wallet", "zero": 0, "negative": -100, "insufficient": 100000, "concurrent": 2000},
+      "statuses": {"same_account": [400], "zero": [400], "negative": [400], "missing_wallet": [404], "insufficient_funds": [400], "concurrency_failure": [400]}
+    }
+  }
+}

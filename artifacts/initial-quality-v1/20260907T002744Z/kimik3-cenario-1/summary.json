@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-1",
+  "source_path": "runs/kimik3/cenario-1",
+  "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+  "declared_go_version": "1.26",
+  "billing": {
+    "status": "parsed",
+    "source_file": "billing_results.txt",
+    "model": "kimik3",
+    "time_raw": "6min 42s",
+    "time_seconds": 402,
+    "tokens": 18057,
+    "spent_usd": 0.26
+  },
+  "commands": [
+    {
+      "name": "format",
+      "command": [
+        "gofmt",
+        "-l",
+        "."
+      ],
+      "started_at": "2026-09-07T00:43:02.522466+00:00",
+      "duration_seconds": 0.037,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/format.stdout.log",
+      "stderr": "logs/format.stderr.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "go",
+        "build",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:43:02.559971+00:00",
+      "duration_seconds": 55.835,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/build.stdout.log",
+      "stderr": "logs/build.stderr.log"
+    },
+    {
+      "name": "vet",
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:43:58.390927+00:00",
+      "duration_seconds": 12.746,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/vet.stdout.log",
+      "stderr": "logs/vet.stderr.log"
+    },
+    {
+      "name": "test",
+      "command": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:44:11.136737+00:00",
+      "duration_seconds": 13.689,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/test.stdout.log",
+      "stderr": "logs/test.stderr.log"
+    },
+    {
+      "name": "race",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:44:24.826148+00:00",
+      "duration_seconds": 53.409,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/race.stdout.log",
+      "stderr": "logs/race.stderr.log"
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-covermode=atomic",
+        "-coverpkg=./...",
+        "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/initial-quality-v1/20260907T002744Z/kimik3-cenario-1/coverage/generated-tests.out",
+        "./..."
+      ],
+      "started_at": "2026-09-07T00:45:18.231855+00:00",
+      "duration_seconds": 7.695,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/coverage.stdout.log",
+      "stderr": "logs/coverage.stderr.log"
+    }
+  ],
+  "tests": {
+    "tests_run": 10,
+    "tests_passed": 10,
+    "tests_failed": 0,
+    "tests_skipped": 0,
+    "coverage_percent": 51.3
+  },
+  "quality": {
+    "format_clean": true,
+    "build_passed": true,
+    "vet_passed": true,
+    "tests_passed": true,
+    "race_passed": true,
+    "coverage_generated": true
+  },
+  "security": {
+    "govulncheck": {
+      "status": "not_run",
+      "available": false,
+      "path": null
+    },
+    "gosec": {
+      "status": "not_run",
+      "available": false,
+      "path": null
+    },
+    "golangci_lint": {
+      "status": "not_run",
+      "available": false,
+      "path": null
+    },
+    "sonar": {
+      "status": "not_run",
+      "reason": "requires explicit scanner credentials/configuration"
+    }
+  }
+}

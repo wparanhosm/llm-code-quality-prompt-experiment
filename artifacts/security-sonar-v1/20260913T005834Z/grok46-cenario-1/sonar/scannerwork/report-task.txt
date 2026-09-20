@@ -1,0 +1,6 @@
+projectKey=lqcpe-grok46-cenario-1-20260913T005834Z
+serverUrl=http://sonarqube:9000
+serverVersion=26.6.0.123539
+dashboardUrl=http://sonarqube:9000/dashboard?id=lqcpe-grok46-cenario-1-20260913T005834Z
+ceTaskId=8f9d8dcb-17c8-4e72-9ec5-0da9a3979b1c
+ceTaskUrl=http://sonarqube:9000/api/ce/task?id=8f9d8dcb-17c8-4e72-9ec5-0da9a3979b1c

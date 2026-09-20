@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-1",
+  "source_path": "runs/gemini37flash/cenario-1",
+  "hash_algorithm": "sha256",
+  "root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+  "entries": [
+    {
+      "path": "billing_result.txt",
+      "type": "file",
+      "mode": "0777",
+      "size": 61,
+      "sha256": "6c9392a1cfa48c9e75a8cae3949bfdb2a95d052df043cabb0ca4c20d161d6796"
+    },
+    {
+      "path": "go.mod",
+      "type": "file",
+      "mode": "0777",
+      "size": 514,
+      "sha256": "028e3e3d360cea42e49d1e35a2d54ad52138bac2b8b7fd0436b60e07a0678830"
+    },
+    {
+      "path": "go.sum",
+      "type": "file",
+      "mode": "0777",
+      "size": 1710,
+      "sha256": "8661f85aea3f6e9ea9b114ae8acd6df19036c8073214cf716e7b2721a2c3c062"
+    },
+    {
+      "path": "main.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 4750,
+      "sha256": "f14289b0d75e46b7e58194b8c67a474ed0f0ddd17aba5cdb5442ae23d6ad84b3"
+    },
+    {
+      "path": "pix_wallets.db",
+      "type": "file",
+      "mode": "0777",
+      "size": 20480,
+      "sha256": "d8262922eb289c796061e032659896cb2853e4300a7cd107b2008da8164c8579"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "runs": [
+    {
+      "run_id": "chatgpt56sol-cenario-1",
+      "source_path": "runs/chatgpt56sol/cenario-1",
+      "root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "file_count": 14,
+      "total_bytes": 18758,
+      "classification": {
+        "application_source": 4,
+        "database_definition": 1,
+        "dependency_manifest": 2,
+        "documentation": 1,
+        "generated_test": 2,
+        "generation_metadata": 1,
+        "model_operational_config": 3
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "chatgpt56sol-cenario-2",
+      "source_path": "runs/chatgpt56sol/cenario-2",
+      "root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+      "file_count": 3685,
+      "total_bytes": 65217997,
+      "classification": {
+        "application_source": 9,
+        "database_definition": 1,
+        "dependency_manifest": 4,
+        "documentation": 1,
+        "generated_test": 5,
+        "generation_artifact": 3657,
+        "generation_context": 3,
+        "generation_metadata": 1,
+        "model_operational_config": 4
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "gemini37flash-cenario-1",
+      "source_path": "runs/gemini37flash/cenario-1",
+      "root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+      "file_count": 5,
+      "total_bytes": 27515,
+      "classification": {
+        "application_source": 1,
+        "dependency_manifest": 2,
+        "generation_artifact": 1,
+        "generation_metadata": 1
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "gemini37flash-cenario-2",
+      "source_path": "runs/gemini37flash/cenario-2",
+      "root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+      "file_count": 3681,
+      "total_bytes": 61958663,
+      "classification": {
+        "application_source": 8,
+        "dependency_manifest": 4,
+        "generated_test": 7,
+        "generation_artifact": 3657,
+        "generation_context": 3,
+        "generation_metadata": 1,
+        "model_operational_config": 1
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "grok46-cenario-1",
+      "source_path": "runs/grok46/cenario-1",
+      "root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+      "file_count": 7,
+      "total_bytes": 6280,
+      "classification": {
+        "application_source": 3,
+        "dependency_manifest": 2,
+        "generated_test": 1,
+        "generation_metadata": 1
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "grok46-cenario-2",
+      "source_path": "runs/grok46/cenario-2",
+      "root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+      "file_count": 3688,
+      "total_bytes": 54859636,
+      "classification": {
+        "application_source": 12,
+        "dependency_manifest": 4,
+        "documentation": 1,
+        "generated_test": 10,
+        "generation_artifact": 3656,
+        "generation_context": 3,
+        "generation_metadata": 1,
+        "model_operational_config": 1
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "kimik3-cenario-1",
+      "source_path": "runs/kimik3/cenario-1",
+      "root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+      "file_count": 7,
+      "total_bytes": 24150,
+      "classification": {
+        "application_source": 3,
+        "dependency_manifest": 2,
+        "generated_test": 1,
+        "generation_metadata": 1
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "kimik3-cenario-2",
+      "source_path": "runs/kimik3/cenario-2",
+      "root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+      "file_count": 3466,
+      "total_bytes": 48758812,
+      "classification": {
+        "application_source": 14,
+        "database_definition": 3,
+        "dependency_manifest": 4,
+        "documentation": 1,
+        "generated_test": 9,
+        "generation_artifact": 3428,
+        "generation_context": 3,
+        "generation_metadata": 1,
+        "model_operational_config": 3
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "sonnet5-cenario-1",
+      "source_path": "runs/sonnet5/cenario-1",
+      "root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+      "file_count": 9,
+      "total_bytes": 20618,
+      "classification": {
+        "application_source": 5,
+        "database_definition": 1,
+        "dependency_manifest": 2,
+        "generation_metadata": 1
+      },
+      "unknown_count": 0
+    },
+    {
+      "run_id": "sonnet5-cenario-2",
+      "source_path": "runs/sonnet5/cenario-2",
+      "root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+      "file_count": 40,
+      "total_bytes": 126103,
+      "classification": {
+        "application_source": 13,
+        "database_definition": 6,
+        "dependency_manifest": 2,
+        "documentation": 1,
+        "generated_test": 11,
+        "generation_context": 2,
+        "generation_metadata": 1,
+        "model_operational_config": 4
+      },
+      "unknown_count": 0
+    }
+  ]
+}

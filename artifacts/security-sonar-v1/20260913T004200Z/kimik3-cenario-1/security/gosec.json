@@ -1,0 +1,60 @@
+{
+	"Golang errors": {},
+	"Issues": [
+		{
+			"severity": "MEDIUM",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "676",
+				"url": "https://cwe.mitre.org/data/definitions/676.html"
+			},
+			"rule_id": "G114",
+			"details": "Use of net/http serve function that has no support for setting timeouts",
+			"file": "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/work/20260913T004200Z/kimik3-cenario-1/source/main.go",
+			"code": "244: \tlog.Printf(\"Servidor Pix P2P ouvindo em %s\", addr)\n245: \tlog.Fatal(http.ListenAndServe(addr, srv.routes()))\n246: }\n",
+			"line": "245",
+			"column": "12",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/work/20260913T004200Z/kimik3-cenario-1/source/main.go",
+			"code": "215: \tw.WriteHeader(status)\n216: \tjson.NewEncoder(w).Encode(v)\n217: }\n",
+			"line": "216",
+			"column": "2",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "703",
+				"url": "https://cwe.mitre.org/data/definitions/703.html"
+			},
+			"rule_id": "G104",
+			"details": "Errors unhandled",
+			"file": "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/work/20260913T004200Z/kimik3-cenario-1/source/main.go",
+			"code": "43: \tif _, err := db.Exec(schema); err != nil {\n44: \t\tdb.Close()\n45: \t\treturn nil, err\n",
+			"line": "44",
+			"column": "3",
+			"nosec": false,
+			"suppressions": null
+		}
+	],
+	"Stats": {
+		"files": 3,
+		"lines": 467,
+		"nosec": 0,
+		"found": 3
+	},
+	"GosecVersion": "dev"
+}

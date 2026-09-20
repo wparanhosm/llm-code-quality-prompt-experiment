@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "run_id": "gemini37flash-cenario-2",
+  "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+  "commands": {
+    "coverage": {
+      "name": "coverage",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-covermode=atomic",
+        "-coverpkg=./...",
+        "-coverprofile=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260912T233323Z/gemini37flash-cenario-2/coverage/generated-tests.out",
+        "./..."
+      ],
+      "started_at": "2026-09-12T23:41:15.274019+00:00",
+      "duration_seconds": 15.221,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/coverage.stdout.log",
+      "stderr": "logs/coverage.stderr.log"
+    },
+    "govulncheck": {
+      "name": "govulncheck",
+      "command": [
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/cache/tools/bin/govulncheck",
+        "-json",
+        "./..."
+      ],
+      "started_at": "2026-09-12T23:41:30.499462+00:00",
+      "duration_seconds": 5.148,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/govulncheck.stdout.log",
+      "stderr": "logs/govulncheck.stderr.log"
+    },
+    "gosec": {
+      "name": "gosec",
+      "command": [
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/cache/tools/bin/gosec",
+        "-no-fail",
+        "-fmt=json",
+        "-out=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260912T233323Z/gemini37flash-cenario-2/security/gosec.json",
+        "./..."
+      ],
+      "started_at": "2026-09-12T23:41:35.670374+00:00",
+      "duration_seconds": 15.159,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/gosec.stdout.log",
+      "stderr": "logs/gosec.stderr.log"
+    },
+    "golangci_lint": {
+      "name": "golangci_lint",
+      "command": [
+        "/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/cache/tools/bin/golangci-lint",
+        "run",
+        "--no-config",
+        "--default=standard",
+        "--issues-exit-code=0",
+        "--timeout=10m",
+        "--output.json.path=/mnt/c/Users/walte/workspace/llm-code-quality-prompt-experiment/artifacts/security-sonar-v1/20260912T233323Z/gemini37flash-cenario-2/lint/golangci-lint.json"
+      ],
+      "started_at": "2026-09-12T23:41:50.834290+00:00",
+      "duration_seconds": 13.538,
+      "status": "passed",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "logs/golangci_lint.stdout.log",
+      "stderr": "logs/golangci_lint.stderr.log"
+    }
+  },
+  "tools": {
+    "govulncheck": {
+      "version": "v1.1.4",
+      "path": "cache/tools/bin/govulncheck"
+    },
+    "gosec": {
+      "version": "v2.29.0",
+      "path": "cache/tools/bin/gosec"
+    },
+    "golangci_lint": {
+      "version": "v2.13.2",
+      "path": "cache/tools/bin/golangci-lint"
+    }
+  },
+  "security": {
+    "govulncheck": {
+      "status": "passed",
+      "vulnerability_events": 0
+    },
+    "gosec": {
+      "status": "passed",
+      "issues": 0,
+      "severity": {}
+    }
+  },
+  "lint": {
+    "status": "passed",
+    "issues": 4,
+    "linters": {
+      "errcheck": 3,
+      "staticcheck": 1
+    }
+  },
+  "sonar": {
+    "status": "skipped",
+    "reason": "SONAR_TOKEN is not set"
+  }
+}

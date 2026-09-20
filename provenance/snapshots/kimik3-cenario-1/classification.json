@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-1",
+  "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+  "entries": [
+    {
+      "path": "billing_results.txt",
+      "category": "generation_metadata",
+      "rule": "billing-metadata",
+      "confidence": "high"
+    },
+    {
+      "path": "go.mod",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "go.sum",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "main.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "main_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "service.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "store.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "application_source": 3,
+    "dependency_manifest": 2,
+    "generated_test": 1,
+    "generation_metadata": 1
+  }
+}

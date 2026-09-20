@@ -1,0 +1,974 @@
+{
+  "campaign": "functional-smoke-v1",
+  "execution_id": "20260913T015119Z",
+  "runs": [
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-1",
+      "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 201,
+          "expected": true,
+          "json": {
+            "amount": "12.50",
+            "created_at": "2026-09-12T22:51:29.128492-03:00",
+            "destination_user_id": "bench-b",
+            "id": "79467f56-5e18-4479-8c98-9aa81f6b44e9",
+            "source_user_id": "bench-a"
+          },
+          "body": "{\"amount\":\"12.50\",\"created_at\":\"2026-09-12T22:51:29.128492-03:00\",\"destination_user_id\":\"bench-b\",\"id\":\"79467f56-5e18-4479-8c98-9aa81f6b44e9\",\"source_user_id\":\"bench-a\"}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "migration_applied_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 0.41
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.759,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.161,
+          "source": "migrations/001_init.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.091,
+          "source": "benchmark/functional/sql/chatgpt56sol-cenario-1.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 5.082,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.007,
+          "pid": 73380
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.512,
+          "type": "http"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.01,
+          "status_code": 201
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.186
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.009,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "chatgpt56sol-cenario-2",
+      "source_root_hash": "06ac94ee765dd44f022c6d0e1b0a6e81f717333252a70a47598380a0ea464a2c",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 201,
+          "expected": true,
+          "json": {
+            "ID": "be06264d27f29fa0e7a5aa6ffa06808a",
+            "Amount": "12.50",
+            "CreatedAt": "2026-09-13T01:53:55.835155891Z"
+          },
+          "body": "{\"ID\":\"be06264d27f29fa0e7a5aa6ffa06808a\",\"Amount\":\"12.50\",\"CreatedAt\":\"2026-09-13T01:53:55.835155891Z\"}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "migration_applied_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 138.447
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.768,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.141,
+          "source": "migrations/001_init.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.072,
+          "source": "benchmark/functional/sql/chatgpt56sol-cenario-2.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 4.03,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.007,
+          "pid": 73643
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.501,
+          "type": "tcp"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.013,
+          "status_code": 201
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.176
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.008,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-1",
+      "source_root_hash": "7907395bdc1bb47cb4ac22bfd643b8960802dd641fbaf439abd4e2db62045c78",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "oneshot",
+        "response": null,
+        "state": {
+          "source_before_cents": 15000,
+          "destination_before_cents": 5000,
+          "source_after_cents": 10500,
+          "destination_after_cents": 9500,
+          "total_before_cents": 20000,
+          "total_after_cents": 20000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 2,
+        "assistance": [
+          "build_command_supplied",
+          "working_directory_isolated"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 0.126
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 4.636,
+          "exit_code": 0
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.124,
+          "exit_code": 0
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.015
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.001,
+          "method": "already_stopped"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "gemini37flash-cenario-2",
+      "source_root_hash": "d898fe9810beabadd3871fdd34db981c58dc5bace4e38fcd5d43b7d18efca706",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 201,
+          "expected": true,
+          "json": {
+            "transfer_id": 1,
+            "from_account_id": 101,
+            "to_account_id": 102,
+            "amount_cents": 1250,
+            "from_account_balance_left": 8750,
+            "to_account_balance_left": 3250,
+            "status": "COMPLETED"
+          },
+          "body": "{\"transfer_id\":1,\"from_account_id\":101,\"to_account_id\":102,\"amount_cents\":1250,\"from_account_balance_left\":8750,\"to_account_balance_left\":3250,\"status\":\"COMPLETED\"}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "schema_created_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 125.969
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.711,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.134,
+          "source": "benchmark/functional/sql/gemini37flash-cenario-2-schema.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.078,
+          "source": "benchmark/functional/sql/gemini37flash-cenario-2.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 4.08,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.006,
+          "pid": 74003
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.506,
+          "type": "http"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.01,
+          "status_code": 201
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.205
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.008,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-1",
+      "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "cli",
+        "response": null,
+        "state": {
+          "source_before_cents": 100000,
+          "destination_before_cents": 25000,
+          "source_after_cents": 98750,
+          "destination_after_cents": 26250,
+          "total_before_cents": 125000,
+          "total_after_cents": 125000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 3,
+        "assistance": [
+          "build_command_supplied",
+          "cli_arguments_supplied",
+          "working_directory_isolated"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 0.324
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 3.53,
+          "exit_code": 0
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.12,
+          "exit_code": 0
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.016
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.001,
+          "method": "already_stopped"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "grok46-cenario-2",
+      "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 201,
+          "expected": true,
+          "json": {
+            "id": "1789264719463947038-1789264719463",
+            "from_wallet_id": "bench-a",
+            "to_wallet_id": "bench-b",
+            "amount": 1250,
+            "created_at": "2026-09-13T01:58:39Z"
+          },
+          "body": "{\"id\":\"1789264719463947038-1789264719463\",\"from_wallet_id\":\"bench-a\",\"to_wallet_id\":\"bench-b\",\"amount\":1250,\"created_at\":\"2026-09-13T01:58:39Z\"}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "migration_reconstructed_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 131.699
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.706,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.119,
+          "source": "benchmark/functional/sql/grok46-cenario-2-schema.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.119,
+          "source": "benchmark/functional/sql/grok46-cenario-2.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 4.585,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.006,
+          "pid": 74406
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.503,
+          "type": "http"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.01,
+          "status_code": 201
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.173
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.033,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-1",
+      "source_root_hash": "d9ace4c75bb83c4ba8f3fbcead1c3f554cb7a1bde706b695fb1c799cfde54eb9",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 200,
+          "expected": true,
+          "json": {
+            "id": 1,
+            "origem": "bench-a",
+            "destino": "bench-b",
+            "valor": 12.5,
+            "status": "completed"
+          },
+          "body": "{\"id\":1,\"origem\":\"bench-a\",\"destino\":\"bench-b\",\"valor\":12.5,\"status\":\"completed\"}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 5,
+        "assistance": [
+          "build_command_supplied",
+          "working_directory_isolated",
+          "fixed_port_required",
+          "readiness_probe_supplied",
+          "seed_via_public_api"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 0.193
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 5.283,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.007,
+          "pid": 74524
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.5,
+          "type": "tcp"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.011,
+          "status_code": 200
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.011
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.008,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "kimik3-cenario-2",
+      "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 201,
+          "expected": true,
+          "json": {
+            "transaction_id": "38c8b3be-d956-472b-aab4-36ea07ae16ae",
+            "from_wallet_id": "11111111-1111-1111-1111-111111111111",
+            "to_wallet_id": "22222222-2222-2222-2222-222222222222",
+            "amount_cents": 1250,
+            "from_new_balance_cents": 8750,
+            "to_new_balance_cents": 3250
+          },
+          "body": "{\"transaction_id\":\"38c8b3be-d956-472b-aab4-36ea07ae16ae\",\"from_wallet_id\":\"11111111-1111-1111-1111-111111111111\",\"to_wallet_id\":\"22222222-2222-2222-2222-222222222222\",\"amount_cents\":1250,\"from_new_balance_cents\":8750,\"to_new_balance_cents\":3250}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "migration_applied_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 128.335
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.727,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.146,
+          "source": "migrations/000001_create_wallets_and_transactions.up.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.095,
+          "source": "benchmark/functional/sql/kimik3-cenario-2.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 4.431,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.007,
+          "pid": 74784
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.504,
+          "type": "http"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.011,
+          "status_code": 201
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.18
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.008,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-1",
+      "source_root_hash": "b8af98fc5ee5ea507276315a2d925dd6b314326fdd6298af2066d059ec295aa5",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 200,
+          "expected": true,
+          "json": {
+            "transfer_id": "2b165953-9d3a-4beb-9afe-9c73dffc2be1",
+            "status": "COMPLETED",
+            "from_user_id": "11111111-1111-1111-1111-111111111111",
+            "to_user_id": "22222222-2222-2222-2222-222222222222",
+            "amount_cents": 1250,
+            "idempotency_key": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+          },
+          "body": "{\"transfer_id\":\"2b165953-9d3a-4beb-9afe-9c73dffc2be1\",\"status\":\"COMPLETED\",\"from_user_id\":\"11111111-1111-1111-1111-111111111111\",\"to_user_id\":\"22222222-2222-2222-2222-222222222222\",\"amount_cents\":1250,\"idempotency_key\":\"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\"}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "migration_applied_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 0.366
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.632,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.132,
+          "source": "migrations/001_init.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.107,
+          "source": "benchmark/functional/sql/sonnet5-cenario-1.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 6.588,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.008,
+          "pid": 75029
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.5,
+          "type": "tcp"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.013,
+          "status_code": 200
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.194
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.009,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    },
+    {
+      "schema_version": "1.0",
+      "run_id": "sonnet5-cenario-2",
+      "source_root_hash": "83dbd6d1ad23d5635f697d844bb09acdc1480cd2fdab2c068ef1657f1bb33337",
+      "status": "passed",
+      "error": null,
+      "functional": {
+        "interface": "http",
+        "response": {
+          "status_code": 200,
+          "expected": true,
+          "json": {
+            "transaction_id": "2e5dd3ae-bd09-4828-b77a-8dcd67c82cf7",
+            "from_wallet_id": "bench-a",
+            "to_wallet_id": "bench-b",
+            "amount_cents": 1250,
+            "from_new_balance": 8750,
+            "to_new_balance": 3250
+          },
+          "body": "{\"transaction_id\":\"2e5dd3ae-bd09-4828-b77a-8dcd67c82cf7\",\"from_wallet_id\":\"bench-a\",\"to_wallet_id\":\"bench-b\",\"amount_cents\":1250,\"from_new_balance\":8750,\"to_new_balance\":3250}\n"
+        },
+        "state": {
+          "source_before_cents": 10000,
+          "destination_before_cents": 2000,
+          "source_after_cents": 8750,
+          "destination_after_cents": 3250,
+          "total_before_cents": 12000,
+          "total_after_cents": 12000,
+          "matching_ledger_rows": 1
+        },
+        "checks": {
+          "initial_state_matches": true,
+          "source_debited_once": true,
+          "destination_credited_once": true,
+          "total_conserved": true,
+          "ledger_recorded_once": true,
+          "non_negative_balances": true
+        }
+      },
+      "operational_effort": {
+        "assistance_count": 6,
+        "assistance": [
+          "database_provisioned",
+          "migration_applied_external",
+          "seed_applied_external",
+          "environment_injected",
+          "build_command_supplied",
+          "readiness_probe_supplied"
+        ],
+        "fallback_count": 0,
+        "fallbacks": []
+      },
+      "phases": {
+        "materialize": {
+          "status": "passed",
+          "duration_seconds": 1.406
+        },
+        "database": {
+          "status": "passed",
+          "duration_seconds": 2.679,
+          "image": "postgres:16-alpine"
+        },
+        "migration": {
+          "status": "passed",
+          "duration_seconds": 0.133,
+          "source": "migrations/001_create_wallets_and_transactions.up.sql"
+        },
+        "seed": {
+          "status": "passed",
+          "duration_seconds": 0.093,
+          "source": "benchmark/functional/sql/sonnet5-cenario-2.sql"
+        },
+        "build": {
+          "status": "passed",
+          "duration_seconds": 5.534,
+          "exit_code": 0
+        },
+        "startup": {
+          "status": "passed",
+          "duration_seconds": 0.008,
+          "pid": 75301
+        },
+        "readiness": {
+          "status": "passed",
+          "duration_seconds": 0.503,
+          "type": "http"
+        },
+        "action": {
+          "status": "passed",
+          "duration_seconds": 0.016,
+          "status_code": 200
+        },
+        "reconciliation": {
+          "status": "passed",
+          "duration_seconds": 0.181
+        },
+        "shutdown": {
+          "status": "passed",
+          "duration_seconds": 0.009,
+          "method": "graceful"
+        }
+      },
+      "diagnostics": {
+        "application_stdout": "logs/application.stdout.log",
+        "application_stderr": "logs/application.stderr.log"
+      }
+    }
+  ]
+}

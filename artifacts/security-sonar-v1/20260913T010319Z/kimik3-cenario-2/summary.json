@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "run_id": "kimik3-cenario-2",
+  "source_root_hash": "fec80cafbf1a2f828a1c4995b00299ec59abc94f19b11491976286b8068a41e8",
+  "recovered_from_completed_artifacts": true,
+  "commands": {
+    "coverage": {
+      "name": "coverage",
+      "status": "completed",
+      "stdout": "logs/coverage.stdout.log",
+      "stderr": "logs/coverage.stderr.log"
+    },
+    "govulncheck": {
+      "name": "govulncheck",
+      "status": "completed",
+      "stdout": "logs/govulncheck.stdout.log",
+      "stderr": "logs/govulncheck.stderr.log"
+    },
+    "gosec": {
+      "name": "gosec",
+      "status": "completed",
+      "stdout": "logs/gosec.stdout.log",
+      "stderr": "logs/gosec.stderr.log"
+    },
+    "golangci_lint": {
+      "name": "golangci_lint",
+      "status": "completed",
+      "stdout": "logs/golangci_lint.stdout.log",
+      "stderr": "logs/golangci_lint.stderr.log"
+    },
+    "sonar": {
+      "name": "sonar",
+      "status": "completed",
+      "stdout": "logs/sonar.stdout.log",
+      "stderr": "logs/sonar.stderr.log"
+    }
+  },
+  "security": {
+    "govulncheck": {
+      "status": "completed",
+      "vulnerability_events": 0
+    },
+    "gosec": {
+      "status": "completed",
+      "issues": 0,
+      "severity": {}
+    }
+  },
+  "lint": {
+    "status": "completed",
+    "issues": 6,
+    "linters": {
+      "errcheck": 5,
+      "unused": 1
+    }
+  },
+  "sonar": {
+    "status": "passed",
+    "project_key": "lqcpe-kimik3-cenario-2-20260913T010319Z",
+    "ce_task_id": "c4a21ca3-fdfa-405b-ae52-ee19c72c5825",
+    "server_version": "26.6.0.123539",
+    "measures": {
+      "coverage": "97.6",
+      "complexity": "136",
+      "bugs": "0",
+      "duplicated_lines_density": "0.0",
+      "code_smells": "2",
+      "cognitive_complexity": "92",
+      "ncloc": "818",
+      "violations": "3",
+      "vulnerabilities": "1",
+      "security_hotspots": "0",
+      "sqale_index": "14"
+    },
+    "issue_count": 3,
+    "quality_gate": "OK"
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "total": 1,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 1
+  },
+  "effortTotal": 6,
+  "issues": [
+    {
+      "key": "ecd67d75-dafd-46f3-8f59-d66b0c2e7e46",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+      "project": "lqcpe-grok46-cenario-2-20260913T010319Z",
+      "line": 43,
+      "hash": "b64b51e8e882604a2ba704f16447e70f",
+      "textRange": {
+        "startLine": 43,
+        "endLine": 43,
+        "startOffset": 29,
+        "endOffset": 44
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 45,
+                "endLine": 45,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 50,
+                "endLine": 50,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 56,
+                "endLine": 56,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 61,
+                "endLine": 61,
+                "startOffset": 1,
+                "endOffset": 4
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 63,
+                "endLine": 63,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 71,
+                "endLine": 71,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 74,
+                "endLine": 74,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 78,
+                "endLine": 78,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 81,
+                "endLine": 81,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 85,
+                "endLine": 85,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 88,
+                "endLine": 88,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 93,
+                "endLine": 93,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 96,
+                "endLine": 96,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+              "textRange": {
+                "startLine": 100,
+                "endLine": 100,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+      "effort": "6min",
+      "debt": "6min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:08:05+0000",
+      "updateDate": "2026-09-13T01:08:05+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-grok46-cenario-2-20260913T010319Z:internal/adapter/postgres/repository.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "repository.go",
+      "longName": "internal/adapter/postgres/repository.go",
+      "path": "internal/adapter/postgres/repository.go"
+    },
+    {
+      "key": "lqcpe-grok46-cenario-2-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "grok46-cenario-2",
+      "longName": "grok46-cenario-2"
+    }
+  ],
+  "facets": []
+}

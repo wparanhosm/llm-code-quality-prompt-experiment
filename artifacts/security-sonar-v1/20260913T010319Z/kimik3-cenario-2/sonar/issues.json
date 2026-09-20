@@ -1,0 +1,330 @@
+{
+  "total": 3,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 3
+  },
+  "effortTotal": 44,
+  "issues": [
+    {
+      "key": "1b274cd6-bb21-4e58-9aca-48be3bcb685a",
+      "rule": "secrets:S6698",
+      "severity": "BLOCKER",
+      "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:cmd/wallet-p2p-api/main.go",
+      "project": "lqcpe-kimik3-cenario-2-20260913T010319Z",
+      "line": 41,
+      "hash": "644615a6255d76a8135b6114390e53db",
+      "textRange": {
+        "startLine": 41,
+        "endLine": 41,
+        "startOffset": 63,
+        "endOffset": 69
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Make sure this PostgreSQL password gets changed and removed from the code.",
+      "effort": "30min",
+      "debt": "30min",
+      "author": "",
+      "tags": [
+        "cwe"
+      ],
+      "creationDate": "2026-09-13T01:07:56+0000",
+      "updateDate": "2026-09-13T01:07:56+0000",
+      "type": "VULNERABILITY",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "TRUSTWORTHY",
+      "cleanCodeAttributeCategory": "RESPONSIBLE",
+      "impacts": [
+        {
+          "softwareQuality": "SECURITY",
+          "severity": "BLOCKER"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "e7497698-a8ac-4410-83b1-eee1ae7bff38",
+      "rule": "go:S1186",
+      "severity": "CRITICAL",
+      "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/adapter/postgres/unit_of_work.go",
+      "project": "lqcpe-kimik3-cenario-2-20260913T010319Z",
+      "line": 32,
+      "hash": "d290efb6fdcfc039cfc05b0f6d1b14ba",
+      "textRange": {
+        "startLine": 32,
+        "endLine": 32,
+        "startOffset": 22,
+        "endOffset": 24
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Add a nested comment explaining why this function is empty or complete the implementation.",
+      "effort": "5min",
+      "debt": "5min",
+      "author": "",
+      "tags": [
+        "suspicious"
+      ],
+      "creationDate": "2026-09-13T01:07:56+0000",
+      "updateDate": "2026-09-13T01:07:56+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "COMPLETE",
+      "cleanCodeAttributeCategory": "INTENTIONAL",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "36defc02-769f-46ce-9703-359d4c74ed9b",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+      "project": "lqcpe-kimik3-cenario-2-20260913T010319Z",
+      "line": 63,
+      "hash": "a7a927a4b3bb7ca59f3a0f6691afca4d",
+      "textRange": {
+        "startLine": 63,
+        "endLine": 63,
+        "startOffset": 27,
+        "endOffset": 34
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 64,
+                "endLine": 64,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 79,
+                "endLine": 79,
+                "startOffset": 2,
+                "endOffset": 5
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 81,
+                "endLine": 81,
+                "startOffset": 3,
+                "endOffset": 5
+              },
+              "msg": "+3 (incl 2 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 90,
+                "endLine": 90,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 97,
+                "endLine": 97,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 102,
+                "endLine": 102,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 105,
+                "endLine": 105,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 110,
+                "endLine": 110,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 113,
+                "endLine": 113,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 127,
+                "endLine": 127,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.",
+      "effort": "9min",
+      "debt": "9min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:07:56+0000",
+      "updateDate": "2026-09-13T01:07:56+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "transfer.go",
+      "longName": "internal/usecase/transfer.go",
+      "path": "internal/usecase/transfer.go"
+    },
+    {
+      "key": "lqcpe-kimik3-cenario-2-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "kimik3-cenario-2",
+      "longName": "kimik3-cenario-2"
+    },
+    {
+      "key": "lqcpe-kimik3-cenario-2-20260913T010319Z:cmd/wallet-p2p-api/main.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "main.go",
+      "longName": "cmd/wallet-p2p-api/main.go",
+      "path": "cmd/wallet-p2p-api/main.go"
+    },
+    {
+      "key": "lqcpe-kimik3-cenario-2-20260913T010319Z:internal/adapter/postgres/unit_of_work.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "unit_of_work.go",
+      "longName": "internal/adapter/postgres/unit_of_work.go",
+      "path": "internal/adapter/postgres/unit_of_work.go"
+    }
+  ],
+  "facets": []
+}

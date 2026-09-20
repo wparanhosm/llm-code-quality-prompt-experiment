@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "run_id": "chatgpt56sol-cenario-1",
+  "source_path": "runs/chatgpt56sol/cenario-1",
+  "hash_algorithm": "sha256",
+  "root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+  "entries": [
+    {
+      "path": ".dockerignore",
+      "type": "file",
+      "mode": "0777",
+      "size": 35,
+      "sha256": "dbbfc22abb5091dc3e42dc56a4d04f8b2c2967c6a1dde7da83a4a27fab7f16d1"
+    },
+    {
+      "path": "Dockerfile",
+      "type": "file",
+      "mode": "0777",
+      "size": 293,
+      "sha256": "74c02a91d51824801a554d0f803718543b6529d2b6ebd5a5ddb615f52b1ddc33"
+    },
+    {
+      "path": "README.md",
+      "type": "file",
+      "mode": "0777",
+      "size": 1857,
+      "sha256": "3dfc61422f7f65e776783decae17713e45ff1bac19cac2b2a78cdba11e4d9279"
+    },
+    {
+      "path": "billing_results.txt",
+      "type": "file",
+      "mode": "0777",
+      "size": 62,
+      "sha256": "c63d6a4db775fe758b9ef6f30e9dbc23ce764fe902ff9a4cc33a087983882047"
+    },
+    {
+      "path": "cmd/api/main.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1640,
+      "sha256": "5d2967a723157a5b1a8e24d32197602c46970e9e903cee8888aac40a0e97b1fd"
+    },
+    {
+      "path": "compose.yaml",
+      "type": "file",
+      "mode": "0777",
+      "size": 625,
+      "sha256": "b881e1c270527d7eb696c3367dfc9c47eee03617bdb0dccca4b61668a7dc0d80"
+    },
+    {
+      "path": "go.mod",
+      "type": "file",
+      "mode": "0777",
+      "size": 369,
+      "sha256": "1dbaec3f780c40f7663509b99fed48ab73a36bc1e6b4bc331af2af5cee3c1b5c"
+    },
+    {
+      "path": "go.sum",
+      "type": "file",
+      "mode": "0777",
+      "size": 2456,
+      "sha256": "91f1a749534aa3796620eb4234076b9ccd74932dd428e51b5a2372dbff254eeb"
+    },
+    {
+      "path": "internal/httpapi/handler.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 2821,
+      "sha256": "0abe1d55d3c03078ea7f0feb5f806faa427e4f8b378fe3223645c4f2b2fbbdc7"
+    },
+    {
+      "path": "internal/httpapi/handler_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 2167,
+      "sha256": "754bb3cef086f811de7db2d083e1d3a03dee348a64ef46ba6373e691abc878c8"
+    },
+    {
+      "path": "internal/money/money.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1186,
+      "sha256": "2177a19faacd46ebb3d82710f4d5488bfaa0102070a1cac39b9bc6bdfa89b4d6"
+    },
+    {
+      "path": "internal/money/money_test.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 1139,
+      "sha256": "fda9afeb69ad3625f51ed5f4ee27475f2b0d879e5fa2d7a11fd58dd0bc8cb278"
+    },
+    {
+      "path": "internal/transfer/service.go",
+      "type": "file",
+      "mode": "0777",
+      "size": 3098,
+      "sha256": "1e59096b649062b6192c1ae7d7370ea4e0e1f944b95d616bd566b0827f7cd822"
+    },
+    {
+      "path": "migrations/001_init.sql",
+      "type": "file",
+      "mode": "0777",
+      "size": 1010,
+      "sha256": "58b88931893c8c7b35619a6f98365df7f5a9362d50187ffcc5f8f7d7961349c6"
+    }
+  ]
+}

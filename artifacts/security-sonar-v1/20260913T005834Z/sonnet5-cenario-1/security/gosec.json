@@ -1,0 +1,44 @@
+{
+	"Golang errors": {},
+	"Issues": [
+		{
+			"severity": "HIGH",
+			"confidence": "LOW",
+			"cwe": {
+				"id": "798",
+				"url": "https://cwe.mitre.org/data/definitions/798.html"
+			},
+			"rule_id": "G101",
+			"details": "Potential hardcoded credentials: Password in URL",
+			"file": "/mnt/c/users/walte/workspace/llm-code-quality-prompt-experiment/work/20260913T005834Z/sonnet5-cenario-1/source/cmd/api/main.go",
+			"code": "25: \t\t// Exemplo: postgres://usuario:senha@localhost:5432/pix_db?sslmode=disable\n26: \t\tdsn = \"postgres://postgres:postgres@localhost:5432/pix_db?sslmode=disable\"\n27: \t}\n",
+			"line": "26",
+			"column": "3",
+			"nosec": false,
+			"suppressions": null
+		},
+		{
+			"severity": "LOW",
+			"confidence": "HIGH",
+			"cwe": {
+				"id": "117",
+				"url": "https://cwe.mitre.org/data/definitions/117.html"
+			},
+			"rule_id": "G706",
+			"details": "Log injection via taint analysis",
+			"file": "/mnt/c/users/walte/workspace/llm-code-quality-prompt-experiment/work/20260913T005834Z/sonnet5-cenario-1/source/cmd/api/main.go",
+			"code": "60: \tgo func() {\n61: \t\tlog.Printf(\"servidor Pix escutando em %s\", addr)\n62: \t\tif err := srv.ListenAndServe(); err != nil \u0026\u0026 err != http.ErrServerClosed {\n",
+			"line": "61",
+			"column": "13",
+			"nosec": false,
+			"suppressions": null
+		}
+	],
+	"Stats": {
+		"files": 5,
+		"lines": 540,
+		"nosec": 0,
+		"found": 2
+	},
+	"GosecVersion": "dev"
+}

@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "run_id": "chatgpt56sol-cenario-1",
+  "source_root_hash": "856ecf6d3afb9a97b52c05a47c5e148a5f97d57f42924b26edafc1608d90255b",
+  "entries": [
+    {
+      "path": ".dockerignore",
+      "category": "model_operational_config",
+      "rule": "model-provided-operational-config",
+      "confidence": "high"
+    },
+    {
+      "path": "Dockerfile",
+      "category": "model_operational_config",
+      "rule": "model-provided-operational-config",
+      "confidence": "high"
+    },
+    {
+      "path": "README.md",
+      "category": "documentation",
+      "rule": "project-documentation",
+      "confidence": "high"
+    },
+    {
+      "path": "billing_results.txt",
+      "category": "generation_metadata",
+      "rule": "billing-metadata",
+      "confidence": "high"
+    },
+    {
+      "path": "cmd/api/main.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "compose.yaml",
+      "category": "model_operational_config",
+      "rule": "model-provided-operational-config",
+      "confidence": "high"
+    },
+    {
+      "path": "go.mod",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "go.sum",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/httpapi/handler.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/httpapi/handler_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/money/money.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/money/money_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/transfer/service.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "migrations/001_init.sql",
+      "category": "database_definition",
+      "rule": "database-schema-or-seed",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "application_source": 4,
+    "database_definition": 1,
+    "dependency_manifest": 2,
+    "documentation": 1,
+    "generated_test": 2,
+    "generation_metadata": 1,
+    "model_operational_config": 3
+  }
+}

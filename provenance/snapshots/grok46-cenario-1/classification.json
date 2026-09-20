@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-1",
+  "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+  "entries": [
+    {
+      "path": "billing_result.txt",
+      "category": "generation_metadata",
+      "rule": "billing-metadata",
+      "confidence": "high"
+    },
+    {
+      "path": "cmd/pix/main.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "go.mod",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "go.sum",
+      "category": "dependency_manifest",
+      "rule": "dependency-manifest",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/db/db.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/wallet/wallet.go",
+      "category": "application_source",
+      "rule": "go-production-source",
+      "confidence": "high"
+    },
+    {
+      "path": "internal/wallet/wallet_test.go",
+      "category": "generated_test",
+      "rule": "go-test-source",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "application_source": 3,
+    "dependency_manifest": 2,
+    "generated_test": 1,
+    "generation_metadata": 1
+  }
+}

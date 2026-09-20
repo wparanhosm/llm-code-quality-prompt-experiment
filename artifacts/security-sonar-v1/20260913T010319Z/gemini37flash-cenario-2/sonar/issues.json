@@ -1,0 +1,444 @@
+{
+  "total": 2,
+  "p": 1,
+  "ps": 500,
+  "paging": {
+    "pageIndex": 1,
+    "pageSize": 500,
+    "total": 2
+  },
+  "effortTotal": 23,
+  "issues": [
+    {
+      "key": "d9369271-8ae4-4d19-860a-4d0da09d4933",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+      "project": "lqcpe-gemini37flash-cenario-2-20260913T010319Z",
+      "line": 52,
+      "hash": "5eba9bbcf5aad9ad7c3f4e42bddf65eb",
+      "textRange": {
+        "startLine": 52,
+        "endLine": 52,
+        "startOffset": 27,
+        "endOffset": 34
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 61,
+                "endLine": 61,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 66,
+                "endLine": 66,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 76,
+                "endLine": 76,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 81,
+                "endLine": 81,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 84,
+                "endLine": 84,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 89,
+                "endLine": 89,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 92,
+                "endLine": 92,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 97,
+                "endLine": 97,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 100,
+                "endLine": 100,
+                "startOffset": 4,
+                "endOffset": 8
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 106,
+                "endLine": 106,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 111,
+                "endLine": 111,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 116,
+                "endLine": 116,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 120,
+                "endLine": 120,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 125,
+                "endLine": 125,
+                "startOffset": 2,
+                "endOffset": 4
+              },
+              "msg": "+2 (incl 1 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+              "textRange": {
+                "startLine": 132,
+                "endLine": 132,
+                "startOffset": 1,
+                "endOffset": 3
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.",
+      "effort": "16min",
+      "debt": "16min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:08:05+0000",
+      "updateDate": "2026-09-13T01:08:05+0000",
+      "type": "CODE_SMELL",
+      "scope": "MAIN",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    },
+    {
+      "key": "ddc00d56-e3b9-4440-a742-002f87f396d9",
+      "rule": "go:S3776",
+      "severity": "CRITICAL",
+      "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+      "project": "lqcpe-gemini37flash-cenario-2-20260913T010319Z",
+      "line": 9,
+      "hash": "26262c33282e12c6de000a05dd74c477",
+      "textRange": {
+        "startLine": 9,
+        "endLine": 9,
+        "startOffset": 5,
+        "endOffset": 17
+      },
+      "flows": [
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+              "textRange": {
+                "startLine": 22,
+                "endLine": 22,
+                "startOffset": 1,
+                "endOffset": 4
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+              "textRange": {
+                "startLine": 25,
+                "endLine": 25,
+                "startOffset": 3,
+                "endOffset": 5
+              },
+              "msg": "+3 (incl 2 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+              "textRange": {
+                "startLine": 29,
+                "endLine": 29,
+                "startOffset": 5,
+                "endOffset": 9
+              },
+              "msg": "+1",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+              "textRange": {
+                "startLine": 26,
+                "endLine": 26,
+                "startOffset": 4,
+                "endOffset": 6
+              },
+              "msg": "+4 (incl 3 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+              "textRange": {
+                "startLine": 30,
+                "endLine": 30,
+                "startOffset": 4,
+                "endOffset": 6
+              },
+              "msg": "+4 (incl 3 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        },
+        {
+          "locations": [
+            {
+              "component": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+              "textRange": {
+                "startLine": 33,
+                "endLine": 33,
+                "startOffset": 4,
+                "endOffset": 6
+              },
+              "msg": "+4 (incl 3 for nesting)",
+              "msgFormattings": []
+            }
+          ]
+        }
+      ],
+      "status": "OPEN",
+      "message": "Refactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.",
+      "effort": "7min",
+      "debt": "7min",
+      "author": "",
+      "tags": [
+        "brain-overload"
+      ],
+      "creationDate": "2026-09-13T01:08:05+0000",
+      "updateDate": "2026-09-13T01:08:05+0000",
+      "type": "CODE_SMELL",
+      "scope": "TEST",
+      "quickFixAvailable": false,
+      "messageFormattings": [],
+      "codeVariants": [],
+      "cleanCodeAttribute": "FOCUSED",
+      "cleanCodeAttributeCategory": "ADAPTABLE",
+      "impacts": [
+        {
+          "softwareQuality": "MAINTAINABILITY",
+          "severity": "HIGH"
+        }
+      ],
+      "issueStatus": "OPEN",
+      "prioritizedRule": false,
+      "fromSonarQubeUpdate": false,
+      "internalTags": [],
+      "linkedTicketStatus": "NOT_LINKED"
+    }
+  ],
+  "components": [
+    {
+      "key": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:internal/usecase/transfer.go",
+      "enabled": true,
+      "qualifier": "FIL",
+      "name": "transfer.go",
+      "longName": "internal/usecase/transfer.go",
+      "path": "internal/usecase/transfer.go"
+    },
+    {
+      "key": "lqcpe-gemini37flash-cenario-2-20260913T010319Z:pkg/money/money_test.go",
+      "enabled": true,
+      "qualifier": "UTS",
+      "name": "money_test.go",
+      "longName": "pkg/money/money_test.go",
+      "path": "pkg/money/money_test.go"
+    },
+    {
+      "key": "lqcpe-gemini37flash-cenario-2-20260913T010319Z",
+      "enabled": true,
+      "qualifier": "TRK",
+      "name": "gemini37flash-cenario-2",
+      "longName": "gemini37flash-cenario-2"
+    }
+  ],
+  "facets": []
+}

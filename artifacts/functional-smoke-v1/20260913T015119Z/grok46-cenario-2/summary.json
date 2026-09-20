@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-2",
+  "source_root_hash": "a883949e52665e8f1788fc0b8b042682d0c93ecf28fc1348fbbf3c3dc225e6cd",
+  "status": "passed",
+  "error": null,
+  "functional": {
+    "interface": "http",
+    "response": {
+      "status_code": 201,
+      "expected": true,
+      "json": {
+        "id": "1789264719463947038-1789264719463",
+        "from_wallet_id": "bench-a",
+        "to_wallet_id": "bench-b",
+        "amount": 1250,
+        "created_at": "2026-09-13T01:58:39Z"
+      },
+      "body": "{\"id\":\"1789264719463947038-1789264719463\",\"from_wallet_id\":\"bench-a\",\"to_wallet_id\":\"bench-b\",\"amount\":1250,\"created_at\":\"2026-09-13T01:58:39Z\"}\n"
+    },
+    "state": {
+      "source_before_cents": 10000,
+      "destination_before_cents": 2000,
+      "source_after_cents": 8750,
+      "destination_after_cents": 3250,
+      "total_before_cents": 12000,
+      "total_after_cents": 12000,
+      "matching_ledger_rows": 1
+    },
+    "checks": {
+      "initial_state_matches": true,
+      "source_debited_once": true,
+      "destination_credited_once": true,
+      "total_conserved": true,
+      "ledger_recorded_once": true,
+      "non_negative_balances": true
+    }
+  },
+  "operational_effort": {
+    "assistance_count": 6,
+    "assistance": [
+      "database_provisioned",
+      "migration_reconstructed_external",
+      "seed_applied_external",
+      "environment_injected",
+      "build_command_supplied",
+      "readiness_probe_supplied"
+    ],
+    "fallback_count": 0,
+    "fallbacks": []
+  },
+  "phases": {
+    "materialize": {
+      "status": "passed",
+      "duration_seconds": 131.699
+    },
+    "database": {
+      "status": "passed",
+      "duration_seconds": 2.706,
+      "image": "postgres:16-alpine"
+    },
+    "migration": {
+      "status": "passed",
+      "duration_seconds": 0.119,
+      "source": "benchmark/functional/sql/grok46-cenario-2-schema.sql"
+    },
+    "seed": {
+      "status": "passed",
+      "duration_seconds": 0.119,
+      "source": "benchmark/functional/sql/grok46-cenario-2.sql"
+    },
+    "build": {
+      "status": "passed",
+      "duration_seconds": 4.585,
+      "exit_code": 0
+    },
+    "startup": {
+      "status": "passed",
+      "duration_seconds": 0.006,
+      "pid": 74406
+    },
+    "readiness": {
+      "status": "passed",
+      "duration_seconds": 0.503,
+      "type": "http"
+    },
+    "action": {
+      "status": "passed",
+      "duration_seconds": 0.01,
+      "status_code": 201
+    },
+    "reconciliation": {
+      "status": "passed",
+      "duration_seconds": 0.173
+    },
+    "shutdown": {
+      "status": "passed",
+      "duration_seconds": 0.033,
+      "method": "graceful"
+    }
+  },
+  "diagnostics": {
+    "application_stdout": "logs/application.stdout.log",
+    "application_stderr": "logs/application.stderr.log"
+  }
+}

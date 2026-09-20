@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "run_id": "grok46-cenario-1",
+  "status": "failed",
+  "error": "no such table: wallets",
+  "source_root_hash": "c72eb796ffc762bed3da4759343223778079bd7b8aab99ea75cb41543ab95e6b",
+  "cases": []
+}

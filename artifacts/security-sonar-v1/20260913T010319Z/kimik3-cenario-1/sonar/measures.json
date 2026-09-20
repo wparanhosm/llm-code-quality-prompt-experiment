@@ -1,0 +1,62 @@
+{
+  "component": {
+    "key": "lqcpe-kimik3-cenario-1-20260913T010319Z",
+    "name": "kimik3-cenario-1",
+    "qualifier": "TRK",
+    "measures": [
+      {
+        "metric": "coverage",
+        "value": "55.7",
+        "bestValue": false
+      },
+      {
+        "metric": "complexity",
+        "value": "63"
+      },
+      {
+        "metric": "bugs",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "duplicated_lines_density",
+        "value": "0.0",
+        "bestValue": true
+      },
+      {
+        "metric": "code_smells",
+        "value": "2",
+        "bestValue": false
+      },
+      {
+        "metric": "cognitive_complexity",
+        "value": "50",
+        "bestValue": false
+      },
+      {
+        "metric": "ncloc",
+        "value": "373"
+      },
+      {
+        "metric": "violations",
+        "value": "2",
+        "bestValue": false
+      },
+      {
+        "metric": "vulnerabilities",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "security_hotspots",
+        "value": "0",
+        "bestValue": true
+      },
+      {
+        "metric": "sqale_index",
+        "value": "17",
+        "bestValue": false
+      }
+    ]
+  }
+}
